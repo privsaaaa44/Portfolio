@@ -5,6 +5,9 @@ import "../index.css";
 import F3 from "../assets/F3.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { LuPhone } from "react-icons/lu";
+import { FiMapPin } from "react-icons/fi";
+
 
 // Assets
 import s1 from "../assets/s1.png";
@@ -127,6 +130,7 @@ const Home = () => {
       </div>
 <br />
 <br />
+<hr className="bg-light" />
       {/* Skills Section (Infinite Loop Carousel) */}
       <h2 className="text-secondary fs-3 ml-3 mb-4 text-center mt-3 ">Technologies I work with</h2>
 
@@ -145,6 +149,7 @@ const Home = () => {
       </div>
       <br />
       <br />
+      <hr className="bg-white"  />
 <div className="d-flex justify-content-center">
   <h4  className="abcdef text-white text-center  fs-5    rounded-pill py-2 px-3 w-10 mt-4">
     Lets Connect
@@ -156,23 +161,80 @@ const Home = () => {
 <p className="text-secondary fs-6">I’m always excited to contribute to innovative projects if you’re looking for someone to help bring your vision to life, I’d love to join your team.</p>
    <br />
    <div className="d-flex justify-content-center gap-4">
-   <div className="abcdef fs-5 rounded py-2 px-3  mt-4 " style={{height: '200px', width: '380px'}}>
+  
+   <div className="abcdef fs-5  py-2 px-3 mt-4 card-1" style={{height: '240px', width: '400px'
+   }}>
+ 
  <div 
-  className="bg-secondary  p-2 rounded abcdefgh  "
-  style={{ width: "50px", height: "50px" }}
+  className="bg-secondary  p-2 py-2 abcdefgh mt-4"
+  style={{ width: "60px", height: "60px" ,borderRadius: '10px', marginLeft: '20px' }}
 >
-  <MdOutlineEmail color="white"  style={{ fontSize: "25px", marginLeft: '4px'}} />
+  <MdOutlineEmail color="white"className="mt-2"  style={{ fontSize: "30px", marginLeft: '6px'}} />
+
+
+
+
+  
 </div>
 
+  <div className="newone mt-4">
+<h5 className="text-white fs-5 firstone ">Email me</h5>
+<h6 className="text-secondary fs-6 firstone mt-2">Drop me a text anytime</h6>
+<h5 className="text-white fs-5 firston mt-3">sadiqsiraj44@gmail.com</h5>
+
+</div>
    </div>
 
-   <div className="abcdef fs-5  rounded py-2 px-3  mt-4 " style={{height: '200px', width: '380px'}}>
+ 
+   <div className="abcdef fs-5  py-2 px-3 mt-4 card-1" style={{height: '240px', width: '400px'
+   }}>
+ 
+ <div 
+  className="bg-secondary  p-2 py-2 abcdefgh mt-4"
+  style={{ width: "60px", height: "60px" ,borderRadius: '10px', marginLeft: '20px' }}
+>
+  <LuPhone color="white"className="mt-2"  style={{ fontSize: "30px", marginLeft: '6px'}} />
 
-   </div>
-   <div className="abcdef fs-5  rounded py-2 px-3 mt-4 " style={{height: '200px', width: '380px'}}>
 
+
+
+  
+</div>
+
+  <div className="newone mt-4">
+<h5 className="text-white fs-5 firstone ">Call me</h5>
+<h6 className="text-secondary fs-6 firstone mt-2">Call me anytime</h6>
+<h5 className="text-white fs-5 firston mt-3">+92 315 2453522</h5>
+
+</div>
+   </div>
+ 
+   <div className="abcdef fs-5  py-2 px-3 mt-4 card-1" style={{height: '240px', width: '400px'
+   }}>
+ 
+ <div 
+  className="bg-secondary  p-2 py-2 abcdefgh mt-4"
+  style={{ width: "60px", height: "60px" ,borderRadius: '10px', marginLeft: '20px' }}
+>
+  <FiMapPin color="white"className="mt-2"  style={{ fontSize: "30px", marginLeft: '6px'}} />
+
+
+
+
+  
+</div>
+
+  <div className="newone mt-4">
+<h5 className="text-white fs-5 firstone ">Visit me</h5>
+<h6 className="text-secondary fs-6 firstone mt-2">Come say hello</h6>
+<h5 className="text-white fs-5 firston mt-3">Pakistan, karachi</h5>
+
+</div>
    </div>
    </div>
+   <br />
+   <h3 className="text-center text-white mt-3" style={{fontSize: '35px'}}>Connect on Socail Media
+</h3>
     </div>
 
   );

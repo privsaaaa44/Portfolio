@@ -5,5 +5,29 @@
 
 nav {
 font-family: 'Melodrama', serif;
-  height: auto;
+
 }
+.card-1:hover {
+  transform:  scale(1.01);
+  /* transition: 0.3 ease; */
+   transition: 0.5s ease, opacity 0.5s ease;
+   opacity: 1;  
+     transform: translateY(-5px) scale(1.02); /* slight lift and zoom */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35); /* deeper shadow on hover */
+  background: linear-gradient(
+    to bottom right, 
+    rgba(255,255,255,0.05), 
+    rgba(0,0,0,0.2)
+  ) 
+}
+
+
+.card-1 {
+  border-radius: 12px;
+  overflow: hidden; 
+  will-change: transform;
+  transition: transform 0.4s ease , background 0.4s ease;
+  position: relative;
+}
+
+
