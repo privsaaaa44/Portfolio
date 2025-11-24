@@ -4,5 +4,5 @@
 
   export default defineConfig({
     plugins: [react()],
-    base: '/Protoflio/', // replace <repo-name> with your GitHub repo name
+    base: '/', // replace <repo-name> with your GitHub repo name
   });

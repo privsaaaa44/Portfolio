@@ -7,7 +7,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { LuPhone } from "react-icons/lu";
 import { FiMapPin } from "react-icons/fi";
-
+import { BsBoxArrowUpRight } from "react-icons/bs";
+import { FiGithub } from "react-icons/fi";
+import { FiLinkedin } from "react-icons/fi";
 
 // Assets
 import s1 from "../assets/s1.png";
@@ -87,8 +89,8 @@ const Home = () => {
       </div>
 
       {/* Recent Work Section */}
-      <div className="Rw">
-        <div className="d-flex justify-content-between align-items-center mt-5 mb-4 flex-wrap">
+      <div className="Rw" id="projectpage">
+        <div className="d-flex justify-content-between align-items-center mt-5 mb-4 flex-wrap px-3 px-md-0">
           <h2 className="text-white">Recent Work</h2>
           <h3 className="text-white">25 - Present</h3>
         </div>
@@ -128,11 +130,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-<br />
-<br />
-<hr className="bg-light" />
+      
+      <br />
+      <br />
+      <hr className="bg-light" />
+      
       {/* Skills Section (Infinite Loop Carousel) */}
-      <h2 className="text-secondary fs-3 ml-3 mb-4 text-center mt-3 ">Technologies I work with</h2>
+      <h2 className="text-secondary fs-3 ml-3 mb-4 text-center mt-3">Technologies I work with</h2>
 
       <div className="skills-carousel-container">
         <div className="skills-carousel">
@@ -147,96 +151,116 @@ const Home = () => {
           ))}
         </div>
       </div>
+      
       <br />
       <br />
-      <hr className="bg-white"  />
-<div className="d-flex justify-content-center">
-  <h4  className="abcdef text-white text-center  fs-5    rounded-pill py-2 px-3 w-10 mt-4">
-    Lets Connect
-  </h4>
+      <hr className="bg-white" />
+      
+      <div className="d-flex justify-content-center">
+        <h4 className="abcdef text-white text-center fs-5 rounded-pill py-2 px-3 w-10 mt-4">
+          Lets Connect
+        </h4>
+      </div>
+      
+      <div id="contactpage">
+        <h1 className="text-center mt-3">Get In Touch</h1>
+        <p className="text-secondary fs-6 text-center px-3 px-md-0">
+          I'm always excited to contribute to innovative projects if you're looking for someone to help bring your vision to life, I'd love to join your team.
+        </p>
+        <br />
+        
+        {/* Contact Cards - Responsive Layout */}
+        <div className="d-flex justify-content-center gap-4 flex-column flex-md-row px-3 px-md-0">
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '400px', height: '240px' }}>
+            <div 
+              className="bg-secondary p-2 py-2 abcdefgh mt-4"
+              style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
+            >
+              <MdOutlineEmail color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
+            </div>
+            <div className="newone mt-4">
+              <h5 className="text-white fs-5 firstone mt-4">Email me</h5>
+              <h6 className="text-secondary fs-6 firstone mt-2">Drop me a text anytime</h6>
+              <h5 className="text-white fs-5 firston mt-3">sadiqsiraj44@gmail.com</h5>
+            </div>
+          </div>
 
-</div>
-<h1 className="text-center mt-3">Get In Touch
-</h1>
-<p className="text-secondary fs-6">I’m always excited to contribute to innovative projects if you’re looking for someone to help bring your vision to life, I’d love to join your team.</p>
-   <br />
-   <div className="d-flex justify-content-center gap-4">
-  
-   <div className="abcdef fs-5  py-2 px-3 mt-4 card-1" style={{height: '240px', width: '400px'
-   }}>
- 
- <div 
-  className="bg-secondary  p-2 py-2 abcdefgh mt-4"
-  style={{ width: "60px", height: "60px" ,borderRadius: '10px', marginLeft: '20px' }}
->
-  <MdOutlineEmail color="white"className="mt-2"  style={{ fontSize: "30px", marginLeft: '6px'}} />
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '400px', height: '240px' }}>
+            <div 
+              className="bg-secondary p-2 py-2 abcdefgh mt-4"
+              style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
+            >
+              <LuPhone color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
+            </div>
+            <div className="newone mt-4">
+              <h5 className="text-white fs-5 firstone">Call me</h5>
+              <h6 className="text-secondary fs-6 firstone mt-2">Call me anytime</h6>
+              <h5 className="text-white fs-5 firston mt-3">+92 315 2453522</h5>
+            </div>
+          </div>
 
-
-
-
-  
-</div>
-
-  <div className="newone mt-4">
-<h5 className="text-white fs-5 firstone ">Email me</h5>
-<h6 className="text-secondary fs-6 firstone mt-2">Drop me a text anytime</h6>
-<h5 className="text-white fs-5 firston mt-3">sadiqsiraj44@gmail.com</h5>
-
-</div>
-   </div>
-
- 
-   <div className="abcdef fs-5  py-2 px-3 mt-4 card-1" style={{height: '240px', width: '400px'
-   }}>
- 
- <div 
-  className="bg-secondary  p-2 py-2 abcdefgh mt-4"
-  style={{ width: "60px", height: "60px" ,borderRadius: '10px', marginLeft: '20px' }}
->
-  <LuPhone color="white"className="mt-2"  style={{ fontSize: "30px", marginLeft: '6px'}} />
-
-
-
-
-  
-</div>
-
-  <div className="newone mt-4">
-<h5 className="text-white fs-5 firstone ">Call me</h5>
-<h6 className="text-secondary fs-6 firstone mt-2">Call me anytime</h6>
-<h5 className="text-white fs-5 firston mt-3">+92 315 2453522</h5>
-
-</div>
-   </div>
- 
-   <div className="abcdef fs-5  py-2 px-3 mt-4 card-1" style={{height: '240px', width: '400px'
-   }}>
- 
- <div 
-  className="bg-secondary  p-2 py-2 abcdefgh mt-4"
-  style={{ width: "60px", height: "60px" ,borderRadius: '10px', marginLeft: '20px' }}
->
-  <FiMapPin color="white"className="mt-2"  style={{ fontSize: "30px", marginLeft: '6px'}} />
-
-
-
-
-  
-</div>
-
-  <div className="newone mt-4">
-<h5 className="text-white fs-5 firstone ">Visit me</h5>
-<h6 className="text-secondary fs-6 firstone mt-2">Come say hello</h6>
-<h5 className="text-white fs-5 firston mt-3">Pakistan, karachi</h5>
-
-</div>
-   </div>
-   </div>
-   <br />
-   <h3 className="text-center text-white mt-3" style={{fontSize: '35px'}}>Connect on Socail Media
-</h3>
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '400px', height: '240px' }}>
+            <div 
+              className="bg-secondary p-2 py-2 abcdefgh mt-4"
+              style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
+            >
+              <FiMapPin color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
+            </div>
+            <div className="newone mt-4">
+              <h5 className="text-white fs-5 firstone">Visit me</h5>
+              <h6 className="text-secondary fs-6 firstone mt-2">Come say hello</h6>
+              <h5 className="text-white fs-5 firston mt-3">Pakistan, karachi</h5>
+            </div>
+          </div>
+        </div>
+        
+        <br />
+        <h3 className="text-center text-white mt-3" style={{ fontSize: '35px' }}>Connect on Social Media</h3>
+        
+        {/* Social Media Cards - Responsive Layout */}
+        <div className="d-flex justify-content-center gap-4 flex-column flex-md-row px-3 px-md-0">
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '460px', height: '100px' }}>
+            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
+              <div className="d-flex">
+                <div 
+                  className="bg-secondary p-2 py-2 abcdefgh mt-3"
+                  style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
+                >
+                  <FiGithub color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
+                </div>
+                <div className="newone mt-4 smallone">
+                  <h5 className="text-secondary fs-6">Github</h5>
+                  <h6 className="text-white fs-6 mt-2">@privsaaaa44</h6>
+                </div>
+                <div>
+                  <BsBoxArrowUpRight color="gray" className="fs-6" style={{ marginTop: '35px' }} />
+                </div>
+              </div>  
+            </a>
+          </div>
+          
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '460px', height: '100px' }}>
+            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
+              <div className="d-flex">
+                <div 
+                  className="bg-secondary p-2 py-2 abcdefgh mt-3"
+                  style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
+                >
+                  <FiLinkedin color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
+                </div>
+                <div className="newone mt-4 smallone">
+                  <h5 className="text-secondary fs-6">Linkedin</h5>
+                  <h6 className="text-white fs-6 mt-2">@sadiq</h6>
+                </div>
+                <div>
+                  <BsBoxArrowUpRight color="gray" className="fs-6" style={{ marginTop: '35px' }} />
+                </div>
+              </div>  
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-
   );
 };
 
