@@ -71,7 +71,7 @@ const Home = () => {
           Sadiq
           <span>
             <img className="img1 ms-2 align-middle" src={F3} alt="F" />
-            <span className="name ms-2">Siraj</span>
+            <span className="name ms-2">Si</span>
           </span>
         </h1>
         <p className="text-white mt-3 mx-auto" style={{ maxWidth: "600px" }}>
