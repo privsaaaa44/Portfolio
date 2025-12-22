@@ -3,10 +3,10 @@
     margin-top: 25px;
 }
 
-nav {
+/* nav {
 font-family: 'Melodrama', serif;
 
-}
+} */
 .card-1:hover {
   transform:  scale(1.01);
   /* transition: 0.3 ease; */
