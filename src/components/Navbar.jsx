@@ -12,65 +12,15 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Check screen size
-  useEffect(() => {
-    const checkScreenSize = () => setIsMobile(window.innerWidth < 992);
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
 
-  // Slider for nav links (desktop only)
-  useEffect(() => {
-    const navGlass = navGlassRef.current;
-    if (!navGlass) return;
-    
-    const slider = sliderRef.current;
-    const navLinks = navGlass.querySelectorAll(".nav-link");
 
-    const moveSlider = (link) => {
-      const parentRect = navGlass.getBoundingClientRect();
-      const linkRect = link.getBoundingClientRect();
-      slider.style.width = `${linkRect.width}px`;
-      slider.style.left = `${linkRect.left - parentRect.left}px`;
-    };
 
-    const activeLink = navGlass.querySelector(".nav-link.active");
-    if (activeLink) moveSlider(activeLink);
-
-    const handleMouseEnter = function () {
-      moveSlider(this);
-    };
-
-    navLinks.forEach((link) => {
-      link.addEventListener("mouseenter", handleMouseEnter);
-    });
-
-    const handleMouseLeave = () => {
-      if (activeLink) moveSlider(activeLink);
-    };
-    navGlass.addEventListener("mouseleave", handleMouseLeave);
-
-    const handleResize = () => {
-      if (activeLink) moveSlider(activeLink);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      navLinks.forEach((link) => {
-        link.removeEventListener("mouseenter", handleMouseEnter);
-      });
-      navGlass.removeEventListener("mouseleave", handleMouseLeave);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isMobile]);
 
   // Scroll listener for animations
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
-      console.log("Window scrollY:", window.scrollY, "Scrolled:", isScrolled); // Debug
     };
     
     window.addEventListener("scroll", handleScroll);
@@ -90,22 +40,22 @@ const Navbar = () => {
         >
           {/* Nav links - Desktop only */}
           <div
-            className="nav-glass px-3 py-2 rounded-pill d-flex gap-4 position-relative"
+            className="nav-glass px-3 py-2  d-flex position-relative"
             ref={navGlassRef}
           >
             <a className="nav-link active fs-6" href="#">
-              <HiOutlineHome className="fs-5 me-1" />
+              <HiOutlineHome className="fs-5 me-1 homeicon" />
               <span className="navbarlink text-white">Home</span>
             </a>
-            <a className="nav-link fs-6" href="#">
+            <a className="nav-link fs-6 aboutnav-link" href="#">
               <HiOutlineDocumentText className="fs-5 me-1" />
               <span className="navbarlink">About</span>
             </a>
-            <a className="nav-link fs-6" href="#projectpage">
+            <a className="nav-link fs-6 projectnav-link" href="#projectpage">
               <PiSuitcaseSimpleBold className="fs-5 me-1" />
               <span className="navbarlink">Project</span>
             </a>
-            <a className="nav-link fs-6" href="#contactpage">
+            <a className="nav-link fs-6 contactnav-link" href="#contactpage">
               <IoMailOutline className="fs-5 me-1" />
               <span className="navbarlink">Contact</span>
             </a>
@@ -119,27 +69,27 @@ const Navbar = () => {
     .custom-nav {
   top: 20px;
   width: 100%;
-  z-index: 999;
+  z-index: 999 !important;
   transition: all 0.3s ease;
   display: flex;
   justify-content: center;
 }
 
-        .nav-glass {
-          background: rgba(255, 255, 255, 0.08);
-          backdrop-filter: blur(12px);
-          padding: 12px 24px;
-          gap: 16px;
-          border-radius: 50px;
-          display: flex;
-          align-items: center;
-          transition: all 0.3s ease;
-        }
-
-        .custom-nav.navbar-scrolled .nav-glass {
-          padding: 6px 12px !important;
-          gap: 8px !important;
-        }
+  .nav-glass {
+    border: 1px solid #141417;
+    background: #000000b3;
+    padding: 12px 0px !important;
+    gap: 0px;
+    border-radius: 51px !important;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+ 
+         .custom-nav.navbar-scrolled .nav-glass {
+    padding: 8px 0px !important;
+    gap: 0px !important;
+}
 
         .navbarlink {
           font-size: 14px;
@@ -179,14 +129,59 @@ const Navbar = () => {
           font-size: 18px;
         }
 
-        .slider {
-          position: absolute;
-          bottom: 0;
-          height: 2px;
-          background: rgba(255, 255, 255, 0.5);
-          border-radius: 2px;
-          transition: all 0.3s ease;
+
+      .custom-nav.navbar-scrolled .slider {
+        height: 30px !important;
+        width: 35px !important;
+        border-radius: 70px !important;
+        left: 2.5% !important;
+        // border: 2px solid rgba(0, 255, 0, 0.7);
+      }
+          .homeicon {
+          margin-left: 2px !important;
+          }
+        
+.aboutnav-link:hover {
+  background: #262626;
+  border-radius: 20px;
+  // color: white;
+  transform: scale(1.1) !important;
+        transition: all 0.4s ease !important;
+// color: white !important;
         }
+.projectnav-link:hover {
+  background: #262626;
+  border-radius: 20px;
+  // color: white;
+  transform: scale(1.1) !important;
+        transition: all 0.4s ease !important;
+// color: white !important;
+        }
+.contactnav-link {
+right: 2% !important;}
+.contactnav-link:hover {
+  background: #262626;
+  border-radius: 20px;
+  right: 2% !important;
+  // color: white;
+  transform: scale(1.1) !important;
+        transition: all 0.4s ease !important;
+// color: white !important;
+        }
+
+      .slider {
+        position: absolute;
+        bottom: 0;
+        left: 2% !important;
+        height: 50px;
+        width: 90px !important;
+        background: transparent;
+        // border: 2px solid rgba(0, 255, 0, 0.8);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        top: 50%;
+        transform: translateY(-50%);
+      }
       `}</style>
     </>
   );
