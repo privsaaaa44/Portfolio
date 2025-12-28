@@ -2,11 +2,16 @@
 .container-fluid.justify-content-between.align-items-center.px-4 {
     margin-top: 25px;
 }
-
+.t {
+ filter: brightness(0) invert(1);
+}
 /* nav {
 font-family: 'Melodrama', serif;
 
 } */
+ .container-fluid.justify-content-between.align-items-center {
+    justify-content: center !important;
+}
 .card-1:hover {
   transform:  scale(1.01);
   /* transition: 0.3 ease; */

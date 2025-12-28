@@ -65,6 +65,7 @@ const Home = () => {
 
   return (
     <div>
+ <br />
       {/* Header Section */}
       <div className="sd-container text-center px-3 px-md-5" data-aos="fade-up">
         <h1 className="name">
@@ -90,10 +91,16 @@ const Home = () => {
 
       {/* Recent Work Section */}
       <div className="Rw" id="projectpage">
-        <div className="d-flex justify-content-between align-items-center mt-5 mb-4 flex-wrap px-3 px-md-0">
-          <h2 className="text-white">Recent Work</h2>
-          <h3 className="text-white">25 - Present</h3>
-        </div>
+        <div className="d-flex justify-content-center">
+        <h4 style={{width: "100px"}} className="abcdef text-secondary text-center fs-6 rounded-pill py-2 px-2 w-10 mt-4">
+         My Work
+        </h4>
+      </div>
+          <h1 style={{fontSize: "60px"}} className="text-center mt-3 ms-5">Featured Projects
+</h1>
+        <p className="text-secondary fs-6 text-center px-3 px-md-0">
+          I'm always excited to contribute to innovative projects if you're looking for someone to help bring your vision to life, I'd love to join your team.
+        </p>
 
         <div className="cards-grid">
           {cardData.map((card, index) => (
@@ -143,6 +150,7 @@ const Home = () => {
           {[...skills, ...skills].map((skill, idx) => (
             <div key={idx} className="skill-item">
               <img
+              className="t"
                 src={skill.icon}
                 alt={`skill-${idx}`}
                 style={{ width: "50px", height: "50px", objectFit: "contain" }}
