@@ -11,24 +11,38 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const lastScrollY = useRef(0);
 
-
-
-
-
-  // Scroll listener for animations
+  // Scroll listener with direction detection
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
+      const currentScrollY = window.scrollY;
+      
+      // Agar top par hai to expand
+      if (currentScrollY < 50) {
+        setScrolled(false);
+      }
+      // Agar scroll down ho raha hai to compress
+      else if (currentScrollY > lastScrollY.current) {
+        setScrolled(true);
+      }
+      // Agar scroll up ho raha hai to expand
+      else if (currentScrollY < lastScrollY.current) {
+        setScrolled(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
     
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
+    <div>      
+    </div>
       <nav
         className={`navbar navbar-dark bg-transparent custom-nav position-fixed ${
           scrolled ? "navbar-scrolled" : ""
@@ -84,7 +98,34 @@ const Navbar = () => {
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
+.stagelight {
+ content: '';
+  position: absolute;
+  width: 50%;
+  // text-align: center;
+  height: 250px;
+  background: radial-gradient(ellipse 80% 150% at 50% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.25) 20%, rgba(255, 255, 255, 0.12) 40%, transparent 70%);
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  filter: blur(2px);
+}
+// .nav-glass::before {
+//   content: '';
+//   position: absolute;
+//   width: 100%;
+//   height: 250px;
+//   background: radial-gradient(ellipse 80% 150% at 50% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.25) 20%, rgba(255, 255, 255, 0.12) 40%, transparent 70%);
+//   pointer-events: none;
+//   left: 0;
+//   top: 0;
+//   opacity: 1;
+//   filter: blur(2px);
+// }
  
          .custom-nav.navbar-scrolled .nav-glass {
     padding: 8px 0px !important;
@@ -115,6 +156,7 @@ const Navbar = () => {
           transition: all 0.3s ease;
           text-decoration: none;
           color: rgba(255, 255, 255, 0.7);
+          z-index: 1;
         }
 
         .nav-link.active {
@@ -129,33 +171,27 @@ const Navbar = () => {
           font-size: 18px;
         }
 
-
       .custom-nav.navbar-scrolled .slider {
         height: 30px !important;
         width: 35px !important;
         border-radius: 70px !important;
-        left: 2.5% !important;
-        // border: 2px solid rgba(0, 255, 0, 0.7);
+        left: 3% !important;
       }
           .homeicon {
-          margin-left: 2px !important;
+          margin-left: 3px !important;
           }
         
 .aboutnav-link:hover {
   background: #262626;
   border-radius: 20px;
-  // color: white;
   transform: scale(1.1) !important;
         transition: all 0.4s ease !important;
-// color: white !important;
         }
 .projectnav-link:hover {
   background: #262626;
   border-radius: 20px;
-  // color: white;
   transform: scale(1.1) !important;
         transition: all 0.4s ease !important;
-// color: white !important;
         }
 .contactnav-link {
 right: 2% !important;}
@@ -163,10 +199,8 @@ right: 2% !important;}
   background: #262626;
   border-radius: 20px;
   right: 2% !important;
-  // color: white;
   transform: scale(1.1) !important;
         transition: all 0.4s ease !important;
-// color: white !important;
         }
 
       .slider {
@@ -176,11 +210,11 @@ right: 2% !important;}
         height: 50px;
         width: 90px !important;
         background: transparent;
-        // border: 2px solid rgba(0, 255, 0, 0.8);
         border-radius: 25px;
         transition: all 0.3s ease;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 0;
       }
       `}</style>
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../index.css";
@@ -38,8 +38,73 @@ import p2 from "../assets/p2.png";
 import { FiArrowDownLeft } from "react-icons/fi";
 
 const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  const quotes = [
+    {
+      text: "The only way to do great work is to love what you do.",
+      author: "Steve Jobs",
+      role: "Apple"
+    },
+    {
+      text:"First, solve the problem. Then, write the code.",
+      author: "Muhammad Sadiq",
+      role: "Software Developer"
+    },
+    {
+      text: "Code is like humor. When you have to explain it, it's bad.",
+      author: "Cory House",
+      role: "Software Architect"
+    },
+    {
+      text: "Simplicity is the soul of efficiency.",
+      author: "Austin Freeman",
+      role: "Tech Lead"
+    },
+    {
+      text: "Clean code always looks like it was written by someone who cares.",
+      author: "Robert C. Martin",
+      role: "Software Engineer"
+    },
+    {
+      text: "The best error message is the one that never shows up.",
+      author: "Martin Fowler",
+      role: "Chief Scientist"
+    },
+    {
+      text: "The best error message is the one that never shows up.",
+      author: "Thomas Fuchs",
+      role: "Developer"
+    },
+    {
+      text: "Programming isn't about what you know; it's about what you can figure out.",
+      author: "Chris Pine",
+      role: "Software Engineer"
+    }
+  ];
+
   useEffect(() => {
     AOS.init({ duration: 500 });
+  }, []);
+
+  useEffect(() => {
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) return 0;
+        return prev + (100 / 70);
+      });
+    }, 100);
+
+    const quoteInterval = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % quotes.length);
+      setProgress(0);
+    }, 7000);
+
+    return () => {
+      clearInterval(progressInterval);
+      clearInterval(quoteInterval);
+    };
   }, []);
 
   const cardData = [
@@ -64,38 +129,73 @@ const Home = () => {
   ];
 
   return (
+    <>
     <div>
- <br />
- <br />
- <br />
- <br />
- <br />
- <br />
- <br />
- <br />
- <br />
       {/* Header Section */}
-      <div className="sd-container text-center px-3 px-md-5" data-aos="fade-up">
-        <h1 className="name">
-          Sadiq
-          <span>
-            <img className="img1 ms-2 align-middle" src={F3} alt="F" />
-            <span className="name ms-2">Siraj</span>
-          </span>
-        </h1>
-        <p className="text-white mt-3 mx-auto" style={{ maxWidth: "600px" }}>
-          A front-end developer, UI designer, and all-around doodler who enjoys
-          developing accessible, usable, and engaging websites & apps that bring
-          your products to life.
+  <section className="firstsection mt-3">
+    <div className="firstdiv">
+      <h1 className="text-center h1class mt-2 fw-bold" style={{fontSize: '72px', color: '#CFD0D0'}} >Hi, I'm</h1>
+      <h1 className="text-center h2class fw-bold" style={{fontSize: '72px', color: '#767777'}} >Muhammad Sadiq</h1>
+      <h1 className="text-center h3class text-white mt-4 fw-lighter" style={{fontSize: '30px'}} >Frontend Developer |</h1>
+     <center>
+      <hr className="classhr w-25 text-center h-25 fw-bold text-secondary"/>
+     </center>
+<div className="3col d-flex justify-content-evenly">
+  <div className="1col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >20+</h1></div>
+  <div className="2col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >12+</h1></div>
+  <div className="3col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >100+</h1></div>
+</div>
+<div className="4col d-flex justify-content-evenly mt-2">
+  <div className="4col"><h1 className="text-uppercase" style={{ fontSize: '14px',color: '#787E89'}}>projects completed</h1></div>
+  <div className="5col"><h1 className="text-uppercase" style={{fontSize: '14px',color: '#787E89'}}>technologies</h1></div>
+  <div className="6col"><h1 className="text-uppercase me-4" style={{fontSize: '14px',color: '#787E89'}}>client satisfaction</h1></div>
+</div> 
+<div className="d-flex justify-content-center mt-5"> 
+  <div className="rounded-4 p-4 shadow-lg border border-secondary card1" style={{ width: '400px', backgroundColor: '#0E1011', minHeight: '350px' }}>
+    <div className="mb-4">
+      <svg width="40" height="40" fill="#6c757d" viewBox="0 0 24 24" className="mb-3">
+        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+      </svg>
+      
+      <div style={{ minHeight: '180px' }}>
+        <p className="text-white mb-4" style={{ fontSize: '20px', fontWeight: '500', lineHeight: '1.6' }}>
+          "{quotes[currentIndex].text}"
         </p>
-        <div className="d-flex justify-content-center mt-4">
-          <a href={muhammadsadiqcv} download>
-            <button className="btn btn-outline-light p-2 rounded-pill bac">
-              Download Resume
-            </button>
-          </a>
+        
+        <div style={{lineHeight: '0', marginTop: '40px'}}>
+          <p className="text-white" style={{ fontSize: '14px', fontWeight: '600' }}>
+            {quotes[currentIndex].author}
+          </p>
+          <p className="text-secondary" style={{ fontSize: '14px' }}>
+            {quotes[currentIndex].role}
+          </p>
         </div>
       </div>
+    </div>
+  <div className="mt-3 bg-secondary rounded-pill overflow-hidden" style={{ height: '4px' }}>
+      <div 
+        className="h-100"
+        style={{ 
+          width: `${progress}%`,
+          background: 'white',
+          transition: 'width 0.1s linear'
+        }}
+      />
+    </div>   
+    <div className="d-flex justify-content-between align-items-center mt-2">
+      <span className="text-secondary" style={{ fontSize: '14px' }}>
+        {currentIndex + 1} / {quotes.length}
+      </span>
+      <span className="text-secondary" style={{ fontSize: '14px' }}>
+        Next in {Math.ceil((100 - progress) / (100 / 7))}s
+      </span>
+    </div>
+    
+   
+  </div>
+</div>
+    </div>
+  </section>
 
       {/* Recent Work Section */}
       <div className="Rw" id="projectpage">
@@ -277,6 +377,39 @@ const Home = () => {
         </div>
       </div>
     </div>
+  <style>
+    {`
+//   .card1:hover {
+    
+//   transform: scale(1.02);
+// transition: all 0.3 ease;
+    
+//     }
+  .card1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.card1:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.card1:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50% !important;
+  width:60%;
+  height:60%;
+  background: linear-gradient( transparent, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+    `}
+  </style>
+  </>
   );
 };
 

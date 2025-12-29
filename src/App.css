@@ -7,7 +7,7 @@ html, body {
     font-family: 'Syne', sans-serif;
     font-weight: 500;
     /* overflow-x: hidden; */
-background: linear-gradient(to bottom, #000000, #0a0a0a, #050505);    width: 100%;
+background: linear-gradient(to bottom, #010102, #000000, #000000);    width: 100%;
 }
 body {
   overflow-x: hidden;
@@ -462,11 +462,14 @@ p {
     transition: all 0.4s ease;
     z-index: 0;
 }
-
-/* ===================== Content Wrapper ===================== */
-.content-wrapper {
-    padding-top: 120px;
+body::selection {
+  background-color: white;
+  color: black;
 }
+/* ===================== Content Wrapper ===================== */
+/* .content-wrapper {
+    padding-top: 120px;
+} */
 
 /* ===================== Hero Section ===================== */
 .hero-section {
@@ -1156,9 +1159,9 @@ p {
 }
 
 /* ===================== Content Wrapper ===================== */
-.content-wrapper {
+/* .content-wrapper {
     padding-top: 120px;
-}
+} */
 
 /* ===================== Hero Section ===================== */
 .hero-section {
