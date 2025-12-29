@@ -385,9 +385,9 @@ const Home = () => {
 // transition: all 0.3 ease;
     
 //     }
-  .card1 {
+ .card1 {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .card1:hover {
@@ -395,19 +395,30 @@ const Home = () => {
   transition: all 0.3s ease;
 }
 
+.card1::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #dc3545;
+  border-radius: 30px;
+  pointer-events: none;
+  clip-path: path('M 20,10 Q 100,5 200,20 T 380,30 Q 400,50 390,100 T 380,200 Q 350,250 300,260 T 100,250 Q 20,230 15,150 T 20,10 Z');
+}
+
 .card1:hover::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 50% !important;
-  width:60%;
-  height:60%;
-  background: linear-gradient( transparent, rgba(255, 255, 255, 0.1), transparent);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   pointer-events: none;
   z-index: 1;
-}
-    `}
+}  `}
   </style>
   </>
   );
