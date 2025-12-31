@@ -150,10 +150,10 @@ const Home = () => {
   <div className="5col"><h1 className="text-uppercase" style={{fontSize: '14px',color: '#787E89'}}>technologies</h1></div>
   <div className="6col"><h1 className="text-uppercase me-4" style={{fontSize: '14px',color: '#787E89'}}>client satisfaction</h1></div>
 </div> 
-<div className="d-flex justify-content-center mt-5"> 
-  <div className="rounded-4 p-4 shadow-lg border border-secondary card1" style={{ width: '400px', backgroundColor: '#0E1011', minHeight: '350px' }}>
+<div className="d-flex justify-content-evenly mt-5"> 
+  <div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
     <div className="mb-4">
-      <svg width="40" height="40" fill="#6c757d" viewBox="0 0 24 24" className="mb-3">
+      <svg width="50" height="50" fill="#6c757d" viewBox="0 0 24 24" className="">
         <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
       </svg>
       
@@ -190,6 +190,52 @@ const Home = () => {
         Next in {Math.ceil((100 - progress) / (100 / 7))}s
       </span>
     </div>
+    
+   
+  </div>
+  <div className="rounded-4 p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
+    <div className="mt-3" style={{minHeight: '180px'}}>
+<div className="aboutmeheading text-center rounded-pill mx-auto" style={{background: '#292A2A', width: 'fit-content'}}>
+  <h3 className="aboutmeheadingh3 text-capitalize py-2 px-3 m-0" style={{fontSize: '14px', color: '#BFBEC0'}}>About Me</h3>
+</div>
+<h4 className="abouth4heading text-white text-center fw-bold fs-4" style={{marginTop: '30px'}}>Passionate Developer & Problem Solver</h4>
+<p 
+  className="aboutpheading ms-1 me-1 w-100 lh-base text-center" 
+  style={{
+    fontSize: '14px', 
+    color: '#9CA3AF',
+    fontWeight: '300',
+    letterSpacing: '0.3px'
+  }}
+>
+  I'm a full-stack developer who loves turning complex problems into elegant solutions. With a keen eye for detail and a passion for clean code, I create seamless digital experiences that make a difference.
+</p>
+<svg width="60" height="60" viewBox="0 0 24 24" className="dotsimageicon mt-2"  style={{
+    animation: 'pulse 2s ease-in-out infinite',
+    transform: 'translateY(17px)'  // Neeche shift ho jayega
+  }}>
+  <circle cx="6" cy="12" r="2" fill="#6c757d" style={{animation: 'blink 1.4s infinite both', animationDelay: '0s'}}/>
+  <circle cx="12" cy="12" r="2" fill="#6c757d" style={{animation: 'blink 1.4s infinite both', animationDelay: '0.2s'}}/>
+  <circle cx="18" cy="12" r="2" fill="#6c757d" style={{animation: 'blink 1.4s infinite both', animationDelay: '0.4s'}}/>
+  
+  <style>{`
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0.3; }
+      40% { opacity: 1; }
+    }
+  `}</style>
+</svg>
+    </div>
+   
+  
+    
+   
+  </div>
+  <div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
+    <div className="mb-4">
+  
+    </div>
+
     
    
   </div>
@@ -379,12 +425,15 @@ const Home = () => {
     </div>
   <style>
     {`
-//   .card1:hover {
+    .card2 {
+    position: relative;
+    overflow: visible;
+    }
+  .card2:hover {
+  transform: scale(1.02);
+transition: all 0.3 ease;
     
-//   transform: scale(1.02);
-// transition: all 0.3 ease;
-    
-//     }
+    }
  .card1 {
   position: relative;
   overflow: visible;
