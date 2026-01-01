@@ -882,10 +882,10 @@ button.btn.btn-outline-light.p-2.rounded-pill.bac {
     height: 58px !important;
     width: 166px !important;
 }
-
+/* 
 .gap-4 {
     gap: 0px !important;
-}
+} */
 
 /* Mobile menu styles */
 .mobile-menu-overlay {

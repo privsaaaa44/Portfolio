@@ -59,19 +59,19 @@ const Navbar = () => {
           >
             <a className="nav-link active fs-6" href="#">
               <HiOutlineHome className="fs-5 me-1 homeicon" />
-              <span className="navbarlink text-white">Home</span>
+              <span className="navbarlink text-white fw-light">Home</span>
             </a>
             <a className="nav-link fs-6 aboutnav-link" href="#">
               <HiOutlineDocumentText className="fs-5 me-1" />
-              <span className="navbarlink">About</span>
+              <span className="navbarlink fw-light">Resume</span>
             </a>
             <a className="nav-link fs-6 projectnav-link" href="#projectpage">
               <PiSuitcaseSimpleBold className="fs-5 me-1" />
-              <span className="navbarlink">Project</span>
+              <span className="navbarlink fw-light">Project</span>
             </a>
             <a className="nav-link fs-6 contactnav-link" href="#contactpage">
               <IoMailOutline className="fs-5 me-1" />
-              <span className="navbarlink">Contact</span>
+              <span className="navbarlink fw-light">Contact</span>
             </a>
             <div className="slider" ref={sliderRef}></div>
           </div>

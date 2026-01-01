@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../index.css";
@@ -10,13 +10,14 @@ import { FiMapPin } from "react-icons/fi";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
-
+import Snowfall from 'react-snowfall';
+import {Code,Layers,Database,Server} from 'lucide-react'
 // Assets
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
 import s3 from "../assets/s3.png";
 import s4 from "../assets/s4.png";
-import s5 from "../assets/s5.svg";
+import s5 from "../assets/s5.png";
 import s6 from "../assets/s6.png";
 import s7 from "../assets/s7.png";
 import s8 from "../assets/s8.png";
@@ -25,6 +26,15 @@ import s10 from "../assets/s10.png";
 import s11 from "../assets/s11.svg";
 import s12 from "../assets/s12.png";
 import s13 from "../assets/s13.png";
+import s14 from "../assets/s14.png";
+import s15 from "../assets/s15.png";
+import s16 from "../assets/s16.png";
+import s17 from "../assets/s17.png";
+import s18 from "../assets/s18.svg";
+import s19 from "../assets/s19.png";
+import s20 from "../assets/s20.png";
+import s21 from "../assets/s21.png";
+import s22 from "../assets/s22.png";
 import { MdOutlineEmail } from "react-icons/md";
 
 import muhammadsadiqcv from "../assets/muhammadsadiqcv.pdf";
@@ -40,6 +50,11 @@ import { FiArrowDownLeft } from "react-icons/fi";
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+const [visibleWords, setVisibleWords] = useState(new Set());
+const scrollTextRef = useRef(null);
+const [isTyping, setIsTyping] = useState(false);
+const scrollText = "They say a jack of all trades is a master of none, but I'm more like a full-stack magician, crafting stunning frontends with one hand while architecting robust backends with the other. My code doesn't just work—it dazzles! Half artist, half engineer, 100% caffeine-powered problem solver.";
+const scrollWords = scrollText.split(' ').filter(word => word.trim());
 
   const quotes = [
     {
@@ -87,14 +102,40 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 500 });
   }, []);
+useEffect(() => {
+  const handleScrollText = () => {
+    if (!scrollTextRef.current) return;
 
+    const section = scrollTextRef.current;
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollPosition = window.scrollY + window.innerHeight;
+    
+    const sectionProgress = (scrollPosition - sectionTop) / sectionHeight;
+    
+    const newVisibleWords = new Set();
+    scrollWords.forEach((_, index) => {
+      const wordThreshold = index / scrollWords.length;
+      if (sectionProgress > wordThreshold) {
+        newVisibleWords.add(index);
+      }
+    });
+    
+    setVisibleWords(newVisibleWords);
+  };
+
+  handleScrollText();
+  window.addEventListener('scroll', handleScrollText);
+  
+  return () => window.removeEventListener('scroll', handleScrollText);
+}, []);
   useEffect(() => {
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) return 0;
         return prev + (100 / 70);
       });
-    }, 100);
+    }, 300);
 
     const quoteInterval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % quotes.length);
@@ -113,19 +154,29 @@ const Home = () => {
   ];
 
   const skills = [
-    { icon: s1 },
-    { icon: s2 },
-    { icon: s3 },
-    { icon: s4 },
-    { icon: s5 },
-    { icon: s6 },
-    { icon: s7 },
-    { icon: s8 },
-    { icon: s9 },
-    { icon: s10 },
-    { icon: s11 },
-    { icon: s12 },
-    { icon: s13 },
+   { icon: s1, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" }, // HTML5
+  { icon: s2, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" }, // CSS
+  { icon: s4, link: "https://getbootstrap.com/" }, // Bootstrap
+  { icon: s3, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }, // JavaScript
+  { icon: s5, link: "https://www.javascript.com/" }, // JS
+  { icon: s6, link: "https://reactjs.org/" }, // React
+  { icon: s7, link: "https://tailwindcss.com/" }, // Tailwind (the wave icon)
+  { icon: s8, link: "https://www.shopify.com/" }, // Shopify
+  { icon: s9, link: "https://wordpress.org/" }, // WordPress
+  { icon: s10, link: "https://elementor.com/" }, // Elementor
+  { icon: s21, link: "https://woocommerce.com/" }, // WooCommerce
+  { icon: s11, link: "https://www.microsoft.com/en-us/edge" }, // Edge
+  { icon: s12, link: "https://git-scm.com/" }, // Git
+  { icon: s13, link: "https://github.com/" }, // GitHub
+  { icon: s14, link: "https://claude.ai/chat" }, // Figma
+  { icon: s15, link: "https://github.com/copilot/" }, // Photoshop
+  { icon: s16, link: "https://www.figma.com/" }, // VS Code
+  { icon: s17, link: "https://www.canva.com/" }, // NPM
+  { icon: s18, link: "https://www.microsoft.com/en-us/microsoft-365/microsoft-office" }, // Edge (duplicate)
+  { icon: s19, link: "https://developers.google.com/search" }, // SEO
+  { icon: s20, link: "https://woocommerce.com/" }, // Illustrator
+  { icon: s22, link: "https://www.mysql.com/" }, // Illustrator
+
   ];
 
   return (
@@ -231,197 +282,261 @@ const Home = () => {
     
    
   </div>
-  <div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
-    <div className="mb-4">
-  
-    </div>
+<div className="rounded-4 p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px', position: 'relative', overflow: 'visible' }}>
+  {/* Glow effect behind 1+ */}
+  <div style={{
+    position: 'absolute',
+    top: '80px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '180px',
+    height: '180px',
+    background: 'radial-gradient(circle, rgba(100, 100, 100, 0.4) 0%, rgba(80, 80, 80, 0.2) 30%, transparent 60%)',
+    filter: 'blur(50px)',
+    borderRadius: '50%',
+    zIndex: 0
+  }}></div>
 
-    
-   
+<div style={{
+  position: 'absolute',
+  width: '50px',
+  height: '50px',
+  top: '279px',
+  right: '20px',
+  zIndex: '1',
+  left: '18px',
+  transform: 'rotate(180deg)',
+}}>
+
+    {/* Top horizontal line */}
+    <div style={{
+      position: 'absolute',
+      top: '0',
+      right: '0',
+      width: '50px',
+      height: '2px',
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '1px'
+    }}></div>
+    {/* Right vertical line */}
+    <div style={{
+      position: 'absolute',
+      top: '0',
+      right: '0',
+      width: '2px',
+      height: '50px',
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '1px'
+    }}></div>
   </div>
+
+  {/* Right top icon - L shape corner */}
+  <div style={{
+    position: 'absolute',
+    top: '20px',
+    right: '20px',
+    width: '50px',
+    height: '50px',
+    zIndex: 1
+  }}>
+    {/* Top horizontal line */}
+    <div style={{
+      position: 'absolute',
+      top: '0',
+      right: '0',
+      width: '50px',
+      height: '2px',
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '1px'
+    }}></div>
+    {/* Right vertical line */}
+    <div style={{
+      position: 'absolute',
+      top: '0',
+      right: '0',
+      width: '2px',
+      height: '50px',
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '1px'
+    }}></div>
+  </div>
+
+  <div className="mt-4" style={{ position: 'relative', zIndex: 2 }}>
+    <div className="carddiv3">
+      <h1 className="cardheading3 text-center" style={{fontSize: '96px'}}>1+</h1>
+    </div>
+    <div className="mt-4 text-center">
+      <h2 className="text-white mb-3" style={{fontSize: '24px', fontWeight: '600'}}>
+        Years of Experience
+      </h2>
+      <p className="text-secondary" style={{fontSize: '14px', lineHeight: '1.6'}}>
+        Building scalable applications and crafting exceptional user experiences
+      </p>
+    </div>
+  </div>
+</div>
 </div>
     </div>
   </section>
 
-      {/* Recent Work Section */}
-      <div className="Rw" id="projectpage">
-        <div className="d-flex justify-content-center">
-        <h4 style={{width: "100px"}} className="abcdef text-secondary text-center fs-6 rounded-pill py-2 px-2 w-10 mt-4">
-         My Work
-        </h4>
-      </div>
-          <h1 style={{fontSize: "60px"}} className="text-center mt-3 ms-5">Featured Projects
-</h1>
-        <p className="text-secondary fs-6 text-center px-3 px-md-0">
-          I'm always excited to contribute to innovative projects if you're looking for someone to help bring your vision to life, I'd love to join your team.
-        </p>
+    
+<div className="skill section">
+  <br />
+  <hr className="bg-dark mt-2" />
+  <br /> 
+  
+  <style>
+    {`
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-25%);
+        }
+      }
+    `}
+  </style>
+  
+  {/* Skills Section (Infinite Loop Carousel) */}
+  <h2 className="text-secondary ml-3 mb-4 text-center mt-3 text-uppercase" style={{fontSize:'14px'}}>
+    Technologies I work with
+  </h2>
 
-        <div className="cards-grid">
-          {cardData.map((card, index) => (
-            <Card
-              key={index}
-              className={`text-white custom-card custom-card-${index + 1}`}
-              style={{ height: "20rem" }}
-            >
-              <Card.Img src={card.img || p1} alt="Card image" />
-              <Card.ImgOverlay className="overlay-text d-flex flex-column justify-content-between">
-                <div className="d-flex justify-content-between align-items-center p-2">
-                  <span className="text-white fs-5 bg-secondary rounded-pill py-1 px-3">
-                    {card.tag}
-                  </span>
-                  <a href="#">
-                    <FiArrowDownLeft color="gray" className="fs-1" />
-                  </a>
-                </div>
-                <div className="overlay-bg p-2">
-                  <Card.Text className="text-dark fw-bold">{card.title}</Card.Text>
-                  <Card.Text className="text-dark fs-4 fw-bold">{card.subtitle}</Card.Text>
-                </div>
-              </Card.ImgOverlay>
-            </Card>
-          ))}
-          <div className="container">
-            <div className="d-flex justify-content-center">
-              <a href="#">
-                <button className="btn btn-outline-light p-2 rounded-pill mt-4">
-                  ALL WORKS
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <br />
-      <br />
-      <hr className="bg-light" />
-      
-      {/* Skills Section (Infinite Loop Carousel) */}
-      <h2 className="text-secondary fs-3 ml-3 mb-4 text-center mt-3">Technologies I work with</h2>
-
-      <div className="skills-carousel-container">
-        <div className="skills-carousel">
-          {[...skills, ...skills].map((skill, idx) => (
-            <div key={idx} className="skill-item">
-              <img
+  <div style={{
+    overflow: 'hidden',
+    width: '100%',
+    color: '#0a0a0a'
+  }}>
+    <div style={{
+      display: 'flex',
+      gap: '19px',
+      animation: 'scroll 20s linear infinite',
+      width: 'fit-content'
+    }}>
+      {[...skills, ...skills,...skills,...skills].map((skill, idx) => (
+        <div key={idx} style={{
+          flexShrink: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '10px',
+        }}>
+          <a 
+            href={skill.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <img
               className="t"
-                src={skill.icon}
-                alt={`skill-${idx}`}
-                style={{ width: "50px", height: "50px", objectFit: "contain" }}
-              />
-            </div>
-          ))}
+              src={skill.icon}
+              alt={`skill-${idx}`}
+              style={{ 
+                width: "48px", 
+                height: "48px", 
+                objectFit: "contain",
+                transition: 'transform 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            />
+          </a>
         </div>
+      ))}
+    </div>
+  </div>
+  
+  <br />
+  <hr className="bg-white" />
+</div>
+<br />
+<div className="shortintroabout mt-3">
+  <div className="icons d-flex justify-content-center gap-3">
+    <Code width={30} height={30}/>
+    <Layers width={30} height={30}/>
+    <Database width={30} height={30}/>
+    <Server width={30} height={30}/>
+  </div>
+  
+  <div 
+    ref={scrollTextRef}
+    className="py-5"
+    style={{ minHeight: '60vh' }}
+  >
+    <div className="shortintroaboutcontainer">
+      <div className="text-justify lh-1 fw-light mx-4" style={{ fontSize: '60px', color: '#fff', margin: '0px', padding: '0px' }}>
+        {scrollWords.map((word, index) => (
+          <React.Fragment key={index}>
+            {word === '|' ? (
+              <span style={{ color: '#fbbf24', margin: '0 8px' }}>|</span>
+            ) : word.trim() ? (
+              <>
+                <span
+                  style={{
+                    display: 'inline',
+                    transition: 'opacity 0.2s ease',
+                    opacity: visibleWords.has(index) ? 1 : 0
+                  }}
+                >
+                  {word}
+                </span>
+                {' '}
+              </>
+            ) : null}
+          </React.Fragment>
+        ))}
+        {isTyping && (
+          <span 
+            style={{ 
+              display: 'inline-block',
+              width: '3px',
+              height: '50px',
+              backgroundColor: '#fff',
+              marginLeft: '4px',
+              animation: 'blinkCursor 0.7s infinite',
+              verticalAlign: 'baseline'
+            }}
+          />
+        )}
       </div>
-      
+    </div>
+  </div>
+</div>
+      {/* <br />
       <br />
       <br />
-      <hr className="bg-white" />
-      
-      <div className="d-flex justify-content-center">
-        <h4 className="abcdef text-white text-center fs-5 rounded-pill py-2 px-3 w-10 mt-4">
-          Lets Connect
+      <br /> 
+      <div style={{
+    position: 'absolute',
+    top: '80px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '180px',
+    height: '180px',
+    background: 'radial-gradient(circle, rgba(100, 100, 100, 0.4) 0%, rgba(80, 80, 80, 0.2) 30%, transparent 60%)',
+    filter: 'blur(50px)',
+    borderRadius: '50%',
+    zIndex: 0
+  }}></div>
+      <div className="d-flex justify-content-center mt-5">
+             <Snowfall
+        style={{
+        position: 'absolute',
+          width: '50vh',
+          height: '50vh',
+          zIndex: 1000,
+          top: '90%'
+        }}
+        snowflakeCount={200}
+      />
+        <h4 className="abcdef text-center border border-dark  rounded-pill py-2 px-3 w-10 mt-4 fw-light" style={{fontSize: '14px', color: '#978f8f'}}>
+          Let's Connect
         </h4>
       </div>
-      
-      <div id="contactpage">
-        <h1 className="text-center mt-3">Get In Touch</h1>
-        <p className="text-secondary fs-6 text-center px-3 px-md-0">
-          I'm always excited to contribute to innovative projects if you're looking for someone to help bring your vision to life, I'd love to join your team.
-        </p>
-        <br />
-        
-        {/* Contact Cards - Responsive Layout */}
-        <div className="d-flex justify-content-center gap-4 flex-column flex-md-row px-3 px-md-0">
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '400px', height: '240px' }}>
-            <div 
-              className="bg-secondary p-2 py-2 abcdefgh mt-4"
-              style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
-            >
-              <MdOutlineEmail color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
-            </div>
-            <div className="newone mt-4">
-              <h5 className="text-white fs-5 firstone mt-4">Email me</h5>
-              <h6 className="text-secondary fs-6 firstone mt-2">Drop me a text anytime</h6>
-              <h5 className="text-white fs-5 firston mt-3">sadiqsiraj44@gmail.com</h5>
-            </div>
-          </div>
-
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '400px', height: '240px' }}>
-            <div 
-              className="bg-secondary p-2 py-2 abcdefgh mt-4"
-              style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
-            >
-              <LuPhone color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
-            </div>
-            <div className="newone mt-4">
-              <h5 className="text-white fs-5 firstone">Call me</h5>
-              <h6 className="text-secondary fs-6 firstone mt-2">Call me anytime</h6>
-              <h5 className="text-white fs-5 firston mt-3">+92 315 2453522</h5>
-            </div>
-          </div>
-
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '400px', height: '240px' }}>
-            <div 
-              className="bg-secondary p-2 py-2 abcdefgh mt-4"
-              style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
-            >
-              <FiMapPin color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
-            </div>
-            <div className="newone mt-4">
-              <h5 className="text-white fs-5 firstone">Visit me</h5>
-              <h6 className="text-secondary fs-6 firstone mt-2">Come say hello</h6>
-              <h5 className="text-white fs-5 firston mt-3">Pakistan, karachi</h5>
-            </div>
-          </div>
-        </div>
-        
-        <br />
-        <h3 className="text-center text-white mt-3" style={{ fontSize: '35px' }}>Connect on Social Media</h3>
-        
-        {/* Social Media Cards - Responsive Layout */}
-        <div className="d-flex justify-content-center gap-4 flex-column flex-md-row px-3 px-md-0">
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '460px', height: '100px' }}>
-            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
-              <div className="d-flex">
-                <div 
-                  className="bg-secondary p-2 py-2 abcdefgh mt-3"
-                  style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
-                >
-                  <FiGithub color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
-                </div>
-                <div className="newone mt-4 smallone">
-                  <h5 className="text-secondary fs-6">Github</h5>
-                  <h6 className="text-white fs-6 mt-2">@privsaaaa44</h6>
-                </div>
-                <div>
-                  <BsBoxArrowUpRight color="gray" className="fs-6" style={{ marginTop: '35px' }} />
-                </div>
-              </div>  
-            </a>
-          </div>
-          
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1 w-100" style={{ maxWidth: '460px', height: '100px' }}>
-            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
-              <div className="d-flex">
-                <div 
-                  className="bg-secondary p-2 py-2 abcdefgh mt-3"
-                  style={{ width: "60px", height: "60px", borderRadius: '10px', marginLeft: '20px' }}
-                >
-                  <FiLinkedin color="white" className="mt-2" style={{ fontSize: "30px", marginLeft: '6px' }} />
-                </div>
-                <div className="newone mt-4 smallone">
-                  <h5 className="text-secondary fs-6">Linkedin</h5>
-                  <h6 className="text-white fs-6 mt-2">@sadiq</h6>
-                </div>
-                <div>
-                  <BsBoxArrowUpRight color="gray" className="fs-6" style={{ marginTop: '35px' }} />
-                </div>
-              </div>  
-            </a>
-          </div>
-        </div>
-      </div>
+       */}
+    
     </div>
   <style>
     {`
@@ -467,7 +582,43 @@ transition: all 0.3 ease;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   pointer-events: none;
   z-index: 1;
-}  `}
+}
+.emailicon {
+margin-top: 8px !important;
+
+}
+  
+  // canvas {
+  //     pointer-events: none !important;
+  //   background-color: #fff3f300 !important;
+  //   position: absolute !important;
+  //   top: 218% !important;
+  //   left: 0px;
+  //   width: 100% !important;
+  //   height: 140vh !important;
+  //   cursor: pointer;
+  //   font-size: 0px !important;
+  // }
+  canvas {
+    top: 218% !important;
+  
+      width: 1361px !important;
+    height: 800px !important;
+    user-select: none !important;
+        vertical-align: middle !important;
+    display: block !important;
+    outline-color: 
+ color-mix(in oklab, var(--ring) 50%, transparent) !important;
+     overflow-clip-margin: content-box !important;
+    overflow: clip !important;
+  }
+//     @keyframes blink {
+//   0%, 50% { opacity: 1; }
+//   51%, 100% { opacity: 0; }
+// }
+  
+  `}
+
   </style>
   </>
   );
