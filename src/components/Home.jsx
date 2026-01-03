@@ -53,8 +53,8 @@ const Home = () => {
 const [visibleWords, setVisibleWords] = useState(new Set());
 const scrollTextRef = useRef(null);
 const [isTyping, setIsTyping] = useState(false);
-const scrollText = "They say a jack of all trades is a master of none, but I'm more like a full-stack magician, crafting stunning frontends with one hand while architecting robust backends with the other. My code doesn't just work—it dazzles! Half artist, half engineer, 100% caffeine-powered problem solver.";
-const scrollWords = scrollText.split(' ').filter(word => word.trim());
+const scrollText = "They say a jack of all trades is a master of none, but I'm more like a full-stack magician, crafting stunning frontends with one hand while fluidly architecting robust backends with the other. My code doesn't just work—it dazzles! Half artist, half engineer, 100% caffeine-powered problem solver.";
+const [scrollWords] = useState(() => scrollText.split(' ').filter(word => word.trim()));
 
   const quotes = [
     {
@@ -102,33 +102,25 @@ const scrollWords = scrollText.split(' ').filter(word => word.trim());
   useEffect(() => {
     AOS.init({ duration: 500 });
   }, []);
+
 useEffect(() => {
-  const handleScrollText = () => {
-    if (!scrollTextRef.current) return;
-
-    const section = scrollTextRef.current;
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const scrollPosition = window.scrollY + window.innerHeight;
-    
-    const sectionProgress = (scrollPosition - sectionTop) / sectionHeight;
-    
-    const newVisibleWords = new Set();
-    scrollWords.forEach((_, index) => {
-      const wordThreshold = index / scrollWords.length;
-      if (sectionProgress > wordThreshold) {
-        newVisibleWords.add(index);
-      }
-    });
-    
-    setVisibleWords(newVisibleWords);
-  };
-
-  handleScrollText();
-  window.addEventListener('scroll', handleScrollText);
+  setIsTyping(true);
+  let wordIndex = 0;
+  const newVisible = new Set();
   
-  return () => window.removeEventListener('scroll', handleScrollText);
-}, []);
+  const typingInterval = setInterval(() => {
+    if (wordIndex < scrollWords.length) {
+      newVisible.add(wordIndex);
+      setVisibleWords(new Set(newVisible)); // Fresh Set har baar
+      wordIndex++;
+    } else {
+      setIsTyping(false);
+      clearInterval(typingInterval);
+    }
+  }, 150);
+
+  return () => clearInterval(typingInterval);
+}, [scrollWords]);
   useEffect(() => {
     const progressInterval = setInterval(() => {
       setProgress(prev => {
@@ -400,7 +392,7 @@ useEffect(() => {
   
   {/* Skills Section (Infinite Loop Carousel) */}
   <h2 className="text-secondary ml-3 mb-4 text-center mt-3 text-uppercase" style={{fontSize:'14px'}}>
-    Technologies I work with
+    Technologies I work withTechnologies I work with
   </h2>
 
   <div style={{
@@ -452,7 +444,7 @@ useEffect(() => {
   <hr className="bg-white" />
 </div>
 <br />
-<div className="shortintroabout mt-3">
+<div className="shortintroabout mt-3" >
   <div className="icons d-flex justify-content-center gap-3">
     <Code width={30} height={30}/>
     <Layers width={30} height={30}/>
@@ -461,49 +453,59 @@ useEffect(() => {
   </div>
   
   <div 
-    ref={scrollTextRef}
     className="py-5"
     style={{ minHeight: '60vh' }}
   >
-    <div className="shortintroaboutcontainer">
-      <div className="text-justify lh-1 fw-light mx-4" style={{ fontSize: '60px', color: '#fff', margin: '0px', padding: '0px' }}>
-        {scrollWords.map((word, index) => (
-          <React.Fragment key={index}>
-            {word === '|' ? (
-              <span style={{ color: '#fbbf24', margin: '0 8px' }}>|</span>
-            ) : word.trim() ? (
-              <>
-                <span
-                  style={{
-                    display: 'inline',
-                    transition: 'opacity 0.2s ease',
-                    opacity: visibleWords.has(index) ? 1 : 0
-                  }}
-                >
-                  {word}
-                </span>
-                {' '}
-              </>
-            ) : null}
-          </React.Fragment>
-        ))}
-        {isTyping && (
-          <span 
-            style={{ 
-              display: 'inline-block',
-              width: '3px',
-              height: '50px',
-              backgroundColor: '#fff',
-              marginLeft: '4px',
-              animation: 'blinkCursor 0.7s infinite',
-              verticalAlign: 'baseline'
+    <div className="shortintroaboutcontainer" style={{marginBottom: '150px'}}>
+<div className="text-justify lh-1 fw-light mx-4" style={{ fontSize: '60px', color: '#fff', margin: '0px', padding: '0px' }}>
+  {scrollWords.map((word, index) => (
+    <React.Fragment key={index}>
+      {word.trim() ? (
+        <>
+          <span
+            style={{
+              display: 'inline',
+              opacity: visibleWords.has(index) ? 1 : 0,
+              transition: 'opacity 0.2s ease'
             }}
-          />
-        )}
-      </div>
+          >
+            {word}
+          </span>
+          {index < scrollWords.length - 1 && ' '}
+          {isTyping && index === visibleWords.size - 1 && (
+            <span className="typing-cursor" />
+          )}
+        </>
+      ) : null}
+    </React.Fragment>
+  ))}
+</div>
     </div>
   </div>
 </div>
+<section className="resumesection">
+<div className="d-flex justify-content-center">
+  <div className="resumesectiondiv resumesectiondiv text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width: 'fit-content'}}>
+    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#BFBEC0'}}>My Resume</h3>
+ 
+  </div>
+</div>
+<h1 className="text-white  resumesectionh1 text-center mt-3 fw-bold" style={{fontSize: '48px'}}>Professional Experience</h1>
+<p className="text-secondary resumesectionp mt-3" style={{ fontSize: '18px'}}>A comprehensive overview of my skills, experience, and achievements</p>
+<br />
+<div className="d-flex justify-content-center resumesectionresumediv mt-5">
+  <div className="resumesectionresume d-flex rounded-5 overflow-hidden border border-dark" style={{ width: '1200px', height: '100vh' }}>
+    <div className="firstcolumn" style={{ width: '30%', backgroundColor: '#191919' }} />
+    <div className="secondcolumn border-start border-dark" style={{ width: '70%', backgroundColor: '#0D0D0D' }} />
+  </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+</section>
       {/* <br />
       <br />
       <br />
@@ -612,11 +614,25 @@ margin-top: 8px !important;
      overflow-clip-margin: content-box !important;
     overflow: clip !important;
   }
-//     @keyframes blink {
-//   0%, 50% { opacity: 1; }
-//   51%, 100% { opacity: 0; }
+
+  .typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 50px;
+    background-color: #fff;
+    margin-left: 4px;
+    animation: blinkCursor 0.7s infinite;
+    vertical-align: baseline;
+  }
+
+  @keyframes blinkCursor {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+//     .mx-4 {
+//     margin-right: 3.5rem !important;
+//     margin-left: 4.5rem !important;
 // }
-  
   `}
 
   </style>
