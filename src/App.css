@@ -9,6 +9,26 @@ html, body {
     /* overflow-x: hidden; */
 background: linear-gradient(to bottom, #010102, #000000, #000000);    width: 100%;
 }
+.secondone a:hover,
+.secondone a:hover .contactinfospan,
+.secondone a:hover svg {
+  color: white !important;
+  stroke: white; /* SVG icon ke liye */
+}
+.thirdone a:hover,
+.thirdone a:hover .contactinfospan,
+.thirdone a:hover svg {
+  color: white !important;
+  stroke: white; /* SVG icon ke liye */
+}
+.fourthone a:hover,
+.fourthone a:hover .contactinfospan,
+.fourthone a:hover svg {
+  color: white !important;
+  stroke: white; /* SVG icon ke liye */
+}
+
+
 body {
   overflow-x: hidden;
 }

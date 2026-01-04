@@ -11,7 +11,8 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import Snowfall from 'react-snowfall';
-import {Code,Layers,Database,Server} from 'lucide-react'
+import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin} from 'lucide-react'
+
 // Assets
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
@@ -493,10 +494,59 @@ useEffect(() => {
 <h1 className="text-white  resumesectionh1 text-center mt-3 fw-bold" style={{fontSize: '48px'}}>Professional Experience</h1>
 <p className="text-secondary resumesectionp mt-3" style={{ fontSize: '18px'}}>A comprehensive overview of my skills, experience, and achievements</p>
 <br />
-<div className="d-flex justify-content-center resumesectionresumediv mt-5">
-  <div className="resumesectionresume d-flex rounded-5 overflow-hidden border border-dark" style={{ width: '1200px', height: '100vh' }}>
-    <div className="firstcolumn" style={{ width: '30%', backgroundColor: '#191919' }} />
-    <div className="secondcolumn border-start border-dark" style={{ width: '70%', backgroundColor: '#0D0D0D' }} />
+<div className="d-flex justify-content-center resumesectionresumediv mt-5 ">
+  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1200px', height: '100vh', }}>
+    <div className="firstcolumn p-3 py-4 px-4" style={{ width: '30%', backgroundColor: '#191919' }} > 
+      <div className="contactinfo mt-2"> 
+        <div className="firstone fs-5 text-white fw-bold">
+          <Mail className="text-light me-2" width={16} height={16} />
+            Contact
+      </div>    
+        <div className="secondone mt-2 secondoneallofit">
+                <a className="text-secondary" href="mailto:sadiqsiraj44@gmail.com" target="_blank">
+          <Mail className="me-2" width={14} height={14} />   
+           <span className="contactinfospan text-secondary fs-6 fw-light">sadiqsiraj44@gmail.com</span>
+      </a>
+       </div>
+        <div className="thirdone mt-2 secondoneallofit">
+                <a className="text-secondary" href="https://wa.me/923152453522" target="_blank">
+          <Phone className="me-2" width={14} height={14} />
+
+           <span className="contactinfospan text-secondary fs-6 fw-light">+923152453522</span>
+      </a>
+       </div>
+        <div className="fourthone mt-2 secondoneallofit">
+                <a className="text-secondary">
+          <MapPin className="me-2 text-seondary" width={14} height={14} />
+
+           <span className="contactinfospan text-secondary fs-6 fw-light">Pakistan</span>
+      </a>
+       </div>
+   
+      </div>
+      <div className="linkinfo mt-4"> 
+        <div className="firstone fs-5 text-white fw-bold">
+          <Globe className="text-light me-2" width={16} height={16} />
+          Links
+      </div>    
+        <div className="secondone mt-2 secondoneallofit">
+                <a className="text-secondary" href="https://github.com/privsaaaa44" target="_blank">
+          <Github className="me-2" width={14} height={14} />   
+           <span className="contactinfospan text-secondary fs-6 fw-light">github.com/privsaaaa44</span>
+      </a>
+       </div>
+        <div className="thirdone mt-2 secondoneallofit">
+                <a className="text-secondary" href="https://www.linkedin.com/in/muhammad-sadiq-1abbba36b" target="_blank">
+          <Linkedin className="me-2" width={14} height={14} />
+
+           <span className="contactinfospan text-secondary fs-6 fw-light">linkedin.com/in/muhammad-sadiq</span>
+      </a>
+       </div>
+   
+   
+      </div>
+    </div>
+    <div className="secondcolumn border-start border-dark" style={{ width: '70%', backgroundColor: '#0D0D0D' }} ></div>
   </div>
 </div>
 
@@ -633,6 +683,18 @@ margin-top: 8px !important;
 //     margin-right: 3.5rem !important;
 //     margin-left: 4.5rem !important;
 // }
+.rounded-4 {
+  border-radius: 1.3rem !important;
+}
+  .contactinfo.mt-2 {
+    padding-left: 11px !important;
+}
+  .linkinfo.mt-4 {
+    padding-left: 11px !important;
+}
+    .me-2 {
+    margin-right: 0.6rem !important;
+}
   `}
 
   </style>
