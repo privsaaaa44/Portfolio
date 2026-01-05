@@ -11,7 +11,7 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import Snowfall from 'react-snowfall';
-import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin} from 'lucide-react'
+import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin,Download} from 'lucide-react'
 
 // Assets
 import s1 from "../assets/s1.png";
@@ -38,7 +38,7 @@ import s21 from "../assets/s21.png";
 import s22 from "../assets/s22.png";
 import { MdOutlineEmail } from "react-icons/md";
 
-import muhammadsadiqcv from "../assets/muhammadsadiqcv.pdf";
+import MuhammadSadiqResume from "../assets/MuhammadSadiqResume.pdf";
 
 // Projects
 import Card from "react-bootstrap/Card";
@@ -103,7 +103,16 @@ const [scrollWords] = useState(() => scrollText.split(' ').filter(word => word.t
   useEffect(() => {
     AOS.init({ duration: 500 });
   }, []);
-
+useEffect(() => {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: false
+  });
+}, []);
+useEffect(() => {
+  AOS.refresh();
+}, [currentIndex]);
 useEffect(() => {
   setIsTyping(true);
   let wordIndex = 0;
@@ -195,13 +204,18 @@ useEffect(() => {
   <div className="6col"><h1 className="text-uppercase me-4" style={{fontSize: '14px',color: '#787E89'}}>client satisfaction</h1></div>
 </div> 
 <div className="d-flex justify-content-evenly mt-5"> 
-  <div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
-    <div className="mb-4">
-      <svg width="50" height="50" fill="#6c757d" viewBox="0 0 24 24" className="">
-        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-      </svg>
-      
-      <div style={{ minHeight: '180px' }}>
+<div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
+  <div className="mb-4">
+    <svg width="50" height="50" fill="#6c757d" viewBox="0 0 24 24" className="">
+      <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+    </svg>
+    
+    <div style={{ minHeight: '180px' }}>
+      <div 
+        key={currentIndex} 
+        data-aos="fade-up"
+        data-aos-duration="600"
+      >
         <p className="text-white mb-4" style={{ fontSize: '20px', fontWeight: '500', lineHeight: '1.6' }}>
           "{quotes[currentIndex].text}"
         </p>
@@ -216,27 +230,28 @@ useEffect(() => {
         </div>
       </div>
     </div>
-  <div className="mt-3 bg-secondary rounded-pill overflow-hidden" style={{ height: '4px' }}>
-      <div 
-        className="h-100"
-        style={{ 
-          width: `${progress}%`,
-          background: 'white',
-          transition: 'width 0.1s linear'
-        }}
-      />
-    </div>   
-    <div className="d-flex justify-content-between align-items-center mt-2">
-      <span className="text-secondary" style={{ fontSize: '14px' }}>
-        {currentIndex + 1} / {quotes.length}
-      </span>
-      <span className="text-secondary" style={{ fontSize: '14px' }}>
-        Next in {Math.ceil((100 - progress) / (100 / 7))}s
-      </span>
-    </div>
-    
-   
   </div>
+  
+  <div className="mt-3 bg-secondary rounded-pill overflow-hidden" style={{ height: '4px' }}>
+    <div 
+      className="h-100"
+      style={{ 
+        width: `${progress}%`,
+        background: 'white',
+        transition: 'width 0.1s linear'
+      }}
+    />
+  </div>   
+  
+  <div className="d-flex justify-content-between align-items-center mt-2">
+    <span className="text-secondary" style={{ fontSize: '14px' }}>
+      {currentIndex + 1} / {quotes.length}
+    </span>
+    <span className="text-secondary" style={{ fontSize: '14px' }}>
+      Next in {Math.ceil((100 - progress) / (100 / 7))}s
+    </span>
+  </div>
+</div>
   <div className="rounded-4 p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
     <div className="mt-3" style={{minHeight: '180px'}}>
 <div className="aboutmeheading text-center rounded-pill mx-auto" style={{background: '#292A2A', width: 'fit-content'}}>
@@ -393,7 +408,7 @@ useEffect(() => {
   
   {/* Skills Section (Infinite Loop Carousel) */}
   <h2 className="text-secondary ml-3 mb-4 text-center mt-3 text-uppercase" style={{fontSize:'14px'}}>
-    Technologies I work withTechnologies I work with
+    Technologies I work with
   </h2>
 
   <div style={{
@@ -485,6 +500,7 @@ useEffect(() => {
   </div>
 </div>
 <section className="resumesection">
+  <div className="animationresumespecificsection" data-aos="fade-up">
 <div className="d-flex justify-content-center">
   <div className="resumesectiondiv resumesectiondiv text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width: 'fit-content'}}>
     <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#BFBEC0'}}>My Resume</h3>
@@ -493,11 +509,12 @@ useEffect(() => {
 </div>
 <h1 className="text-white  resumesectionh1 text-center mt-3 fw-bold" style={{fontSize: '48px'}}>Professional Experience</h1>
 <p className="text-secondary resumesectionp mt-3" style={{ fontSize: '18px'}}>A comprehensive overview of my skills, experience, and achievements</p>
+</div>
 <br />
 <div className="d-flex justify-content-center resumesectionresumediv mt-5 ">
-  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1200px', height: '100vh', }}>
-    <div className="firstcolumn p-3 py-4 px-4" style={{ width: '30%', backgroundColor: '#191919' }} > 
-      <div className="contactinfo mt-2"> 
+  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1200px', height: '260vh', }}>
+    <div className="firstcolumn p-3 py-4 px-4" style={{ width: '30%', backgroundColor: '#191919'}} > 
+      <div className="contactinfo mt-2" data-aos="fade-up"> 
         <div className="firstone fs-5 text-white fw-bold">
           <Mail className="text-light me-2" width={16} height={16} />
             Contact
@@ -524,7 +541,7 @@ useEffect(() => {
        </div>
    
       </div>
-      <div className="linkinfo mt-4"> 
+      <div className="linkinfo mt-4" data-aos="fade-up"> 
         <div className="firstone fs-5 text-white fw-bold">
           <Globe className="text-light me-2" width={16} height={16} />
           Links
@@ -545,6 +562,331 @@ useEffect(() => {
    
    
       </div>
+      <div className="technicalinfo mt-4"> 
+        <div className="firstone fs-5 text-white fw-bold">
+          <Code className="text-light me-2" width={16} height={16} />
+          Technical Skills
+      </div>    
+<div className="skillssection">
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+        JavaScript
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+        65%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '65%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+        React
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+        75%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '75%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+     Wordpress
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+        50%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '50%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+     SEO
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+        80%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '80%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+    Figma/Canva 
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+       90%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '90%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+   My SQL 
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+       85%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '85%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+  Shopify
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+       65%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '65%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+   Bootstrap/Tailwind CSS
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+       95%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '95%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+  XML/JSON
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+   99%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '99%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+  MS office
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+   95%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '95%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+  <div className="skill-container"> 
+    <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+      <span className="skillname fw-lighter">
+  Git/GitHub
+      </span>
+      <span className="skillpercentage" style={{float: 'right'}}>
+   90%
+      </span>
+    </div>
+    <div 
+      className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden"
+      style={{height: '8px'}}  // Explicit height instead of h-25
+    >  
+      <div 
+        className="progressfill h-100 rounded-2" 
+        style={{
+          backgroundColor: '#B7B7B7',
+          width: '90%',
+          height: '100%'  // Ensure it fills parent
+        }}
+      ></div>
+    </div>
+  </div>
+</div>
+   
+   
+      </div>
+          <div className="linkinfo mt-4"> 
+        <div className="firstone fs-5 text-white fw-bold">
+         Soft Skills
+      </div>    
+      <div className="softskills">
+<div className="firstsoftskill mt-2 d-flex flex-wrap gap-2"> 
+  <span 
+    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232'}}
+  >
+    Problem Solving
+  </span>
+  <span 
+    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232'}}
+  >
+    Team Collaboration
+  </span>
+</div>
+<div className="secondsoftskill mt-2 d-flex flex-wrap gap-2"> 
+  <span 
+    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232'}}
+  >
+   Communication
+  </span>
+  <span 
+    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232'}}
+  >
+Adaptability
+  </span>
+</div>
+<div className="thirdsoftskill mt-2 d-flex flex-wrap gap-2"> 
+
+  <span 
+    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232'}}
+  >
+Time Management
+  </span>
+</div>
+        </div>   
+<button 
+  onClick={() => {
+    const link = document.createElement('a');
+    link.href = MuhammadSadiqResume;
+    link.download = "Muhmmad Sadiq - Resume";
+    link.click();
+  }}
+  className="resumesectionbutton fw-bold btn-light rounded-pill mt-4 w-100 bg-white border-0" 
+  style={{
+    fontSize: '13px', 
+    padding: '11px 20px',
+    boxShadow: '0 1px 4px rgba(0,0,0,0.08)',
+    fontWeight: '500',
+    cursor: 'pointer'
+  }}
+>
+  <Download className="me-2" width={16} height={16} strokeWidth={2}/>
+  <span className="text-dark">Download Resume</span>
+</button>     </div>
     </div>
     <div className="secondcolumn border-start border-dark" style={{ width: '70%', backgroundColor: '#0D0D0D' }} ></div>
   </div>
@@ -690,6 +1032,9 @@ margin-top: 8px !important;
     padding-left: 11px !important;
 }
   .linkinfo.mt-4 {
+    padding-left: 11px !important;
+}
+  .technicalinfo.mt-4 {
     padding-left: 11px !important;
 }
     .me-2 {
