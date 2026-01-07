@@ -5,6 +5,16 @@
 .t {
  filter: brightness(0) invert(1);
 }
+.resumesectionbutton {
+  /* Add base styles for smoother transitions */
+  transition: all 0.3s ease-in-out !important;
+  background-color: #ffffff !important; /* or whatever your base color is */
+}
+
+.resumesectionbutton:hover {
+  transform: scale(1.01) !important;
+  background-color: #ffffffe6 !important;
+}
 /* nav {
 font-family: 'Melodrama', serif;
 
