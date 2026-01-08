@@ -933,9 +933,17 @@ Time Management
 </button>     </div>
     </div>
     <div className="secondcolumn border-start border-dark  p-3 py-4 px-4 ps-4 pt-4" style={{ width: '70%', backgroundColor: '#0D0D0D', }} >
-        <div className="into ">
-<h1 className="intodivh1 fs-4 text-white fw-bold">Introduction</h1>
+        <div className="intro ">
+<h1 className="introdivh1 fs-4 text-white fw-bold">Introduction</h1>
 <hr style={{background:'#FF0000'}} />
+<h5 style={{width: '100%'}} className="introp pe-1 fs-6 text-left text-secondary lh-base ms-0 me-0 w-100">I build production-grade, maintainable, and performant web UIs with
+reusable components, state management, routing, forms, and serverside rendering. I optimize frontend performance through lazy loading,
+code splitting, memoization, and caching, and implement secure
+authentication integrated with REST/GraphQL APIs. I enforce code
+quality with unit, integration, and E2E tests, static analysis, and clear
+documentation, and collaborate in CI/CD pipelines and containerized
+environments while monitoring frontend health with logs and metric.
+</h5>
   </div>
     </div>
 
@@ -1095,6 +1103,9 @@ margin-top: 8px !important;
     padding-top: 32px !important;
     padding-left: 32px !important;
     }
+    p.introp.fs-6.text-left.text-secondary {
+    text-align: left !important;
+}
   `}
 
   </style>
