@@ -5,13 +5,51 @@
 .t {
  filter: brightness(0) invert(1);
 }
-.resumesectionbutton {
+/* Base Button Styles */
+button.resumesectionlettalktobutton.bg-white.rounded-pill {
+    min-width: 160px;
+    width: 13%;
+    padding: 12px 24px;
+    background-color: #ffffff !important;
+    border: 1px solid #f8f9fa !important;
+    border-radius: 50rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* Hover State */
+button.resumesectionlettalktobutton.bg-white.rounded-pill:hover {
+      background-color: #ffffffe6 !important;
+  transform: scale(1.01) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Active State (when clicked) */
+button.resumesectionlettalktobutton.bg-white.rounded-pill:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Focus State (for accessibility) */
+button.resumesectionlettalktobutton.bg-white.rounded-pill:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25) !important;
+}
+.resumesectionbuttonresumedownload:hover {
   /* Add base styles for smoother transitions */
   transition: all 0.3s ease-in-out !important;
   background-color: #ffffff !important; /* or whatever your base color is */
 }
+.companyul li::marker {
+  content: "▶ ";
+  font-size: 6px;
+  margin-right: 10px !important;
+}
 
-.resumesectionbutton:hover {
+
+.resumesectionbuttonresumedownload:hover {
   transform: scale(1.01) !important;
   background-color: #ffffffe6 !important;
 }

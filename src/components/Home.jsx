@@ -11,7 +11,7 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import Snowfall from 'react-snowfall';
-import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin,Download} from 'lucide-react'
+import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin,Download,Calendar,Circle,Award,MoveRight} from 'lucide-react'
 
 // Assets
 import s1 from "../assets/s1.png";
@@ -199,7 +199,7 @@ useEffect(() => {
   { icon: s17, link: "https://www.canva.com/" }, // NPM
   { icon: s18, link: "https://www.microsoft.com/en-us/microsoft-365/microsoft-office" }, // Edge (duplicate)
   { icon: s19, link: "https://developers.google.com/search" }, // SEO
-  { icon: s20, link: "https://woocommerce.com/" }, // Illustrator
+  { icon: s20, link: "https://woocommerce.com/" }, // Illustratore
   { icon: s22, link: "https://www.mysql.com/" }, // Illustrator
 
   ];
@@ -546,51 +546,51 @@ useEffect(() => {
 </div>
 <br />
 <div className="d-flex justify-content-center resumesectionresumediv mt-5 ">
-  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1200px', height: '260vh', }}>
+  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1200px', height: '240vh', }}>
     <div className="firstcolumn p-3 py-4 px-4" style={{ width: '30%', backgroundColor: '#191919'}} > 
       <div className="contactinfo mt-2" data-aos="fade-up"> 
         <div className="firstone fs-5 text-white fw-bold">
-          <Mail className="text-light me-2" width={16} height={16} />
+          <Mail className="me-2" style={{color:'#ffffff99'}} width={16} height={16} />
             Contact
       </div>    
         <div className="secondone mt-2 secondoneallofit">
                 <a className="text-secondary" href="mailto:sadiqsiraj44@gmail.com" target="_blank">
           <Mail className="me-2" width={14} height={14} />   
-           <span className="contactinfospan text-secondary fs-6 fw-light">sadiqsiraj44@gmail.com</span>
+           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>sadiqsiraj44@gmail.com</span>
       </a>
        </div>
         <div className="thirdone mt-2 secondoneallofit">
                 <a className="text-secondary" href="https://wa.me/923152453522" target="_blank">
           <Phone className="me-2" width={14} height={14} />
 
-           <span className="contactinfospan text-secondary fs-6 fw-light">+923152453522</span>
+           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>+923152453522</span>
       </a>
        </div>
         <div className="fourthone mt-2 secondoneallofit">
                 <a className="text-secondary">
           <MapPin className="me-2 text-seondary" width={14} height={14} />
 
-           <span className="contactinfospan text-secondary fs-6 fw-light">Pakistan</span>
+           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>Pakistan</span>
       </a>
        </div>
    
       </div>
       <div className="linkinfo mt-4" data-aos="fade-up"> 
         <div className="firstone fs-5 text-white fw-bold">
-          <Globe className="text-light me-2" width={16} height={16} />
+          <Globe className="me-2" style={{color:'#ffffff99'}} width={16} height={16} />
           Links
       </div>    
         <div className="secondone mt-2 secondoneallofit">
                 <a className="text-secondary" href="https://github.com/privsaaaa44" target="_blank">
           <Github className="me-2" width={14} height={14} />   
-           <span className="contactinfospan text-secondary fs-6 fw-light">github.com/privsaaaa44</span>
+           <span className="contactinfospan  fs-6 fw-light" style={{color: '#ffffff99'}}>github.com/privsaaaa44</span>
       </a>
        </div>
         <div className="thirdone mt-2 secondoneallofit">
                 <a className="text-secondary" href="https://www.linkedin.com/in/muhammad-sadiq-1abbba36b" target="_blank">
           <Linkedin className="me-2" width={14} height={14} />
 
-           <span className="contactinfospan text-secondary fs-6 fw-light">linkedin.com/in/muhammad-sadiq</span>
+           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>linkedin.com/in/muhammad-sadiq</span>
       </a>
        </div>
    
@@ -598,16 +598,16 @@ useEffect(() => {
       </div>
      <div className="technicalinfo mt-4" ref={sectionRef}> 
       <div className="firstone fs-5 text-white fw-bold">
-        <Code className="text-light me-2" width={16} height={16} />
+        <Code className="me-2" style={{color:'#ffffff99'}} width={16} height={16} />
         Technical Skills
       </div>    
       <div className="skillssection">
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2"  style={{fontSize: '14px',color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               JavaScript
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               65%
             </span>
           </div>
@@ -627,11 +627,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               React
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               75%
             </span>
           </div>
@@ -651,11 +651,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px',color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               Wordpress
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               50%
             </span>
           </div>
@@ -675,11 +675,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               SEO
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               80%
             </span>
           </div>
@@ -699,11 +699,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               Figma/Canva 
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               90%
             </span>
           </div>
@@ -723,11 +723,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader  mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               My SQL 
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               85%
             </span>
           </div>
@@ -747,11 +747,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader  mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               Shopify
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               65%
             </span>
           </div>
@@ -771,11 +771,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               Bootstrap/Tailwind CSS
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               95%
             </span>
           </div>
@@ -795,11 +795,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               XML/JSON
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               99%
             </span>
           </div>
@@ -819,11 +819,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               MS office
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               95%
             </span>
           </div>
@@ -843,11 +843,11 @@ useEffect(() => {
           </div>
         </div>
         <div className="skill-container"> 
-          <div className="skillheader text-secondary mt-2" style={{fontSize: '14px'}}>
+          <div className="skillheader mt-2" style={{fontSize: '14px', color: '#ffffff99'}}>
             <span className="skillname fw-lighter">
               Git/GitHub
             </span>
-            <span className="skillpercentage" style={{float: 'right'}}>
+            <span className="skillpercentage" style={{float: 'right', color: '#ffffff99'}}>
               90%
             </span>
           </div>
@@ -876,28 +876,28 @@ useEffect(() => {
       <div className="softskills">
 <div className="firstsoftskill mt-2 d-flex flex-wrap gap-2"> 
   <span 
-    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
-    style={{fontSize: '12px', backgroundColor: '#323232'}}
+    className="fw-lighter rounded-5 border  border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232',color: '#ffffff99'}}
   >
     Problem Solving
   </span>
   <span 
-    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
-    style={{fontSize: '12px', backgroundColor: '#323232'}}
+    className="fw-lighter rounded-5 border  border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232', color: '#ffffff99'}}
   >
     Team Collaboration
   </span>
 </div>
 <div className="secondsoftskill mt-2 d-flex flex-wrap gap-2"> 
   <span 
-    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
-    style={{fontSize: '12px', backgroundColor: '#323232'}}
+    className="fw-lighter rounded-5 border  border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232', color: '#ffffff99'}}
   >
    Communication
   </span>
   <span 
-    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
-    style={{fontSize: '12px', backgroundColor: '#323232'}}
+    className="fw-lighter rounded-5 border  border-secondary py-1 px-3"
+    style={{fontSize: '12px', backgroundColor: '#323232', color: '#ffffff99'}}
   >
 Adaptability
   </span>
@@ -905,8 +905,8 @@ Adaptability
 <div className="thirdsoftskill mt-2 d-flex flex-wrap gap-2"> 
 
   <span 
-    className="text-secondary fw-lighter rounded-5 border border-secondary py-1 px-3" 
-    style={{fontSize: '12px', backgroundColor: '#323232'}}
+    className="fw-lighter rounded-5 border  border-secondary py-1 px-3" 
+    style={{fontSize: '12px', backgroundColor: '#323232', color: '#ffffff99'}}
   >
 Time Management
   </span>
@@ -919,7 +919,7 @@ Time Management
     link.download = "Muhmmad Sadiq - Resume";
     link.click();
   }}
-  className="resumesectionbutton fw-bold btn-light rounded-pill mt-4 w-100 bg-white border-0" 
+  className="resumesectionbuttonresumedownload fw-bold btn-light rounded-pill mt-4 w-100 bg-white border-0" 
   style={{
     fontSize: '13px', 
     padding: '11px 20px',
@@ -936,7 +936,7 @@ Time Management
         <div className="intro ">
 <h1 className="introdivh1 fs-4 text-white fw-bold">Introduction</h1>
 <hr style={{background:'#FF0000'}} />
-<h5 style={{width: '100%'}} className="introp pe-1 fs-6 text-left text-secondary lh-base ms-0 me-0 w-100">I build production-grade, maintainable, and performant web UIs with
+<h5 style={{color:'#ffffff99', width: '100%'}} className="introp pe-1 fs-6 text-left lh-base ms-0 me-0 w-100">I build production-grade, maintainable, and performant web UIs with
 reusable components, state management, routing, forms, and serverside rendering. I optimize frontend performance through lazy loading,
 code splitting, memoization, and caching, and implement secure
 authentication integrated with REST/GraphQL APIs. I enforce code
@@ -945,13 +945,204 @@ documentation, and collaborate in CI/CD pipelines and containerized
 environments while monitoring frontend health with logs and metric.
 </h5>
   </div>
-    </div>
+  <div className="experience101">
+<div className="experience mt-5 d-flex align-items-center">
+  <Calendar width={18} height={18} style={{color: '#ffffff99'}} />
+  <span className="espan text-white fw-bold fs-4 p-2">Work Experience</span>
+</div>
+<hr className="mt-0" style={{background:'#FF0000'}} />
+<div className="flex justify-center items-center">
+  <div className="d-flex align-items-center mt-4">
+<Circle 
+  width={12} 
+  height={12} 
+  stroke="gray"
+  fill="#3D3D3D"
+  strokeWidth={3}
+/>
+<span className="text-white fs-5 fw-bold ms-4">Data Entry Operator Intern</span>
+</div>
+<div className="company mt-1">
+  <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
+    <h4
+      className="fw-bolder mb-0"
+      style={{ fontSize: '14px', color: '#6a7282' }}
+    >
+    Digitalaz Solution
+    </h4>
 
-
+    <ul
+      className="mb-0 d-flex align-items-center gap-4 "
+      style={{
+        listStyleType: 'square',
+        paddingLeft: '8px',
+        margin: 0,
+        marginLeft: '4px'
+      }}
+    >
+      <li className="ms-3" style={{ fontSize: '14px', color: '#ffffff99', paddingLeft: '2px' }}>
+        On-site
+      </li>
+      <li style={{ fontSize: '14px', color: '#ffffff99', paddingLeft: '2px' }}>
+       Aug 2025 –
+Sep 2025
+      </li>
+    </ul>
+  </div>
+  <div className="companypara mt-2" style={{marginLeft: '13px'}}>
+    <ul className="companyul">  
+  <li className="companyli fs-6 mb-2" style={{color:'#ffffff99'}}><span className="ms-2">Performed product listings and updates on the company’s ecommerce platform.</span></li>
+  <li className="companyli fs-6 mb-2" style={{color:'#ffffff99'}}><span className="ms-2">Ensured product details, prices, and descriptions were accurate and up to date. </span></li>
+  <li className="companyli fs-6 mb-2" style={{color:'#ffffff99'}}><span className="ms-2">Assisted in organizing digital inventory and maintaining data consistency.</span></li>
+    </ul>
   </div>
 </div>
 
+
+</div>    
+<div className="flex justify-center items-center">
+  <div className="d-flex align-items-center mt-4">
+<Circle 
+  width={12} 
+  height={12} 
+  stroke="gray"
+  fill="#3D3D3D"
+  strokeWidth={3}
+/>
+<span className="text-white fs-5 fw-bold ms-4">Web Developer Intern</span>
+</div>
+<div className="company mt-1">
+  <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
+    <h4
+      className="fw-bolder mb-0"
+      style={{ fontSize: '14px', color: '#6a7282' }}
+    >
+   IJK Media 
+    </h4>
+
+    <ul
+      className="mb-0 d-flex align-items-center gap-4 "
+      style={{
+        listStyleType: 'square',
+        paddingLeft: '8px',
+        margin: 0,
+        marginLeft: '4px'
+      }}
+    >
+      <li className="ms-3" style={{ fontSize: '14px', color: '#ffffff99', paddingLeft: '2px' }}>
+        On-site
+      </li>
+      <li style={{ fontSize: '14px', color: '#ffffff99', paddingLeft: '2px' }}>
+      Oct 2025 – Dec 2025
+      </li>
+    </ul>
+  </div>
+  <div className="companypara mt-2" style={{marginLeft: '13px'}}>
+    <ul className="companyul">  
+  <li className="companyli fs-6 mb-2" style={{color:'#ffffff99'}}><span className="ms-2">Developed front-end features using HTML, CSS, JavaScript, Bootstrap, React, WordPress. </span></li>
+  <li className="companyli fs-6 mb-2" style={{color:'#ffffff99'}}><span className="ms-2"> Focused on creating responsive layouts and improving user interface experience. </span></li>
+  <li className="companyli fs-6 mb-2" style={{color:'#ffffff99'}}><span className="ms-2">Collaborated with the team to deliver visually appealing and
+functional web pages.</span></li>
+    </ul>
+  </div>
+</div>
+
+
+</div>    
+</div>
+  <div className="experience102">
+<div className="experience mt-5 d-flex align-items-center">
+  <span className="espan text-white fw-bold fs-4 mb-2">Education</span>
+</div>
+<hr className="mt-0" style={{background:'#FF0000'}} />
+<div className="flex justify-center items-center">
+ <div className="d-flex align-items-center mt-4">
+  <Circle 
+    width={20} 
+    height={20} 
+    stroke="gray"
+    fill="#3D3D3D"
+    strokeWidth={2}
+  />
+  <span className="text-white fs-5 fw-bold ms-4">
+    Diploma Degree Aptech, 3-year Web Development Course (1 year Completed) | 2025 – Present
+  </span>
+</div>
+
+
+</div>    
+<div className="flex justify-center items-center">
+  <div className="d-flex align-items-center mt-4">
+<Circle 
+  width={12} 
+  height={12} 
+  stroke="gray"
+  fill="#3D3D3D"
+  strokeWidth={3}
+/>
+<span className="text-white fs-5 fw-bold ms-4">Govt Degree Boys College Johar Karachi, ICS | 2025 – Present
+</span>
+</div>
+<div className="company mt-1">
+  <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
+    <h4
+      className="fw-bolder mb-0"
+      style={{ fontSize: '14px', color: '#6a7282' }}
+    >
+Intermediate in Computer Science
+    </h4>
+  </div>
+
+</div>
+
+
+</div>    
+<div className="flex justify-center items-center">
+  <div className="d-flex align-items-center mt-4">
+<Circle 
+  width={12} 
+  height={12} 
+  stroke="gray"
+  fill="#3D3D3D"
+  strokeWidth={3}
+/>
+<span className="text-white fs-5 fw-bold ms-4">HPGS School Karachi, Computer Science | 2025
+</span>
+</div>
+<div className="company mt-1">
+  <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
+    <h4
+      className="fw-bolder mb-0"
+      style={{ fontSize: '14px', color: '#6a7282' }}
+    >
+Matriculation in Computer Science
+    </h4>
+  </div>
+
+</div>
+
+
+</div>    
+</div>
+<div className="cerifications">
+ <div className="experience mt-5 d-flex align-items-center">
+  <Award width={18} height={18} style={{color: '#ffffff99'}} />
+  <span className="espan text-white fw-bold fs-4 p-2">Certifications</span>
+</div>
+<hr className="mt-0" style={{background:'#FF0000'}} />
+</div>
+</div>
+  </div>
+</div>
 <br />
+<p className="fs-6 resumesectionlastptag" style={{color:'#ffffff99'}}>Interested in working together?</p>
+<div className="d-flex justify-content-center mt-4">
+<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light fw-bolder">Let's Talks
+<span><MoveRight className="fs-6 ms-2 fw-lighter"/></span>
+
+</button>
+</div>
+
 <br />
 <br />
 <br />
@@ -1106,6 +1297,7 @@ margin-top: 8px !important;
     p.introp.fs-6.text-left.text-secondary {
     text-align: left !important;
 }
+
   `}
 
   </style>
