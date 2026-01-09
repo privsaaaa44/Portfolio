@@ -1,11 +1,15 @@
 /* ===================== Reset & Body ===================== */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+.textone {  
+  font-weight: 900 !important;
+}
 
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Syne', sans-serif;
     font-weight: 500;
+    height: 10000px;
     /* overflow-x: hidden; */
 background: linear-gradient(to bottom, #010102, #000000, #000000);    width: 100%;
 }

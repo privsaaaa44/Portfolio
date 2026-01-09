@@ -58,6 +58,7 @@ const scrollText = "They say a jack of all trades is a master of none, but I'm m
 const [scrollWords] = useState(() => scrollText.split(' ').filter(word => word.trim()));
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const quotes = [
     {
@@ -933,7 +934,7 @@ Time Management
 </button>     </div>
     </div>
     <div className="secondcolumn border-start border-dark  p-3 py-4 px-4 ps-4 pt-4" style={{ width: '70%', backgroundColor: '#0D0D0D', }} >
-        <div className="intro ">
+        <div  data-aos="fade-up" className="intro">
 <h1 className="introdivh1 fs-4 text-white fw-bold">Introduction</h1>
 <hr style={{background:'#FF0000'}} />
 <h5 style={{color:'#ffffff99', width: '100%'}} className="introp pe-1 fs-6 text-left lh-base ms-0 me-0 w-100">I build production-grade, maintainable, and performant web UIs with
@@ -951,7 +952,8 @@ environments while monitoring frontend health with logs and metric.
   <span className="espan text-white fw-bold fs-4 p-2">Work Experience</span>
 </div>
 <hr className="mt-0" style={{background:'#FF0000'}} />
-<div className="flex justify-center items-center">
+<div  data-aos="fade-right"   data-aos-offset="100"
+     data-aos-easing="ease-in-sine" className="flex justify-center items-center">
   <div className="d-flex align-items-center mt-4">
 <Circle 
   width={12} 
@@ -1000,7 +1002,8 @@ Sep 2025
 
 
 </div>    
-<div className="flex justify-center items-center">
+<div  data-aos="fade-right"   data-aos-offset="100"
+     data-aos-easing="ease-in-sine" className="flex justify-center items-center">
   <div className="d-flex align-items-center mt-4">
 <Circle 
   width={12} 
@@ -1055,7 +1058,8 @@ functional web pages.</span></li>
   <span className="espan text-white fw-bold fs-4 mb-2">Education</span>
 </div>
 <hr className="mt-0" style={{background:'#FF0000'}} />
-<div className="flex justify-center items-center">
+<div  data-aos="fade-right"   data-aos-offset="100"
+     data-aos-easing="ease-in-sine" className="flex justify-center items-center">
  <div className="d-flex align-items-center mt-4">
   <Circle 
     width={20} 
@@ -1071,7 +1075,8 @@ functional web pages.</span></li>
 
 
 </div>    
-<div className="flex justify-center items-center">
+<div  data-aos="fade-right"   data-aos-offset="100"
+     data-aos-easing="ease-in-sine" className="flex justify-center items-center">
   <div className="d-flex align-items-center mt-4">
 <Circle 
   width={12} 
@@ -1097,7 +1102,8 @@ Intermediate in Computer Science
 
 
 </div>    
-<div className="flex justify-center items-center">
+<div  data-aos="fade-right"   data-aos-offset="100"
+     data-aos-easing="ease-in-sine" className="flex justify-center items-center">
   <div className="d-flex align-items-center mt-4">
 <Circle 
   width={12} 
@@ -1135,6 +1141,7 @@ Matriculation in Computer Science
   </div>
 </div>
 <br />
+<div   data-aos="fade-up" className="resumesectionlastdiv">
 <p className="fs-6 resumesectionlastptag" style={{color:'#ffffff99'}}>Interested in working together?</p>
 <div className="d-flex justify-content-center mt-4">
 <button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light fw-bolder">Let's Talks
@@ -1142,11 +1149,60 @@ Matriculation in Computer Science
 
 </button>
 </div>
+</div>
 
 <br />
-<br />
-<br />
-<br />
+<br />  
+
+      <div className="d-flex align-items-center justify-content-center  bg-black">
+        <section className="revolvingcircle">
+          <div
+            className="position-relative"
+            style={{ width: '250px', height: '250px', cursor: 'pointer' }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <svg
+              viewBox="0 0 400 400"
+              className={`w-100 h-100 ${isHovered ? 'animate-spin-fast' : 'animate-spin-slow'}`}
+style={{ 
+  animationDuration: isHovered ? '4s' : '8s'  // Sirf duration change
+}}            
+            >
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M 200, 200 m -130, 0 a 130,130 0 1,1 260,0 a 130,130 0 1,1 -260,0"
+                />
+              </defs>
+              
+              <circle
+                cx={250}
+                cy={250}
+                r={130}
+                fill="none"
+                
+                strokeWidth={2.5}
+              />
+              
+              <text
+                fill="white"
+                fontSize="39"
+                fontStyle="italic"
+                
+                className="textone"
+                letterSpacing="-5"
+              >
+                <textPath href="#circlePath" startOffset="0%">
+                  ✱FULL ✱STACK ✱DEVELOPER
+                </textPath>
+              </text>
+            </svg>
+          </div>
+        </section>
+      </div>
+
+
 </section>
       {/* <br />
       <br />
@@ -1184,6 +1240,32 @@ Matriculation in Computer Science
     </div>
   <style>
     {`
+            @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes spin-fast {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 10s linear infinite;
+        }
+
+        .animate-spin-fast {
+          animation: spin-fast 5s linear infinite;
+        }
+
     .card2 {
     position: relative;
     overflow: visible;
