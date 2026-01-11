@@ -14,6 +14,7 @@ import Snowfall from 'react-snowfall';
 import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin,Download,Calendar,Circle,Award,MoveRight} from 'lucide-react'
 
 // Assets
+import jslogo from "../assets/jslogo.svg";
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
 import s3 from "../assets/s3.png";
@@ -538,12 +539,12 @@ useEffect(() => {
   <div className="animationresumespecificsection" data-aos="fade-up">
 <div className="d-flex justify-content-center">
   <div className="resumesectiondiv resumesectiondiv text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width: 'fit-content'}}>
-    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#BFBEC0'}}>My Resume</h3>
+    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}>My Resume</h3>
  
   </div>
 </div>
 <h1 className="text-white  resumesectionh1 text-center mt-3 fw-bold" style={{fontSize: '48px'}}>Professional Experience</h1>
-<p className="text-secondary resumesectionp mt-3" style={{ fontSize: '18px'}}>A comprehensive overview of my skills, experience, and achievements</p>
+<p className="resumesectionp mt-3" style={{ fontSize: '18px', color: '#ffffff99'}}>A comprehensive overview of my skills, experience, and achievements</p>
 </div>
 <br />
 <div className="d-flex justify-content-center resumesectionresumediv mt-5 ">
@@ -1202,6 +1203,100 @@ style={{
         </section>
       </div>
 
+
+</section>
+<section className="mywork text-center mt-5 pt-1">
+    <div className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
+        <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px',color: '#ffffff99'}}>My Work</h3>
+    </div>
+   <h1 className="text-white  resumesectionh1 text-center mt-3 fw-bolder" style={{fontSize: '60px'}}>Featured Projects
+</h1> 
+<p
+  className="resumesectionp mt-3 text-center"
+  style={{ fontSize: '18px', color: '#ffffff99'}}
+>
+  Showcasing my best work across frontend, backend, and full-stack development
+</p>
+    <div className="d-flex mt-3 justify-content-center  gap-4 p-5">
+<div 
+  className="card rounded-4 shadow-lg border border-dark" 
+  style={{ 
+    width: '35rem', 
+    height: '110vh', 
+    backgroundColor: '#0E1011', 
+    borderWidth: '1px',
+    overflow: 'hidden'
+  }}
+>
+  {/* Top Section - Badge */}
+  <div className="resumesectiondiv d-flex align-items-center rounded-pill border border-dark ms-auto me-2 mt-1" style={{background: '#0D0D0D', width: 'fit-content'}}>
+    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}> Web Design Project</h3>
+  </div>
+
+  {/* Hero Section with Background Image - SIRF YAHAN IMAGE */}
+  <div className="mt-2 border-top border-white border-left "
+    style={{
+      height: '40vh', // adjust kar sakte ho
+      backgroundImage: `url(${p1})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+  
+    {/* Hero Content */}
+
+  </div>
+<div className="card-content align-items-left ms-4 mt-4" style={{textAlign: 'left'}}>  
+  <h1 className="fs-4 text-white fw-bold">Decor Delight Furniture Store</h1>
+
+<div className="mt-2 rounded-end" style={{width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0'}}></div>
+<h3 className="card-h3 fs-6 w-100  lh-base" style={{color:'#d1d5dc'}}>
+During my first semester end project at Aptech, I developed a responsive furniture e-commerce website featuring product browsing and custom furniture services, which strengthened my web development and UI/UX design skills.
+</h3> 
+
+<div className="d-flex gap-3 mt-4">
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s4} width={25} height={25} className="mb-1"   style={{filter: 'grayscale(100%) brightness(0.7)'}} alt="" />
+    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>JavaScript</span>
+  </div>
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+    <svg className="mb-2" width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/>
+    </svg>
+    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Next.js</span>
+  </div>
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+    <svg className="mb-2" width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/>
+    </svg>
+    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Next.js</span>
+  </div>
+  
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+    <svg className="mb-2" width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/>
+    </svg>
+    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Next.js</span>
+  </div>
+</div>
+</div>
+  {/* Bottom Section - Plain Black Background */}
+
+</div>
+
+      <div className="card" style={{ width: '35rem', height: '110vh' }}>
+       
+      </div>
+    </div>
 
 </section>
       {/* <br />
