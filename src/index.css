@@ -5,6 +5,98 @@
 .t {
  filter: brightness(0) invert(1);
 }
+/* .projectcard {
+
+} */
+.firstcolumn {
+   background: linear-gradient(
+    to top bottom left, 
+    rgba(230, 227, 227, 0.05), 
+    rgba(0,0,0,0.2)
+  ) 
+}
+.card2 {
+   background: linear-gradient(
+    to top 50%, 
+    rgba(255,255,255,0.05), 
+    rgba(0,0,0,0.2)
+  ) 
+}
+.secondcolumn {
+    background: linear-gradient(
+      to  bottom right, 
+      rgba(230, 227, 227, 0.05), 
+      rgba(0,0,0,0.2)
+    ) 
+}
+.projectcard {
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+    background: linear-gradient(
+      to  bottom right, 
+      rgba(230, 227, 227, 0.05), 
+      rgba(0,0,0,0.2)
+    ) 
+}
+.projectcard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;  /* inherit lagayein, background-image nahi */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+.imagebgproject {
+  transition: transform 0.5s ease-in-out;
+}
+
+.projectcard:hover::before {
+  transform: scale(1.15);  /* Ye line add karein */
+}
+.projectcard:hover .imagebgproject {
+  transform: scale(1.1); /* Image zoom hogi */
+}
+/* Dark + White light overlay - hover pe active */
+.projectcard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right, 
+    rgba(255,255,255,0.1),  /* White light */
+    rgba(0,0,0,0.5)         /* Dark overlay */
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.projectcard:hover {
+  transform: scale(1.02);
+box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.15) !important;
+}
+
+.projectcard:hover::after {
+  opacity: 1; /* Hover pe dark + white light dikhega */
+}
+
+/* Content ko overlay ke upar rakhein */
+.projectcard > * {
+  position: relative;
+  z-index: 2;
+}
 /* Base Button Styles */
 button.resumesectionlettalktobutton.bg-white.rounded-pill {
     min-width: 160px;
