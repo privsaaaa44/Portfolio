@@ -2,8 +2,22 @@
 .container-fluid.justify-content-between.align-items-center.px-4 {
     margin-top: 25px;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .t {
  filter: brightness(0) invert(1);
+}
+.card1:hover {
+   transform: scale(1.02);
+      background: linear-gradient(
+      to  bottom right, 
+      rgba(230, 227, 227, 0.05), 
+      rgba(0,0,0,0.2)
+    ) 
+   
 }
 /* .projectcard {
 
@@ -61,9 +75,20 @@
 .projectcard:hover::before {
   transform: scale(1.15);  /* Ye line add karein */
 }
-.projectcard:hover .imagebgproject {
+.projectcard:hover .imagebgproject  {
   transform: scale(1.1); /* Image zoom hogi */
 }
+ /* .hover-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} */
+
+  /* .hover-icon {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+} */
+
 /* Dark + White light overlay - hover pe active */
 .projectcard::after {
   content: '';
@@ -111,6 +136,13 @@ button.resumesectionlettalktobutton.bg-white.rounded-pill {
     transition: all 0.3s ease-in-out !important;
 }
 
+
+
+.githubworkbutton:hover {
+      transform: scale(1.03) !important;
+background: rgba(230, 227, 227, 0.15) !important;
+border: 1px solid rgba(230, 227, 227, 0.15) !important;
+}
 /* Hover State */
 button.resumesectionlettalktobutton.bg-white.rounded-pill:hover {
       background-color: #ffffffe6 !important;

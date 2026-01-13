@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../index.css";
+import p4 from "../assets/p4.png";
 import F3 from "../assets/F3.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,6 +21,7 @@ import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
 import s3 from "../assets/s3.png";
 import s4 from "../assets/s4.png";
+import p3 from "../assets/p3.png";
 import s5 from "../assets/s5.png";
 import s6 from "../assets/s6.png";
 import s7 from "../assets/s7.png";
@@ -1224,7 +1226,7 @@ style={{
   className="projectcard rounded-4 shadow-lg border border-dark" 
   style={{ 
     width: '35rem', 
-    height: '113vh', 
+    height: '117vh', 
     backgroundColor: '#0E1011', 
     borderWidth: '1px',
     overflow: 'hidden'
@@ -1236,12 +1238,12 @@ style={{
   </div>
 
   {/* Hero Section with Background Image - SIRF YAHAN IMAGE */}
-  <div className="mt-2 border-top border-white border-left imagebgproject"
+ <div className="mt-1 border-2 border-top border-dark border-left imagebgproject"
     style={{
-      height: '40vh', // adjust kar sakte ho
+      height: '45vh',
       backgroundImage: `url(${p1})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      backgroundSize: '100% auto',  // width 100%, height auto
+      backgroundPosition: 'top center',
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       display: 'flex',
@@ -1254,7 +1256,7 @@ style={{
 
   </div>
 <div className="card-content align-items-left ms-4 mt-4" style={{textAlign: 'left'}}>  
-  <h1 className="fs-4 text-white fw-bold">Decor Delight Furniture Store</h1>
+  <h1 className="fs-4 text-white fw-bold">Decor Delight Furntire Store</h1>
 
 <div className="mt-2 rounded-end" style={{width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0'}}></div>
 <h3 className="card-h3 fs-6 w-100  lh-base" style={{color:'#d1d5dc'}}>
@@ -1296,7 +1298,7 @@ During my first semester end project at Aptech, I developed a responsive furnitu
   </div>
 </div>
 <div className="simplecardtext mt-3 d-flex align-items-center">
-<span style={{fontSize: '12px', color: '#ffffff99'}}>+3 more</span>
+<span style={{fontSize: '12px', color: '#ffffff99'}}>+4 more</span>
 <span
   className="circlelogoextra ms-2 border border-dark"
   style={{
@@ -1359,6 +1361,29 @@ During my first semester end project at Aptech, I developed a responsive furnitu
     width={10}
     height={10}
     src={s2}
+    alt=""
+    style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+  />
+</span>
+<span
+  className="circlelogoextra  border border-dark"
+  style={{
+    backgroundColor: '#1a1a1a',
+    width: '24px',
+    height: '24px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: '-5px',
+    position: 'relative',
+    zIndex: 4
+  }}
+>
+  <img
+    width={10}
+    height={10}
+    src={s16}
     alt=""
     style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
   />
@@ -1411,12 +1436,12 @@ During my first semester end project at Aptech, I developed a responsive furnitu
 
 </div>
 </a>
-<a  href="https://privsaaaa44.github.io/Eproject/home.html" className="projectcardlink" target="_blank">
+<a  href="https://mywebmanagers.com/bnb-lisiting-management/" className="projectcardlink" target="_blank">
 <div 
   className="projectcard rounded-4 shadow-lg border border-dark" 
   style={{ 
     width: '35rem', 
-    height: '113vh', 
+    height: '117vh', 
     backgroundColor: '#0E1011', 
     borderWidth: '1px',
     overflow: 'hidden'
@@ -1424,16 +1449,16 @@ During my first semester end project at Aptech, I developed a responsive furnitu
 >
   {/* Top Section - Badge */}
   <div className="resumesectiondiv d-flex align-items-center rounded-pill border border-dark ms-auto me-2 mt-1" style={{background: '#0D0D0D', width: 'fit-content'}}>
-    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}> Web Design Project</h3>
+    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}> CMS Blog Site</h3>
   </div>
 
   {/* Hero Section with Background Image - SIRF YAHAN IMAGE */}
-  <div className="mt-2 border-top border-white border-left imagebgproject "
+ <div className="mt-1 border-2 border-top border-dark border-left imagebgproject"
     style={{
-      height: '40vh', // adjust kar sakte ho
-      backgroundImage: `url(${p1})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      height: '45vh',
+      backgroundImage: `url(${p2})`,
+      backgroundSize: '100% auto',  // width 100%, height auto
+      backgroundPosition: 'top center',
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       display: 'flex',
@@ -1446,22 +1471,22 @@ During my first semester end project at Aptech, I developed a responsive furnitu
 
   </div>
 <div className="card-content align-items-left ms-4 mt-4" style={{textAlign: 'left'}}>  
-  <h1 className="fs-4 text-white fw-bold">Decor Delight Furniture Store</h1>
+  <h1 className="fs-4 text-white fw-bold">My Web Managers</h1>
 
 <div className="mt-2 rounded-end" style={{width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0'}}></div>
 <h3 className="card-h3 fs-6 w-100  lh-base" style={{color:'#d1d5dc'}}>
-During my first semester end project at Aptech, I developed a responsive furniture e-commerce website featuring product browsing and custom furniture services, which strengthened my web development and UI/UX design skills.
+During my internship at IJK Media, I developed a responsive CMS based blog website with integrated service browsing and custom web solutions, enhancing my WordPress development and content management expertise.
 </h3> 
 
 <div className="d-flex gap-3 mt-4">
   <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
        style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
-<img src={s4} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>JavaScript</span>
+<img src={s9} width={20} height={20} className="mb-1" style={{    filter: 'brightness(0) invert(1)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Wordpress</span>
   </div>
   <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
        style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
 <img 
-  src={s11} 
+  src={s10} 
   width={20} 
   height={20} 
   className="mb-1" 
@@ -1475,20 +1500,20 @@ During my first semester end project at Aptech, I developed a responsive furnitu
   className="text-secondary fw-medium" 
   style={{fontSize: '10px', color: '#ffffff99'}}
 >
-  Jquery
+ Elementor Pro
 </span>  </div>
    <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
        style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
-<img src={s5} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>JSON</span>
+<img src={s4} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>JavaScript</span>
   </div>
   
    <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
        style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
-<img src={s3} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Bootstrap</span>
+<img src={s11} width={20} height={20} className="mb-1" style={{    filter: 'brightness(0) invert(1)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Jquery</span>
   </div>
 </div>
 <div className="simplecardtext mt-3 d-flex align-items-center">
-<span style={{fontSize: '12px', color: '#ffffff99'}}>+3 more</span>
+<span style={{fontSize: '12px', color: '#ffffff99'}}>+4 more</span>
 <span
   className="circlelogoextra ms-2 border border-dark"
   style={{
@@ -1555,12 +1580,35 @@ During my first semester end project at Aptech, I developed a responsive furnitu
     style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
   />
 </span>
+<span
+  className="circlelogoextra  border border-dark"
+  style={{
+    backgroundColor: '#1a1a1a',
+    width: '24px',
+    height: '24px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: '-5px',
+    position: 'relative',
+    zIndex: 4
+  }}
+>
+  <img
+    width={10}
+    height={10}
+    src={s16}
+    alt=""
+    style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+  />
+</span>
 
 </div>
 
 <div className="projectlivenowbutt mt-3 d-flex justify-content-between align-items-center">
 <a
-  href="https://privsaaaa44.github.io/Eproject/home.html"
+  href="https://mywebmanagers.com/bnb-lisiting-management/"
   target="_blank"
   rel="noopener noreferrer"
   className="text-decoration-none"
@@ -1605,6 +1653,311 @@ During my first semester end project at Aptech, I developed a responsive furnitu
 </a>
     </div>
 
+
+    
+    <div className="d-flex  justify-content-center  gap-4 mt-0">
+<a  href="https://flavoura-best-resturant-in-pak.vercel.app" className="projectcardlink" target="_blank">
+<div 
+  className="projectcard rounded-4 shadow-lg border border-dark" 
+  style={{ 
+    width: '35rem', 
+    height: '117vh', 
+    backgroundColor: '#0E1011', 
+    borderWidth: '1px',
+    overflow: 'hidden'
+  }}
+>
+  {/* Top Section - Badge */}
+  <div className="resumesectiondiv d-flex align-items-center rounded-pill border border-dark ms-auto me-2 mt-1" style={{background: '#0D0D0D', width: 'fit-content'}}>
+    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}>Frontend Website</h3>
+  </div>
+
+  {/* Hero Section with Background Image - SIRF YAHAN IMAGE */}
+ <div className="mt-1 border-2 border-top border-dark border-left imagebgproject"
+    style={{
+      height: '45vh',
+      backgroundImage: `url(${p3})`,
+      backgroundSize: '100% auto',  // width 100%, height auto
+      backgroundPosition: 'top center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+    {/* Hero Content */}
+
+  </div>
+<div className="card-content align-items-left ms-4 mt-4" style={{textAlign: 'left'}}>  
+  <h1 className="fs-4 text-white fw-bold">Flavora Resturant Wesbite</h1>
+
+<div className="mt-2 rounded-end" style={{width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0'}}></div>
+<h3 className="card-h3 fs-6 w-100  lh-base" style={{color:'#d1d5dc'}}>
+During this personal project, I created a restaurant website with online table reservation functionality, allowing customers to browse menus, view available time slots, and book tables through an intuitive interface.
+</h3> 
+
+<div className="d-flex gap-3 mt-4">
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s6} width={20} height={20} className="mb-1" style={{ filter: 'brightness(0) invert(1)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>React.JSX</span>
+  </div>
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img 
+  src={s3} 
+  width={20} 
+  height={20} 
+  className="mb-1" 
+  style={{
+    filter: 'brightness(0) invert(1)' // Pure white ke liye
+    // Ya sirf: filter: 'brightness(2)' // Original color with brightness
+  }} 
+  alt="" 
+/>
+<span 
+  className="text-secondary fw-medium" 
+  style={{fontSize: '10px', color: '#ffffff99'}}
+>
+Bootstrap
+</span>  </div>
+   <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s16} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Figma</span>
+  </div>
+  
+   <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s18} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Vercel</span>
+  </div>
+</div>
+<div className="simplecardtext mt-3 d-flex align-items-center">
+<span style={{fontSize: '12px', color: '#ffffff99'}}>+1 more</span>
+<span
+  className="circlelogoextra ms-2 border border-dark"
+  style={{
+    backgroundColor: '#1a1a1a',
+    width: '24px',
+    height: '24px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }}
+>
+  <img
+    width={10}
+    height={10}
+    src={s4}
+    alt=""
+    style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+  />
+</span>
+
+
+</div>
+
+<div className="projectlivenowbutt mt-3 d-flex justify-content-between align-items-center">
+<a
+  href="https://flavoura-best-resturant-in-pak.vercel.app"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-decoration-none"
+>
+  <button
+    className="btn btn-light d-inline-flex align-items-center gap-2  fw-medium"
+    style={{ fontSize: "12px", borderRadius: '9px', padding: '6px 12px', height: '26px' }}
+  >
+    <ExternalLink width={12}/>
+    View Live
+  </button>
+</a>
+<a href="https://github.com/privsaaaa44" target="_blank" className="githubinprojectlink">
+<div className="githubinproject border border-dark"  style={{
+    backgroundColor: '#1a1a1a',
+    width: '36px',
+    height: '36px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: '22px'
+  }}>
+
+
+  <img
+
+    width={14}
+    height={14}
+    src={s13}
+    alt=""
+    style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+  />
+</div>
+</a>
+</div>
+</div>
+  {/* Bottom Section - Plain Black Background */}
+
+
+</div>
+</a>
+<a  href="https://flavoura-best-resturant-in-pak.vercel.app" className="projectcardlink" target="_blank">
+<div 
+  className="projectcard rounded-4 shadow-lg border border-dark" 
+  style={{ 
+    width: '35rem', 
+    height: '117vh', 
+    backgroundColor: '#0E1011', 
+    borderWidth: '1px',
+    overflow: 'hidden'
+  }}
+>
+  {/* Top Section - Badge */}
+  <div className="resumesectiondiv d-flex align-items-center rounded-pill border border-dark ms-auto me-2 mt-1" style={{background: '#0D0D0D', width: 'fit-content'}}>
+    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}>Frontend Website</h3>
+  </div>
+
+  {/* Hero Section with Background Image - SIRF YAHAN IMAGE */}
+ <div className="mt-1 border-2 border-top border-dark border-left imagebgproject"
+    style={{
+      height: '45vh',
+      backgroundImage: `url(${p4})`,
+      backgroundSize: '100% auto',  // width 100%, height auto
+      backgroundPosition: 'top center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+  
+    {/* Hero Content */}
+
+  </div>
+<div className="card-content align-items-left ms-4 mt-4" style={{textAlign: 'left'}}>  
+  <h1 className="fs-4 text-white fw-bold">Personal Protfolio</h1>
+
+<div className="mt-2 rounded-end" style={{width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0'}}></div>
+<h3 className="card-h3 fs-6 w-100  lh-base" style={{color:'#d1d5dc'}}>
+During this personal project, I created a responsive portfolio website showcasing my projects, skills, and experience, featuring smooth navigation, interactive elements, and modern design principles throughout.
+</h3> 
+
+<div className="d-flex gap-3 mt-4">
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s6} width={20} height={20} className="mb-1" style={{ filter: 'brightness(0) invert(1)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>React.JSX</span>
+  </div>
+  <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img 
+  src={s3} 
+  width={20} 
+  height={20} 
+  className="mb-1" 
+  style={{
+    filter: 'brightness(0) invert(1)' // Pure white ke liye
+    // Ya sirf: filter: 'brightness(2)' // Original color with brightness
+  }} 
+  alt="" 
+/>
+<span 
+  className="text-secondary fw-medium" 
+  style={{fontSize: '10px', color: '#ffffff99'}}
+>
+Bootstrap
+</span>  </div>
+   <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s16} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Figma</span>
+  </div>
+  
+   <div className="d-flex flex-column align-items-center justify-content-center rounded-3" 
+       style={{height: '70px',backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a'}}>
+<img src={s18} width={20} height={20} className="mb-1" style={{filter: 'invert(1) brightness(1.5) contrast(0.8)'}} alt="" />    <span className="text-secondary fw-medium" style={{fontSize: '10px', color: '#ffffff99'}}>Vercel</span>
+  </div>
+</div>
+<div className="simplecardtext mt-3 d-flex align-items-center">
+<span style={{fontSize: '12px', color: '#ffffff99'}}>+1 more</span>
+<span
+  className="circlelogoextra ms-2 border border-dark"
+  style={{
+    backgroundColor: '#1a1a1a',
+    width: '24px',
+    height: '24px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }}
+>
+  <img
+    width={10}
+    height={10}
+    src={s4}
+    alt=""
+    style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+  />
+</span>
+
+
+</div>
+
+<div className="projectlivenowbutt mt-3 d-flex justify-content-between align-items-center">
+<a
+  href="https://flavoura-best-resturant-in-pak.vercel.app"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-decoration-none"
+>
+  <button
+    className="btn btn-light d-inline-flex align-items-center gap-2  fw-medium"
+    style={{ fontSize: "12px", borderRadius: '9px', padding: '6px 12px', height: '26px' }}
+  >
+    <ExternalLink width={12}/>
+    View Live
+  </button>
+</a>
+<a href="https://github.com/privsaaaa44" target="_blank" className="githubinprojectlink">
+<div className="githubinproject border border-dark"  style={{
+    backgroundColor: '#1a1a1a',
+    width: '36px',
+    height: '36px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: '22px'
+  }}>
+
+
+  <img
+
+    width={14}
+    height={14}
+    src={s13}
+    alt=""
+    style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+  />
+</div>
+</a>
+</div>
+</div>
+  {/* Bottom Section - Plain Black Background */}
+
+
+</div>
+</a>
+
+    </div>
+<h6 className="fs-6 mt-5 p-4" style={{color: '#ffffff99'}}>Want to see more of my work?</h6>
+<a className="fs-6" target="_blank" href="https://github.com/privsaaaa44">
+<button className="btn  border border-secondary border-1 fs-6 rounded-pill p-3 githubworkbutton" style={{width: '19%'}}>
+  <Github className="text-white me-1" width={16} height={16}/> <span className="fs-6 text-white fw-medium">View All on GitHub</span> <span><MoveRight width={16} height={16}   className="ms-2 text-white fw-lighter"/></span>
+</button>
+
+</a>
 </section>
       {/* <br />
       <br />
@@ -1677,40 +2030,7 @@ During my first semester end project at Aptech, I developed a responsive furnitu
 transition: all 0.3 ease;
     
     }
- .card1 {
-  position: relative;
-  overflow: visible;
-}
-
-.card1:hover {
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
-
-.card1::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 2px solid #dc3545;
-  border-radius: 30px;
-  pointer-events: none;
-  clip-path: path('M 20,10 Q 100,5 200,20 T 380,30 Q 400,50 390,100 T 380,200 Q 350,250 300,260 T 100,250 Q 20,230 15,150 T 20,10 Z');
-}
-
-.card1:hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  pointer-events: none;
-  z-index: 1;
-}
+ 
 .emailicon {
 margin-top: 8px !important;
 
