@@ -53,6 +53,24 @@ import p2 from "../assets/p2.png";
 import { FiArrowDownLeft } from "react-icons/fi";
 
 const Home = () => {
+const trackRef = useRef(null);
+const [isDragging, setIsDragging] = useState(false);
+const positionRef = useRef(0);
+const isMouseOverRef = useRef(false);  // ← YEH ADD KAREIN
+const isDraggingRef = useRef(false);
+const startXRef = useRef(0);
+  const currentXRef = useRef(0);
+  const lastXRef = useRef(0);
+const lastTimeRef = useRef(Date.now());
+  const itemWidthRef = useRef(0);
+  const animationIdRef = useRef(null);
+
+
+
+
+
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 const [visibleWords, setVisibleWords] = useState(new Set());
@@ -177,7 +195,105 @@ useEffect(() => {
       }
     };
   }, []);
+useEffect(() => {
+  const track = trackRef.current;
+  if (!track) return;
 
+  // Wait for DOM to be ready and get one set of content width
+  setTimeout(() => {
+    itemWidthRef.current = track.scrollWidth / 2;
+  }, 100);
+
+  const normalize = () => {
+    // Modulo operation se seamless loop
+    if (itemWidthRef.current > 0) {
+      // Position ko ek set ki width ke range mein rakhein
+      positionRef.current = positionRef.current % itemWidthRef.current;
+      
+      // Agar positive ho gaya toh negative mein convert karo
+      if (positionRef.current > 0) {
+        positionRef.current -= itemWidthRef.current;
+      }
+    }
+  };
+
+  const animate = () => {
+    if (!isDraggingRef.current) {
+      const speed = -3;
+      positionRef.current += speed;
+      normalize();
+    }
+
+    if (track) {
+      track.style.transform = `translateX(${positionRef.current}px)`;
+    }
+    animationIdRef.current = requestAnimationFrame(animate);
+  };
+
+  const handleMouseEnter = () => {
+    isMouseOverRef.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isMouseOverRef.current = false;
+  };
+
+  const handleStart = (e) => {
+    isDraggingRef.current = true;
+    setIsDragging(true);
+    startXRef.current = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+    currentXRef.current = startXRef.current;
+    lastXRef.current = startXRef.current;
+    lastTimeRef.current = Date.now();
+  };
+
+  const handleMove = (e) => {
+    if (!isDraggingRef.current) return;
+    
+    e.preventDefault();
+    currentXRef.current = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+    const delta = currentXRef.current - lastXRef.current;
+    positionRef.current += delta;
+    
+    normalize();
+    
+    lastXRef.current = currentXRef.current;
+    lastTimeRef.current = Date.now();
+  };
+
+  const handleEnd = () => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    setIsDragging(false);
+  };
+
+  track.addEventListener('mouseenter', handleMouseEnter);
+  track.addEventListener('mouseleave', handleMouseLeave);
+  track.addEventListener('mousedown', handleStart);
+  document.addEventListener('mousemove', handleMove);
+  document.addEventListener('mouseup', handleEnd);
+  track.addEventListener('touchstart', handleStart, { passive: false });
+  document.addEventListener('touchmove', handleMove, { passive: false });
+  document.addEventListener('touchend', handleEnd);
+
+  setTimeout(() => {
+    animate();
+  }, 150);
+
+  return () => {
+    track.removeEventListener('mouseenter', handleMouseEnter);
+    track.removeEventListener('mouseleave', handleMouseLeave);
+    track.removeEventListener('mousedown', handleStart);
+    document.removeEventListener('mousemove', handleMove);
+    document.removeEventListener('mouseup', handleEnd);
+    track.removeEventListener('touchstart', handleStart);
+    document.removeEventListener('touchmove', handleMove);
+    document.removeEventListener('touchend', handleEnd);
+    if (animationIdRef.current) {
+      cancelAnimationFrame(animationIdRef.current);
+    }
+  };
+}, []);
   const cardData = [
     { tag: "website", title: "E-commerce Store", subtitle: "Furniture Store", img: p1 },
     { tag: "website", title: "IJK MEDIA", subtitle: "Company Site", img: p2 },
@@ -1208,8 +1324,10 @@ style={{
 
 
 </section>
-<section className="mywork text-center mt-5 pt-1">
-    <div className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
+<section className="mywork text-center mt-5 pt-1" style={{marginBottom: '150px'}}>
+  <div data-aos="fade-up" className="myworkheadings">
+
+    <div  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
         <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px',color: '#ffffff99'}}>My Work</h3>
     </div>
    <h1 className="text-white  resumesectionh1 text-center mt-3 fw-bolder" style={{fontSize: '60px'}}>Featured Projects
@@ -1220,7 +1338,9 @@ style={{
 >
   Showcasing my best work across frontend, backend, and full-stack development
 </p>
-    <div className="d-flex mt-3 justify-content-center  gap-4 p-5">
+  </div>
+
+    <div data-aos="fade-up" className="d-flex mt-3 justify-content-center  gap-4 p-5">
 <a  href="https://privsaaaa44.github.io/Eproject/home.html" className="projectcardlink" target="_blank">
 <div 
   className="projectcard rounded-4 shadow-lg border border-dark" 
@@ -1655,7 +1775,7 @@ During my internship at IJK Media, I developed a responsive CMS based blog websi
 
 
     
-    <div className="d-flex  justify-content-center  gap-4 mt-0">
+    <div data-aos="fade-up" className="d-flex  justify-content-center  gap-4 mt-0">
 <a  href="https://flavoura-best-resturant-in-pak.vercel.app" className="projectcardlink" target="_blank">
 <div 
   className="projectcard rounded-4 shadow-lg border border-dark" 
@@ -1951,6 +2071,7 @@ Bootstrap
 </a>
 
     </div>
+    <div data-aos="fade-up" className="myworklastheading">
 <h6 className="fs-6 mt-5 p-4" style={{color: '#ffffff99'}}>Want to see more of my work?</h6>
 <a className="fs-6" target="_blank" href="https://github.com/privsaaaa44">
 <button className="btn  border border-secondary border-1 fs-6 rounded-pill p-3 githubworkbutton" style={{width: '19%'}}>
@@ -1958,6 +2079,32 @@ Bootstrap
 </button>
 
 </a>
+</div>
+<div className="myworklastonebikul" style={{marginTop: '130px', }}>  
+<div className="d-flex gap-0 align-item-center" style={{userSelect: 'none', cursor: isDragging ?  'grabbing' : 'grab'}}>
+<div className="w-100 position-relative">
+<div ref={trackRef} className="d-flex" style={{whiteSpace: 'nowrap', willChange: 'transform'}}>
+  {/* Set 1 */}
+  <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{fontSize: '64px', flexShrink: '0'}}>
+    LET'S <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    CREATE <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    AND <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    DEVELOP <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    SOFTWARE <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+  </div>
+  
+  {/* Set 2 */}
+  <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{fontSize: '64px', flexShrink: '0'}}>
+    LET'S <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    CREATE <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    AND <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    DEVELOP <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+    SOFTWARE <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
+  </div>
+</div>
+</div>
+</div>
+</div>
 </section>
       {/* <br />
       <br />

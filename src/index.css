@@ -110,7 +110,7 @@
 
 .projectcard:hover {
   transform: scale(1.02);
-box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.15) !important;
+box-shadow: 1px 1px 8px 2px  rgba(230, 227, 227, 0.15)  !important;
 }
 
 .projectcard:hover::after {
