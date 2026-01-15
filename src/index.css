@@ -184,10 +184,14 @@ font-family: 'Melodrama', serif;
  .container-fluid.justify-content-between.align-items-center {
     justify-content: center !important;
 }
-.card-1:hover {
-  transform:  scale(1.03) !important;
-  transition:all 0.3 ease-in-out !important;
+.d-flex.justify-content-center.mt-5.flex-column.flex-md-row.px-3.px-md-0 {
+    gap: 1.9rem;
+}
+.card-1 {
+  /* transform:  scale(1.03) !important; */
+  /* transition:all 0.3 ease-in-out !important; */
    /* transition: 0.5s ease-in-out, opacity 0.5s ease; */
+  /* gap: 1.9rem !important; */
    opacity: 1;  
    color: white;
      transform: translateY(-5px) scale(1.02); /* slight lift and zoom */

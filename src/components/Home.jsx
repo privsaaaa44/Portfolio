@@ -219,7 +219,7 @@ useEffect(() => {
 
   const animate = () => {
     if (!isDraggingRef.current) {
-      const speed = -3;
+      const speed = -1.5;
       positionRef.current += speed;
       normalize();
     }
@@ -2080,10 +2080,10 @@ Bootstrap
 
 </a>
 </div>
-<div className="myworklastonebikul" style={{marginTop: '130px', }}>  
-<div className="d-flex gap-0 align-item-center" style={{userSelect: 'none', cursor: isDragging ?  'grabbing' : 'grab'}}>
-<div className="w-100 position-relative">
-<div ref={trackRef} className="d-flex" style={{whiteSpace: 'nowrap', willChange: 'transform'}}>
+<div className="myworklastonebikul" style={{marginTop: '130px'}}>  
+<div className="d-flex gap-0 align-items-center" style={{userSelect: 'none', cursor: isDragging ? 'grabbing' : 'grab'}}>
+<div className="w-100 position-relative" style={{overflow: 'hidden'}}>
+<div ref={trackRef} className="d-flex align-items-center" style={{whiteSpace: 'nowrap', willChange: 'transform'}}>
   {/* Set 1 */}
   <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{fontSize: '64px', flexShrink: '0'}}>
     LET'S <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
@@ -2094,7 +2094,7 @@ Bootstrap
   </div>
   
   {/* Set 2 */}
-  <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{fontSize: '64px', flexShrink: '0'}}>
+  <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{fontSize: '64px', flexShrink: '0', lineHeight: '1'}}>
     LET'S <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
     CREATE <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
     AND <span className="mx-3" style={{fontSize: "64px"}}>✦</span>
@@ -2140,6 +2140,136 @@ Bootstrap
        */}
     
     </div>
+      <div id="contactpage">
+           <div  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
+        <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px',color: '#ffffff99'}}>Let's Connect</h3>
+    </div>
+        <h1 className="text-center mt-2 fw-bold w-100" style={{fontSize: '72px'}}>Get In Touch</h1>
+        <p className="text-secondary text-center  px-md-0 w-100 mt-1" style={{fontSize: '20px'}}>
+         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        </p>
+        <br />
+        
+        {/* Contact Cards - Responsive Layout */}
+        <div className="d-flex justify-content-center mt-5  flex-column flex-md-row px-3 px-md-0" style={{}}>
+          <a className="card1link"  href="mailto:sadiqsiraj44@gmail.com">
+          <div className="abcdef rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
+       <div 
+  className="d-flex justify-content-center align-items-center m-4"
+  style={{ 
+    width: "64px",
+    height: "64px", 
+    borderRadius: '14px',
+    backgroundColor: '#1C1C1E'
+  }}
+>
+  <MdOutlineEmail 
+    color="text-white ms-3" 
+    style={{
+      width: '28px', 
+      height: '28px',
+      color: 'white'
+    }}
+  />
+</div>
+            <div className="newone m-4">
+              <h5 className="text-white fs-5 firstone mt-4">Email me</h5>
+              <h6 className="text-secondary  firstone mt-2" style={{fontSize: '14px'}}>Drop me a text anytime</h6>
+              <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>sadiqsiraj44@gmail.com</h5>
+            </div>
+          </div>
+</a>
+           <div className="abcdef  rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
+       <div 
+  className="d-flex justify-content-center align-items-center m-4"
+  style={{ 
+    width: "64px",
+    height: "64px", 
+    borderRadius: '14px',
+    backgroundColor: '#1C1C1E'
+  }}
+>
+  <LuPhone
+    color="text-white ms-3" 
+    style={{
+      width: '28px', 
+      height: '28px',
+      color: 'white'
+    }}
+  />
+</div>
+            <div className="newone m-4">
+              <h5 className="text-white fs-5 firstone mt-4">Call me</h5>
+              <h6 className="text-secondary  firstone mt-2" style={{fontSize: '14px'}}>Mon-Fri from 9am to 6am</h6>
+              <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>+92 315 2453522</h5>
+            </div>
+          </div>
+      <div className="abcdef  rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
+       <div 
+  className="d-flex justify-content-center align-items-center m-4"
+  style={{ 
+    width: "64px",
+    height: "64px", 
+    borderRadius: '14px',
+    backgroundColor: '#1C1C1E'
+  }}
+>
+  <FiMapPin 
+    color="text-white ms-3" 
+    style={{
+      width: '28px', 
+      height: '28px',
+      color: 'white'
+    }}
+  />
+</div>
+            <div className="newone m-4">
+              <h5 className="text-white fs-5 firstone mt-4">Visit me</h5>
+              <h6 className="text-secondary  firstone mt-2" style={{fontSize: '14px'}}>Come say hello</h6>
+              <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>Pakistan, karachi</h5>
+            </div>
+          </div>
+        </div>
+        
+        <br />
+        <h3 className="text-center text-white mt-3 fw-bold" style={{ fontSize: '30px' }}>Connect on Social Media</h3>
+        
+        {/* Social Media Cards - Responsive Layout */}
+        <div className="d-flex justify-content-center gap-4 flex-column flex-md-row px-3 px-md-0">
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1  border border-dark" style={{  height: '104px', background: '#0f0f0f', width: '434px' }}>
+            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
+              <div className="d-flex">
+              <div 
+  className="bg-dark d-flex align-items-center justify-content-center"
+  style={{ 
+    width: "56px !important", 
+    height: "56px !important", 
+    borderRadius: '12px !important',
+    backgroundColor: '#1a1a1a',
+    marginTop: '19px'
+  }}
+>
+  <FiGithub 
+    color="white" 
+    style={{ 
+      width: '24px', 
+      height: '24px' 
+    }} 
+  />
+</div>
+                <div className="newone mt-4 smallone">
+                  <h5 className="text-secondary fs-6">Github</h5>
+                  <h6 className="text-white fs-6 mt-2">@privsaaaa44</h6>
+                </div>
+                <div>
+                  <BsBoxArrowUpRight color="gray" className="fs-6" style={{ marginTop: '35px' }} />
+                </div>
+              </div>  
+            </a>
+          </div>
+          
+        </div>
+      </div>
   <style>
     {`
             @keyframes spin-slow {
@@ -2178,10 +2308,10 @@ transition: all 0.3 ease;
     
     }
  
-.emailicon {
-margin-top: 8px !important;
+// .emailicon {
+// margin-top: 8px !important;
 
-}
+// }
   
   // canvas {
   //     pointer-events: none !important;
