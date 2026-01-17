@@ -2140,22 +2140,40 @@ Bootstrap
        */}
     
     </div>
-      <div id="contactpage">
-           <div  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
-        <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px',color: '#ffffff99'}}>Let's Connect</h3>
-    </div>
+      <div id="contactpage"> 
+
+
+   <div  
+  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" 
+  style={{
+    background: 'rgb(15, 15, 15)', 
+    width: 'fit-content'
+  }}
+>
+  
+  <h3 
+    className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0" 
+    style={{
+      fontSize: '14px',
+      color: '#ffffff99',
+      fontWeight: '500'
+    }}
+  >
+    Let's Connect
+  </h3>
+</div>
         <h1 className="text-center mt-2 fw-bold w-100" style={{fontSize: '72px'}}>Get In Touch</h1>
-        <p className="text-secondary text-center  px-md-0 w-100 mt-1" style={{fontSize: '20px'}}>
+        <p className="text-center  px-md-0 w-100 mt-1" style={{fontSize: '20px', color:'#ffffff99'}}>
          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
         </p>
         <br />
         
         {/* Contact Cards - Responsive Layout */}
         <div className="d-flex justify-content-center mt-5  flex-column flex-md-row px-3 px-md-0" style={{}}>
-          <a className="card1link"  href="mailto:sadiqsiraj44@gmail.com">
+          <a className="card1link"  href="mailto:sadiqsiraj44@gmail.com" target="_blank">
           <div className="abcdef rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
        <div 
-  className="d-flex justify-content-center align-items-center m-4"
+  className="d-flex justify-content-center align-items-center m-4 email-icon404"
   style={{ 
     width: "64px",
     height: "64px", 
@@ -2173,15 +2191,15 @@ Bootstrap
   />
 </div>
             <div className="newone m-4">
-              <h5 className="text-white fs-5 firstone mt-4">Email me</h5>
-              <h6 className="text-secondary  firstone mt-2" style={{fontSize: '14px'}}>Drop me a text anytime</h6>
-              <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>sadiqsiraj44@gmail.com</h5>
+              <h5 className="text-white fs-5 firstone mt-4 fw-bold">Email me</h5>
+              <h6 className="firstone mt-2 fw-normal" style={{fontSize: '14px', color:'#ffffff99'}}>Drop me a text anytime</h6>
+              <h5 className="text-white  firston mt-3 fw-medium" style={{fontSize: '18px'}}>sadiqsiraj44@gmail.com</h5>
             </div>
           </div>
 </a>
            <div className="abcdef  rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
        <div 
-  className="d-flex justify-content-center align-items-center m-4"
+  className="d-flex justify-content-center align-items-center m-4 email-icon404"
   style={{ 
     width: "64px",
     height: "64px", 
@@ -2199,14 +2217,14 @@ Bootstrap
   />
 </div>
             <div className="newone m-4">
-              <h5 className="text-white fs-5 firstone mt-4">Call me</h5>
-              <h6 className="text-secondary  firstone mt-2" style={{fontSize: '14px'}}>Mon-Fri from 9am to 6am</h6>
+              <h5 className="text-white fs-5 firstone mt-4 fw-bold">Call me</h5>
+              <h6 className="firstone mt-2 fw-normal" style={{fontSize: '14px', color:'#ffffff99'}}>Mon-Fri from 9am to 6am</h6>
               <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>+92 315 2453522</h5>
             </div>
           </div>
       <div className="abcdef  rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
        <div 
-  className="d-flex justify-content-center align-items-center m-4"
+  className="d-flex justify-content-center align-items-center m-4 email-icon404"
   style={{ 
     width: "64px",
     height: "64px", 
@@ -2224,8 +2242,8 @@ Bootstrap
   />
 </div>
             <div className="newone m-4">
-              <h5 className="text-white fs-5 firstone mt-4">Visit me</h5>
-              <h6 className="text-secondary  firstone mt-2" style={{fontSize: '14px'}}>Come say hello</h6>
+              <h5 className="text-white fs-5 firstone mt-4 fw-bold">Visit me</h5>
+              <h6 className="firstone mt-2 fw-normal" style={{fontSize: '14px', color:'#ffffff99'}}>Come say hello</h6>
               <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>Pakistan, karachi</h5>
             </div>
           </div>
@@ -2235,17 +2253,19 @@ Bootstrap
         <h3 className="text-center text-white mt-3 fw-bold" style={{ fontSize: '30px' }}>Connect on Social Media</h3>
         
         {/* Social Media Cards - Responsive Layout */}
-        <div className="d-flex justify-content-center gap-4 flex-column flex-md-row px-3 px-md-0">
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1  border border-dark" style={{  height: '104px', background: '#0f0f0f', width: '434px' }}>
+        <div className="d-flex justify-content-center  flex-column flex-md-row px-3 px-md-0" style={{ gap: '1.5rem'}}>
+          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1_1  border border-dark" style={{  height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
             <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
               <div className="d-flex">
-              <div 
-  className="bg-dark d-flex align-items-center justify-content-center"
+<div  className="email-icon404"
   style={{ 
-    width: "56px !important", 
-    height: "56px !important", 
-    borderRadius: '12px !important',
+    width: "56px", 
+    height: "56px", 
+    borderRadius: '12px',
     backgroundColor: '#1a1a1a',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: '19px'
   }}
 >
@@ -2256,17 +2276,51 @@ Bootstrap
       height: '24px' 
     }} 
   />
-</div>
+</div>  
                 <div className="newone mt-4 smallone">
-                  <h5 className="text-secondary fs-6">Github</h5>
-                  <h6 className="text-white fs-6 mt-2">@privsaaaa44</h6>
+                  <h5 className="fw-medium" style={{fontSize: '14px',color:'#ffffff99'}}>GitHub</h5>
+                  <h6 className="text-white fs-6 fw-semibold">@privsaaaa44</h6>
                 </div>
                 <div>
-                  <BsBoxArrowUpRight color="gray" className="fs-6" style={{ marginTop: '35px' }} />
+                  <BsBoxArrowUpRight  className="fs-6 arrowicon" style={{ marginTop: '35px', color:'#ffffff99' }} />
                 </div>
               </div>  
             </a>
           </div>
+    <div className="abcdef fs-5 py-2 px-3 mt-4 card-1_1 border border-dark" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
+  <a href="https://www.linkedin.com/in/muhammad-sadiq-1abbba36b" target="_blank" rel="noopener noreferrer">
+    <div className="d-flex align-items-center mt-3">
+      <div 
+        className="email-icon404"
+        style={{ 
+          width: "56px", 
+          height: "56px", 
+          borderRadius: '12px',
+          backgroundColor: '#1a1a1a',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <FiLinkedin 
+          color="white" 
+          style={{ 
+            width: '24px', 
+            height: '24px' 
+          }} 
+        />
+      </div>  
+      <div className="newone ms-3">
+        <h5 className="fw-medium" style={{ fontSize: '14px', color:'#ffffff99' }}>LinkedIn</h5>
+        <h6 className="text-white fs-6 fw-semibold">@muhammad-sadiq</h6>
+      </div>
+      <div className="ms-auto">
+        <BsBoxArrowUpRight className="fs-6 arrowicon" style={{ color:'#ffffff99' }} />
+      </div>
+    </div>  
+  </a>
+</div>
+
           
         </div>
       </div>
