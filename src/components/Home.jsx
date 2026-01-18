@@ -13,7 +13,7 @@ import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import Snowfall from 'react-snowfall';
 import {Code,Layers,Database,Server,Phone,Mail,MapPin,Globe,Github,Linkedin,Download,Calendar,Circle,Award,MoveRight, ExternalLink} from 'lucide-react'
-
+import Contact from "./Contact"
 // Assets
 import tp from "../assets/tp.png";
 import jslogo from "../assets/jslogo.svg";
@@ -329,14 +329,20 @@ useEffect(() => {
     <>
     <div>
       {/* Header Section */}
-  <section className="firstsection mt-3">
+  <section className="firstsection mt-3" id="homepage">
     <div className="firstdiv">
       <h1 className="text-center h1class mt-2 fw-bold" style={{fontSize: '72px', color: '#CFD0D0'}} >Hi, I'm</h1>
       <h1 className="text-center h2class fw-bold" style={{fontSize: '72px', color: '#767777'}} >Muhammad Sadiq</h1>
       <h1 className="text-center h3class text-white mt-4 fw-lighter" style={{fontSize: '30px'}} >Frontend Developer |</h1>
      <center>
-      <hr className="classhr w-25 text-center h-25 fw-bold text-secondary"/>
-     </center>
+<hr
+  style={{
+    border: "none",
+    height: "3px",
+    width: '35%'  ,
+    background: "linear-gradient(to right, transparent, #ffffff99, transparent)",
+  }}
+/>     </center>
 <div className="3col d-flex justify-content-evenly">
   <div className="1col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >20+</h1></div>
   <div className="2col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >12+</h1></div>
@@ -529,7 +535,7 @@ useEffect(() => {
 </div>
 </div>
     </div>
-  </section>
+
 
     
 <div className="skill section">
@@ -654,7 +660,8 @@ useEffect(() => {
     </div>
   </div>
 </div>
-<section className="resumesection">
+  </section>
+<section className="resumesection mt-4" id="resumepage">
   <div className="animationresumespecificsection" data-aos="fade-up">
 <div className="d-flex justify-content-center">
   <div className="resumesectiondiv resumesectiondiv text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width: 'fit-content'}}>
@@ -667,7 +674,7 @@ useEffect(() => {
 </div>
 <br />
 <div className="d-flex justify-content-center resumesectionresumediv mt-5 ">
-  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1200px', height: '240vh', }}>
+  <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1152px', height: '240vh', }}>
     <div className="firstcolumn p-3 py-4 px-4" style={{ width: '30%', backgroundColor: '#191919'}} > 
       <div className="contactinfo mt-2" data-aos="fade-up"> 
         <div className="firstone fs-5 text-white fw-bold">
@@ -677,21 +684,21 @@ useEffect(() => {
         <div className="secondone mt-2 secondoneallofit">
                 <a className="text-secondary" href="mailto:sadiqsiraj44@gmail.com" target="_blank">
           <Mail className="me-2" width={14} height={14} />   
-           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>sadiqsiraj44@gmail.com</span>
+           <span className="contactinfospan fs-6 fw-lighter" style={{color: '#ffffff99'}}>sadiqsiraj44@gmail.com</span>
       </a>
        </div>
         <div className="thirdone mt-2 secondoneallofit">
                 <a className="text-secondary" href="https://wa.me/923152453522" target="_blank">
           <Phone className="me-2" width={14} height={14} />
 
-           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>+923152453522</span>
+           <span className="contactinfospan fs-6 fw-lighter" style={{color: '#ffffff99'}}>+92 315 2453522</span>
       </a>
        </div>
         <div className="fourthone mt-2 secondoneallofit">
                 <a className="text-secondary">
           <MapPin className="me-2 text-seondary" width={14} height={14} />
 
-           <span className="contactinfospan fs-6 fw-light" style={{color: '#ffffff99'}}>Pakistan</span>
+           <span className="contactinfospan fs-6 fw-lighter" style={{color: '#ffffff99'}}>Pakistan</span>
       </a>
        </div>
    
@@ -704,7 +711,7 @@ useEffect(() => {
         <div className="secondone mt-2 secondoneallofit">
                 <a className="text-secondary" href="https://github.com/privsaaaa44" target="_blank">
           <Github className="me-2" width={14} height={14} />   
-           <span className="contactinfospan  fs-6 fw-light" style={{color: '#ffffff99'}}>github.com/privsaaaa44</span>
+           <span className="contactinfospan  fs-6 fw-lighter" style={{color: '#ffffff99'}}>github.com/privsaaaa44</span>
       </a>
        </div>
         <div className="thirdone mt-2 secondoneallofit">
@@ -1056,7 +1063,7 @@ Time Management
     <div className="secondcolumn border-start border-dark  p-3 py-4 px-4 ps-4 pt-4" style={{ width: '70%', backgroundColor: '#0D0D0D', }} >
         <div  data-aos="fade-up" className="intro">
 <h1 className="introdivh1 fs-4 text-white fw-bold">Introduction</h1>
-<hr style={{background:'#FF0000'}} />
+<hr style={{color: '#ffffff99'}} />
 <h5 style={{color:'#ffffff99', width: '100%'}} className="introp pe-1 fs-6 text-left lh-base ms-0 me-0 w-100">I build production-grade, maintainable, and performant web UIs with
 reusable components, state management, routing, forms, and serverside rendering. I optimize frontend performance through lazy loading,
 code splitting, memoization, and caching, and implement secure
@@ -1071,7 +1078,7 @@ environments while monitoring frontend health with logs and metric.
   <Calendar width={18} height={18} style={{color: '#ffffff99'}} />
   <span className="espan text-white fw-bold fs-4 p-2">Work Experience</span>
 </div>
-<hr className="mt-0" style={{background:'#FF0000'}} />
+<hr className="mt-0" style={{ color: '#ffffff99'}} />
 <div  data-aos="fade-right"   data-aos-offset="100"
      data-aos-easing="ease-in-sine" className="flex justify-center items-center">
   <div className="d-flex align-items-center mt-4">
@@ -1177,7 +1184,7 @@ functional web pages.</span></li>
 <div className="experience mt-5 d-flex align-items-center">
   <span className="espan text-white fw-bold fs-4 mb-2">Education</span>
 </div>
-<hr className="mt-0" style={{background:'#FF0000'}} />
+<hr className="mt-0" style={{color: '#ffffff99'}} />
 <div  data-aos="fade-right"   data-aos-offset="100"
      data-aos-easing="ease-in-sine" className="flex justify-center items-center">
  <div className="d-flex align-items-center mt-4">
@@ -1255,7 +1262,7 @@ Matriculation in Computer Science
   <Award width={18} height={18} style={{color: '#ffffff99'}} />
   <span className="espan text-white fw-bold fs-4 p-2">Certifications</span>
 </div>
-<hr className="mt-0" style={{background:'#FF0000'}} />
+<hr className="mt-0" style={{color: '#ffffff99'}} />
 </div>
 </div>
   </div>
@@ -1324,7 +1331,7 @@ style={{
 
 
 </section>
-<section className="mywork text-center mt-5 pt-1" style={{marginBottom: '150px'}}>
+<section id="projectpage" className="mywork text-center mt-5 pt-1" style={{marginBottom: '150px'}}>
   <div data-aos="fade-up" className="myworkheadings">
 
     <div  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
@@ -2106,224 +2113,12 @@ Bootstrap
 </div>
 </div>
 </section>
-      {/* <br />
-      <br />
-      <br />
-      <br /> 
-      <div style={{
-    position: 'absolute',
-    top: '80px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '180px',
-    height: '180px',
-    background: 'radial-gradient(circle, rgba(100, 100, 100, 0.4) 0%, rgba(80, 80, 80, 0.2) 30%, transparent 60%)',
-    filter: 'blur(50px)',
-    borderRadius: '50%',
-    zIndex: 0
-  }}></div>
-      <div className="d-flex justify-content-center mt-5">
-             <Snowfall
-        style={{
-        position: 'absolute',
-          width: '50vh',
-          height: '50vh',
-          zIndex: 1000,
-          top: '90%'
-        }}
-        snowflakeCount={200}
-      />
-        <h4 className="abcdef text-center border border-dark  rounded-pill py-2 px-3 w-10 mt-4 fw-light" style={{fontSize: '14px', color: '#978f8f'}}>
-          Let's Connect
-        </h4>
-      </div>
-       */}
+    
     
     </div>
-      <div id="contactpage"> 
-
-
-   <div  
-  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" 
-  style={{
-    background: 'rgb(15, 15, 15)', 
-    width: 'fit-content'
-  }}
->
-  
-  <h3 
-    className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0" 
-    style={{
-      fontSize: '14px',
-      color: '#ffffff99',
-      fontWeight: '500'
-    }}
-  >
-    Let's Connect
-  </h3>
-</div>
-        <h1 className="text-center mt-2 fw-bold w-100" style={{fontSize: '72px'}}>Get In Touch</h1>
-        <p className="text-center  px-md-0 w-100 mt-1" style={{fontSize: '20px', color:'#ffffff99'}}>
-         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-        </p>
-        <br />
-        
-        {/* Contact Cards - Responsive Layout */}
-        <div className="d-flex justify-content-center mt-5  flex-column flex-md-row px-3 px-md-0" style={{}}>
-          <a className="card1link"  href="mailto:sadiqsiraj44@gmail.com" target="_blank">
-          <div className="abcdef rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
-       <div 
-  className="d-flex justify-content-center align-items-center m-4 email-icon404"
-  style={{ 
-    width: "64px",
-    height: "64px", 
-    borderRadius: '14px',
-    backgroundColor: '#1C1C1E'
-  }}
->
-  <MdOutlineEmail 
-    color="text-white ms-3" 
-    style={{
-      width: '28px', 
-      height: '28px',
-      color: 'white'
-    }}
-  />
-</div>
-            <div className="newone m-4">
-              <h5 className="text-white fs-5 firstone mt-4 fw-bold">Email me</h5>
-              <h6 className="firstone mt-2 fw-normal" style={{fontSize: '14px', color:'#ffffff99'}}>Drop me a text anytime</h6>
-              <h5 className="text-white  firston mt-3 fw-medium" style={{fontSize: '18px'}}>sadiqsiraj44@gmail.com</h5>
-            </div>
-          </div>
-</a>
-           <div className="abcdef  rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
-       <div 
-  className="d-flex justify-content-center align-items-center m-4 email-icon404"
-  style={{ 
-    width: "64px",
-    height: "64px", 
-    borderRadius: '14px',
-    backgroundColor: '#1C1C1E'
-  }}
->
-  <LuPhone
-    color="text-white ms-3" 
-    style={{
-      width: '28px', 
-      height: '28px',
-      color: 'white'
-    }}
-  />
-</div>
-            <div className="newone m-4">
-              <h5 className="text-white fs-5 firstone mt-4 fw-bold">Call me</h5>
-              <h6 className="firstone mt-2 fw-normal" style={{fontSize: '14px', color:'#ffffff99'}}>Mon-Fri from 9am to 6am</h6>
-              <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>+92 315 2453522</h5>
-            </div>
-          </div>
-      <div className="abcdef  rounded-4 fs-5  py-2 px-2 mt-4 card-1  border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
-       <div 
-  className="d-flex justify-content-center align-items-center m-4 email-icon404"
-  style={{ 
-    width: "64px",
-    height: "64px", 
-    borderRadius: '14px',
-    backgroundColor: '#1C1C1E'
-  }}
->
-  <FiMapPin 
-    color="text-white ms-3" 
-    style={{
-      width: '28px', 
-      height: '28px',
-      color: 'white'
-    }}
-  />
-</div>
-            <div className="newone m-4">
-              <h5 className="text-white fs-5 firstone mt-4 fw-bold">Visit me</h5>
-              <h6 className="firstone mt-2 fw-normal" style={{fontSize: '14px', color:'#ffffff99'}}>Come say hello</h6>
-              <h5 className="text-white  firston mt-3" style={{fontSize: '18px'}}>Pakistan, karachi</h5>
-            </div>
-          </div>
-        </div>
-        
-        <br />
-        <h3 className="text-center text-white mt-3 fw-bold" style={{ fontSize: '30px' }}>Connect on Social Media</h3>
-        
-        {/* Social Media Cards - Responsive Layout */}
-        <div className="d-flex justify-content-center  flex-column flex-md-row px-3 px-md-0" style={{ gap: '1.5rem'}}>
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1_1  border border-dark" style={{  height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
-            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer">
-              <div className="d-flex">
-<div  className="email-icon404"
-  style={{ 
-    width: "56px", 
-    height: "56px", 
-    borderRadius: '12px',
-    backgroundColor: '#1a1a1a',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '19px'
-  }}
->
-  <FiGithub 
-    color="white" 
-    style={{ 
-      width: '24px', 
-      height: '24px' 
-    }} 
-  />
-</div>  
-                <div className="newone mt-4 smallone">
-                  <h5 className="fw-medium" style={{fontSize: '14px',color:'#ffffff99'}}>GitHub</h5>
-                  <h6 className="text-white fs-6 fw-semibold">@privsaaaa44</h6>
-                </div>
-                <div>
-                  <BsBoxArrowUpRight  className="fs-6 arrowicon" style={{ marginTop: '35px', color:'#ffffff99' }} />
-                </div>
-              </div>  
-            </a>
-          </div>
-    <div className="abcdef fs-5 py-2 px-3 mt-4 card-1_1 border border-dark" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
-  <a href="https://www.linkedin.com/in/muhammad-sadiq-1abbba36b" target="_blank" rel="noopener noreferrer">
-    <div className="d-flex align-items-center mt-3">
-      <div 
-        className="email-icon404"
-        style={{ 
-          width: "56px", 
-          height: "56px", 
-          borderRadius: '12px',
-          backgroundColor: '#1a1a1a',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        <FiLinkedin 
-          color="white" 
-          style={{ 
-            width: '24px', 
-            height: '24px' 
-          }} 
-        />
-      </div>  
-      <div className="newone ms-3">
-        <h5 className="fw-medium" style={{ fontSize: '14px', color:'#ffffff99' }}>LinkedIn</h5>
-        <h6 className="text-white fs-6 fw-semibold">@muhammad-sadiq</h6>
-      </div>
-      <div className="ms-auto">
-        <BsBoxArrowUpRight className="fs-6 arrowicon" style={{ color:'#ffffff99' }} />
-      </div>
-    </div>  
-  </a>
-</div>
-
-          
-        </div>
-      </div>
+    <section id="contactpage">
+   <Contact/>
+   </section>
   <style>
     {`
             @keyframes spin-slow {

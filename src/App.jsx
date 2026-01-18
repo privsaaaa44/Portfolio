@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import './App.css';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <br />
         <div className="content-wrapper">
           <Home />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </>

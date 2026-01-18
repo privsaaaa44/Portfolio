@@ -37,11 +37,12 @@
   ) 
 }
 .secondcolumn {
-    background: linear-gradient(
-      to  bottom right, 
-      rgba(230, 227, 227, 0.05), 
-      rgba(0,0,0,0.2)
-    ) 
+background: linear-gradient(
+  to bottom right,
+  rgba(13, 13, 13, 0.08),  /* start light */
+  rgba(13, 13, 13, 0.18)   /* right side zyada dark */
+);
+
 }
 .projectcard {
   overflow: hidden;

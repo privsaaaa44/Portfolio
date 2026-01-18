@@ -61,7 +61,7 @@ const Navbar = () => {
               <HiOutlineHome className="fs-5 me-1 homeicon" />
               <span className="navbarlink text-white fw-light">Home</span>
             </a>
-            <a className="nav-link fs-6 aboutnav-link" href="#">
+            <a className="nav-link fs-6 aboutnav-link" href="#resumepage">
               <HiOutlineDocumentText className="fs-5 me-1" />
               <span className="navbarlink fw-light">Resume</span>
             </a>
