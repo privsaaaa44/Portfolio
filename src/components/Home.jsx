@@ -1095,7 +1095,7 @@ environments while monitoring frontend health with logs and metric.
   <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
     <h4
       className="fw-bolder mb-0"
-      style={{ fontSize: '14px', color: '#6a7282' }}
+      style={{ fontSize: '14px', color:'#ffffff99' }}
     >
     Digitalaz Solution
     </h4>
@@ -1145,7 +1145,7 @@ Sep 2025
   <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
     <h4
       className="fw-bolder mb-0"
-      style={{ fontSize: '14px', color: '#6a7282' }}
+      style={{ fontSize: '14px', color:'#ffffff99' }}
     >
    IJK Media 
     </h4>
@@ -1219,7 +1219,7 @@ functional web pages.</span></li>
   <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
     <h4
       className="fw-bolder mb-0"
-      style={{ fontSize: '14px', color: '#6a7282' }}
+      style={{ fontSize: '14px',color:'#ffffff99' }}
     >
 Intermediate in Computer Science
     </h4>
@@ -1246,7 +1246,7 @@ Intermediate in Computer Science
   <div className="d-flex align-items-center" style={{ paddingLeft: '36px' }}>
     <h4
       className="fw-bolder mb-0"
-      style={{ fontSize: '14px', color: '#6a7282' }}
+      style={{ fontSize: '14px', color:'#ffffff99'  }}
     >
 Matriculation in Computer Science
     </h4>
@@ -1270,9 +1270,9 @@ Matriculation in Computer Science
 <br />
 <div   data-aos="fade-up" className="resumesectionlastdiv">
 <p className="fs-6 resumesectionlastptag" style={{color:'#ffffff99'}}>Interested in working together?</p>
-<div className="d-flex justify-content-center mt-4">
-<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light fw-bolder">Let's Talks
-<span><MoveRight className="fs-6 ms-2 fw-lighter"/></span>
+<div className="d-flex justify-content-center mt-4 fs-6 fw-light">
+<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light  p-3 fs-6">Let's Talk
+<span><MoveRight style={{width: '16px', height: '16px'}} width={16} height={16} className="fs-6 ms-2 fw-lighter"/></span>
 
 </button>
 </div>
