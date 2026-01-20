@@ -15,12 +15,12 @@ const Navbar = () => {
   // Scroll listener
   useEffect(() => {
     let ticking = false;
-    
+
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          
+
           // Navbar compress/expand
           if (currentScrollY < 50) {
             setScrolled(false);
@@ -29,14 +29,14 @@ const Navbar = () => {
           } else if (currentScrollY < lastScrollY.current) {
             setScrolled(false);
           }
-          
+
           lastScrollY.current = currentScrollY;
 
           // Section detection
-          const homepage = document.getElementById('homepage');
-          const resumepage = document.getElementById('resumepage');
-          const projectpage = document.getElementById('projectpage');
-          const contactpage = document.getElementById('contactpage');
+          const homepage = document.getElementById("homepage");
+          const resumepage = document.getElementById("resumepage");
+          const projectpage = document.getElementById("projectpage");
+          const contactpage = document.getElementById("contactpage");
 
           const offset = 150;
 
@@ -73,54 +73,61 @@ const Navbar = () => {
               setActiveSection(0);
             }
           }
-          
+
           ticking = false;
         });
-        
+
         ticking = true;
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Toggle body class for top light
+  useEffect(() => {
+    if (scrolled) {
+      document.body.classList.add("nav-scrolled");
+    } else {
+      document.body.classList.remove("nav-scrolled");
+    }
+  }, [scrolled]);
 
   // Update slider
   useEffect(() => {
     const updateSliderPosition = () => {
       const slider = sliderRef.current;
       const navGlass = navGlassRef.current;
-      
+
       if (!slider || !navGlass) return;
 
-      const links = navGlass.querySelectorAll('.nav-link');
+      const links = navGlass.querySelectorAll(".nav-link");
       const activeLink = links[activeSection];
 
       if (activeLink) {
-        // Use requestAnimationFrame for smoother updates
         requestAnimationFrame(() => {
           void navGlass.offsetHeight;
-          
+
           const linkRect = activeLink.getBoundingClientRect();
           const navRect = navGlass.getBoundingClientRect();
-          
+
           const leftPos = linkRect.left - navRect.left;
           const width = linkRect.width;
-          
+
           slider.style.left = `${leftPos}px`;
           slider.style.width = `${width}px`;
         });
       }
     };
 
-    // Multiple updates for ultra-smooth transitions
     updateSliderPosition();
     const timer1 = setTimeout(updateSliderPosition, 50);
     const timer2 = setTimeout(updateSliderPosition, 150);
     const timer3 = setTimeout(updateSliderPosition, 320);
-    
+
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
@@ -133,7 +140,7 @@ const Navbar = () => {
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 100,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
     setActiveSection(index);
@@ -142,47 +149,56 @@ const Navbar = () => {
   return (
     <>
       <nav
-     
         className={`navbar naya navbar-dark bg-transparent custom-nav position-fixed ${
           scrolled ? "navbar-scrolled" : ""
         }`}
       >
-        <div className="container-fluid justify-content-center align-items-center">
-          <div className="nav-glass px-3 py-2 d-flex position-relative" ref={navGlassRef}>
-            
+        <div className="align-items-center">
+          <div
+            className="nav-glass px-3 py-2 d-flex position-relative"
+            ref={navGlassRef}
+          >
             <button
-            style={{fontSize:'14px',}}
-              onClick={() => scrollToSection('homepage', 0)}
-              className={`nav-link ${activeSection === 0 ? 'active' : ''} homenav-link`}
+              style={{ fontSize: "14px" }}
+              onClick={() => scrollToSection("homepage", 0)}
+              className={`nav-link ${
+                activeSection === 0 ? "active" : ""
+              } homenav-link`}
             >
               <HiOutlineHome className="fs-5 me-1 homeicon" />
               <span className="navbarlink text-white">Home</span>
             </button>
-            
+
             <button
-              onClick={() => scrollToSection('resumepage', 1)}
-              className={`nav-link ${activeSection === 1 ? 'active' : ''} aboutnav-link`}
+              onClick={() => scrollToSection("resumepage", 1)}
+              className={`nav-link ${
+                activeSection === 1 ? "active" : ""
+              } aboutnav-link`}
             >
               <HiOutlineDocumentText width={18} height={18} className="me-1" />
               <span className="navbarlink">Resume</span>
             </button>
-            
+
             <button
-              onClick={() => scrollToSection('projectpage', 2)}
-              className={`nav-link ${activeSection === 2 ? 'active' : ''} fs-6 projectnav-link`}
+              onClick={() => scrollToSection("projectpage", 2)}
+              className={`nav-link ${
+                activeSection === 2 ? "active" : ""
+              } fs-6 projectnav-link`}
             >
               <PiSuitcaseSimpleBold width={18} height={18} className="me-1" />
               <span className="navbarlink">Project</span>
             </button>
-            
+
             <button
-              onClick={() => scrollToSection('contactpage', 3)}
-              className={`nav-link ${activeSection === 3 ? 'active' : ''} fs-6 contactnav-link`}
+              onClick={() => scrollToSection("contactpage", 3)}
+              className={`nav-link ${
+                activeSection === 3 ? "active" : ""
+              } fs-6 contactnav-link`}
             >
               <IoMailOutline width={18} height={18} className="me-1" />
               <span className="navbarlink">Contact</span>
             </button>
-            
+
             <div className="slider" ref={sliderRef}></div>
           </div>
         </div>
@@ -190,7 +206,7 @@ const Navbar = () => {
 
       <style>{`
         .custom-nav {
-          top: 20px;
+          top: 4px;
           width: 100%;
           z-index: 999 !important;
           transition: all 0.3s ease;
@@ -201,18 +217,18 @@ const Navbar = () => {
         .nav-glass {
           border: 1px solid #141417;
           background: #000000b3;
-          padding: 8px 0px !important;
+          padding: 7px 8px !important;
           gap: 0px;
-          border-radius: 51px !important;
+          border-radius: 30px !important;
           display: flex;
           align-items: center;
           transition: all 0.3s ease;
           position: relative;
           overflow: visible;
         }
- 
+
         .custom-nav.navbar-scrolled .nav-glass {
-          padding: 6px 0px !important;
+          padding: 7px 7px !important;
         }
 
         .navbarlink {
@@ -241,8 +257,8 @@ const Navbar = () => {
           color: rgba(255, 255, 255, 0.7);
           z-index: 2;
           background: transparent;
-          border: none;
-          outline: none;
+          border: none !important;
+          outline: none !important;
         }
 
         .nav-link.active {
@@ -258,7 +274,8 @@ const Navbar = () => {
         }
 
         .custom-nav.navbar-scrolled .slider {
-          height: calc(100% - 6px) !important;
+        width: 38px !important;
+        height: 34px !important;
           border-radius: 70px !important;
         }
 
@@ -267,40 +284,53 @@ const Navbar = () => {
           width:  18px !important;
           height: 18px !important;
         }
-        
-        .aboutnav-link:hover {
-          background: #262626;
-          border-radius: 20px;
-          transform: scale(1.1);
-          transition: all 0.4s ease;
-        }
-        .homenav-link:hover {
-          background: #262626;
-          border-radius: 20px;
-          transform: scale(1.1);
-          transition: all 0.4s ease;
+
+        .aboutnav-link,
+        .homenav-link,
+        .projectnav-link,
+        .contactnav-link {
+          transition: all 0.3s ease;
         }
 
-        .projectnav-link:hover {
-          background: #262626;
-          border-radius: 20px;
-          transform: scale(1.1);
-          transition: all 0.4s ease;
-        }
-
+        .aboutnav-link:hover,
+        .homenav-link:hover,
+        .projectnav-link:hover,
         .contactnav-link:hover {
           background: #262626;
-          border-radius: 20px;
-          transform: scale(1.1);
-          transition: all 0.4s ease;
+          border-radius: 25px;
+          transform: scale(1.06);
+        }
+
+        /* Top ambient light */
+        body::before {
+          content: "";
+          position: fixed;
+          top: -220px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 620px;
+          height: 520px;
+          background: radial-gradient(
+            ellipse at top,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.04),
+            transparent 65%
+          );
+          pointer-events: none;
+          z-index: 0;
+          filter: blur(8px);
+          transition: opacity 0.3s ease;
+        }
+
+        body.nav-scrolled::before {
+          opacity: 0;
         }
 
         .slider {
-          position: absolute;
-          height: calc(100% - 8px);
-          width: auto;
+          position: absolute; 
+          height: 36px !important;
           background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 25px;
           transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                       width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
