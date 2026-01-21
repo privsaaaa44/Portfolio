@@ -329,31 +329,29 @@ useEffect(() => {
     <>
     <div>
       {/* Header Section */}
-  <section className="firstsection mt-3" id="homepage">
-    <div className="firstdiv">
-      <h1 className="text-center h1class mt-2 fw-bold" style={{fontSize: '72px', color: '#CFD0D0'}} >Hi, I'm</h1>
-      <h1 className="text-center h2class fw-bold" style={{fontSize: '72px', color: '#767777'}} >Muhammad Sadiq</h1>
-      <h1 className="text-center h3class text-white mt-4 fw-lighter" style={{fontSize: '30px'}} >Frontend Developer |</h1>
+  <section className="firstsection mt-0" id="homepage">
+    <div className="firstdiv mt-0 p-0">
+      <h1 className="text-center h1class mt-0 fw-bold" style={{fontSize: '72px', color: '#CFD0D0'}} >Hi, I'm</h1>
+      <h1 className="text-center h2Lclass fw-bold mt-2"  style={{fontSize: '72px', color: '#767777'}} >Muhammad Sadiq</h1>
+      <h1 className="text-center h3class text-white fw-lighter" style={{fontSize: '30px', marginTop: '32px'}} >Frontend Developer</h1>
      <center>
-<hr
+<hr className="mt-4"
   style={{
     border: "none",
     height: "3px",
-    width: '35%'  ,
+    width: '40%'  ,
     background: "linear-gradient(to right, transparent, #ffffff99, transparent)",
   }}
 />     </center>
-<div className="3col d-flex justify-content-evenly">
-  <div className="1col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >20+</h1></div>
-  <div className="2col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >12+</h1></div>
-  <div className="3col"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >100+</h1></div>
+
+<div className="col3one">
+<div className="col3 d-flex justify-content-center align-items-center" style={{gap: '170px'}} >
+  <div className="col1 text-center"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >20+</h1><h1 className="text-uppercase fw-medium mt-2" style={{ fontSize: '14px',color: '#87909A'}}>projects completed</h1></div>
+  <div className="col2 text-center"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >12+</h1><h1 className="text-uppercase fw-medium mt-2"  style={{ fontSize: '14px',color: '#87909A'}}>Technologies</h1></div>
+  <div className="col3 text-center"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >100+</h1><h1 className="text-uppercase fw-medium mt-2" style={{fontSize: '14px',color: '#87909A'}}>client satisfaction</h1></div>
 </div>
-<div className="4col d-flex justify-content-evenly mt-2">
-  <div className="4col"><h1 className="text-uppercase" style={{ fontSize: '14px',color: '#787E89'}}>projects completed</h1></div>
-  <div className="5col"><h1 className="text-uppercase" style={{fontSize: '14px',color: '#787E89'}}>technologies</h1></div>
-  <div className="6col"><h1 className="text-uppercase me-4" style={{fontSize: '14px',color: '#787E89'}}>client satisfaction</h1></div>
-</div> 
-<div className="d-flex justify-content-evenly mt-5"> 
+</div>
+<div className="d-flex justify-content-evenly mt-5 "> 
 <div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
   <div className="mb-4">
     <svg width="50" height="50" fill="#6c757d" viewBox="0 0 24 24" className="">

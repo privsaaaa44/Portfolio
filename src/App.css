@@ -3,7 +3,39 @@
 .textone {  
   font-weight: 900 !important;
 }
+.col3one {
+  margin-top: 50px !important;
+}
+/* For Chromium browsers (Chrome, Edge, Opera, Safari) */
+::-webkit-scrollbar {
+  width: 5px; /* Width of vertical scrollbar */
+  height: 5px; /* Height of horizontal scrollbar */
+}
 
+::-webkit-scrollbar-track {
+  background: #0a0a0a; /* Dark background (matches dark theme) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444444; /* Dark gray thumb */
+  border-radius: 5px;
+  border: 2px solid #0a0a0a; /* Padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666; /* Lighter gray on hover */
+}
+
+/* Remove arrow buttons */
+::-webkit-scrollbar-button {
+  display: none !important;
+}
+
+/* For Firefox */
+* {
+  scrollbar-color: #444444 #0a0a0a;
+  scrollbar-width: thin;
+}
 html, body {
     margin: 0;
     padding: 0;

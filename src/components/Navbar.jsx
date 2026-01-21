@@ -4,7 +4,7 @@ import { HiOutlineHome } from "react-icons/hi2";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { PiSuitcaseSimpleBold } from "react-icons/pi";
 import { IoMailOutline } from "react-icons/io5";
-
+import {House, FileText, BriefcaseBusiness, Mail} from "lucide-react"
 const Navbar = () => {
   const sliderRef = useRef(null);
   const navGlassRef = useRef(null);
@@ -155,7 +155,7 @@ const Navbar = () => {
       >
         <div className="align-items-center">
           <div
-            className="nav-glass px-3 py-2 d-flex position-relative"
+            className="nav-glass px-3 py-1 d-flex  position-relative"
             ref={navGlassRef}
           >
             <button
@@ -165,8 +165,8 @@ const Navbar = () => {
                 activeSection === 0 ? "active" : ""
               } homenav-link`}
             >
-              <HiOutlineHome className="fs-5 me-1 homeicon" />
-              <span className="navbarlink text-white">Home</span>
+              <House className={`homeicon ${activeSection === 0 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink text-white" style={{marginLeft: '6px'}} >Home</span>
             </button>
 
             <button
@@ -175,8 +175,8 @@ const Navbar = () => {
                 activeSection === 1 ? "active" : ""
               } aboutnav-link`}
             >
-              <HiOutlineDocumentText width={18} height={18} className="me-1" />
-              <span className="navbarlink">Resume</span>
+              <FileText width={18} height={18} className={`${activeSection === 1 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink" style={{marginLeft: '6px'}} >Resume</span>
             </button>
 
             <button
@@ -185,8 +185,8 @@ const Navbar = () => {
                 activeSection === 2 ? "active" : ""
               } fs-6 projectnav-link`}
             >
-              <PiSuitcaseSimpleBold width={18} height={18} className="me-1" />
-              <span className="navbarlink">Project</span>
+              <BriefcaseBusiness width={18} height={18} className={`${activeSection === 2 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink" style={{marginLeft: '6px'}} >Project</span>
             </button>
 
             <button
@@ -195,8 +195,8 @@ const Navbar = () => {
                 activeSection === 3 ? "active" : ""
               } fs-6 contactnav-link`}
             >
-              <IoMailOutline width={18} height={18} className="me-1" />
-              <span className="navbarlink">Contact</span>
+              <Mail width={18} height={18} className={`${activeSection === 3 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink ms-1">Contact</span>
             </button>
 
             <div className="slider" ref={sliderRef}></div>
@@ -215,11 +215,12 @@ const Navbar = () => {
         }
 
         .nav-glass {
-          border: 1px solid #141417;
-          background: #000000b3;
-          padding: 7px 8px !important;
+          border: 1px solid #191919;
+          background: #00000066 !important;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px !important;
+          padding: 8px !important;
           gap: 0px;
-          border-radius: 30px !important;
+          border-radius: 3.40282e38px !important;
           display: flex;
           align-items: center;
           transition: all 0.3s ease;
@@ -229,7 +230,11 @@ const Navbar = () => {
 
         .custom-nav.navbar-scrolled .nav-glass {
           padding: 7px 7px !important;
-        }
+          border: 2px solid #191919 !important;
+          background : #000000b3 !important;
+              box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 32px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;
+      backdrop-filter: blur(12px) !important;
+              }
 
         .navbarlink {
           font-size: 14px;
@@ -266,7 +271,8 @@ const Navbar = () => {
         }
 
         .custom-nav.navbar-scrolled .nav-link {
-          padding: 6px 8px !important;
+          padding: 6px 10px !important;
+
         }
 
         .custom-nav.navbar-scrolled .nav-link svg {
@@ -280,7 +286,6 @@ const Navbar = () => {
         }
 
         .homeicon {
-          margin-left: 3px !important;
           width:  18px !important;
           height: 18px !important;
         }
@@ -291,7 +296,7 @@ const Navbar = () => {
         .contactnav-link {
           transition: all 0.3s ease;
         }
-
+  
         .aboutnav-link:hover,
         .homenav-link:hover,
         .projectnav-link:hover,
@@ -299,6 +304,20 @@ const Navbar = () => {
           background: #262626;
           border-radius: 25px;
           transform: scale(1.06);
+        }
+
+        /* Icon zoom animation */
+        @keyframes iconZoom {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.08);
+          }
+        }
+
+        .icon-zoom {
+          animation: iconZoom 1.5s ease-in-out infinite !important;
         }
 
         /* Top ambient light */
