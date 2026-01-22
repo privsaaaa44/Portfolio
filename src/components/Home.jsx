@@ -351,8 +351,8 @@ useEffect(() => {
   <div className="col3 text-center"><h1 className="text-white fw-bold" style={{fontSize: '36px'}} >100+</h1><h1 className="text-uppercase fw-medium mt-2" style={{fontSize: '14px',color: '#87909A'}}>client satisfaction</h1></div>
 </div>
 </div>
-<div className="d-flex justify-content-evenly mt-5 "> 
-<div className="rounded-4 p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
+<div className="d-flex justify-content-center" style={{marginTop: '60px', gap: '30px'}}> 
+<div className="p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px', borderRadius: '15px', }}>
   <div className="mb-4">
     <svg width="50" height="50" fill="#6c757d" viewBox="0 0 24 24" className="">
       <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
@@ -400,7 +400,7 @@ useEffect(() => {
     </span>
   </div>
 </div>
-  <div className="rounded-4 p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px' }}>
+  <div className="p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px', borderRadius: '15px' }}>
     <div className="mt-3" style={{minHeight: '180px'}}>
 <div className="aboutmeheading text-center rounded-pill mx-auto" style={{background: '#292A2A', width: 'fit-content'}}>
   <h3 className="aboutmeheadingh3 text-capitalize py-2 px-3 m-0" style={{fontSize: '14px', color: '#BFBEC0'}}>About Me</h3>
@@ -410,7 +410,7 @@ useEffect(() => {
   className="aboutpheading ms-1 me-1 w-100 lh-base text-center" 
   style={{
     fontSize: '14px', 
-    color: '#9CA3AF',
+    color: '#ffffff99',
     fontWeight: '300',
     letterSpacing: '0.3px'
   }}
@@ -438,7 +438,7 @@ useEffect(() => {
     
    
   </div>
-<div className="rounded-4 p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px', position: 'relative', overflow: 'visible' }}>
+<div className="p-4 shadow-lg border border-dark card2" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px', position: 'relative', overflow: 'visible', borderRadius: '15px' }}>
   {/* Glow effect behind 1+ */}
   <div style={{
     position: 'absolute',
@@ -452,70 +452,28 @@ useEffect(() => {
     borderRadius: '50%',
     zIndex: 0
   }}></div>
+     <div className="position-absolute" style={{
+          top:   '50px',
+          right: '50px',
+          width:  '80px',
+          height: '80px',
+          border: '2px solid rgba(255, 255, 255, 0.1)',
+          borderLeft: 'none',
+          borderBottom: 'none',
+          borderTopRightRadius: '25px'
+        }}></div>
 
-<div style={{
-  position: 'absolute',
-  width: '50px',
-  height: '50px',
-  top: '279px',
-  right: '20px',
-  zIndex: '1',
-  left: '18px',
-  transform: 'rotate(180deg)',
-}}>
 
-    {/* Top horizontal line */}
-    <div style={{
-      position: 'absolute',
-      top: '0',
-      right: '0',
-      width: '50px',
-      height: '2px',
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      borderRadius: '1px'
-    }}></div>
-    {/* Right vertical line */}
-    <div style={{
-      position: 'absolute',
-      top: '0',
-      right: '0',
-      width: '2px',
-      height: '50px',
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      borderRadius: '1px'
-    }}></div>
-  </div>
-
-  {/* Right top icon - L shape corner */}
-  <div style={{
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
-    width: '50px',
-    height: '50px',
-    zIndex: 1
-  }}>
-    {/* Top horizontal line */}
-    <div style={{
-      position: 'absolute',
-      top: '0',
-      right: '0',
-      width: '50px',
-      height: '2px',
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      borderRadius: '1px'
-    }}></div>
-    {/* Right vertical line */}
-    <div style={{
-      position: 'absolute',
-      top: '0',
-      right: '0',
-      width: '2px',
-      height: '50px',
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      borderRadius: '1px'
-    }}></div>
-  </div>
+     <div className="position-absolute" style={{
+          bottom:  '40px',
+          left:    '40px',
+          width:  '80px',
+          height: '80px',
+          border: '2px solid rgba(255, 255, 255, 0.1)',
+          borderRight: 'none',
+          borderTop: 'none',
+          borderBottomLeftRadius: '25px'
+        }}></div>
 
   <div className="mt-4" style={{ position: 'relative', zIndex: 2 }}>
     <div className="carddiv3">
@@ -525,7 +483,7 @@ useEffect(() => {
       <h2 className="text-white mb-3" style={{fontSize: '24px', fontWeight: '600'}}>
         Years of Experience
       </h2>
-      <p className="text-secondary" style={{fontSize: '14px', lineHeight: '1.6'}}>
+      <p className="" style={{fontSize: '14px', lineHeight: '1.6', color: '#ffffff99'}}>
         Building scalable applications and crafting exceptional user experiences
       </p>
     </div>
@@ -538,7 +496,7 @@ useEffect(() => {
     
 <div className="skill section">
   <br />
-  <hr className="bg-dark mt-2" />
+  <hr className="bg-dark mt-2" style={{opacity: '0.4 '}} />
   <br /> 
   
   <style>
@@ -555,7 +513,7 @@ useEffect(() => {
   </style>
   
   {/* Skills Section (Infinite Loop Carousel) */}
-  <h2 className="text-secondary ml-3 mb-4 text-center mt-3 text-uppercase" style={{fontSize:'14px'}}>
+  <h2 className="ml-3 mb-4 fw-normal text-center mt-3 text-uppercase" style={{fontSize:'14px', letterSpacing: '1.5px', color: '#6B7280'}}>
     Technologies I work with
   </h2>
 
@@ -616,19 +574,19 @@ useEffect(() => {
   </div>
   
   <br />
-  <hr className="bg-white" />
+  <hr className="bg-dark" style={{opacity: '0.4 '}} />
 </div>
 <br />
 <div className="shortintroabout mt-3" >
   <div className="icons d-flex justify-content-center gap-3">
-    <Code width={30} height={30}/>
-    <Layers width={30} height={30}/>
-    <Database width={30} height={30}/>
-    <Server width={30} height={30}/>
+    <Code     color="#4A5565"  width={30} height={30}/>
+    <Layers   color="#4A5565"  width={30} height={30}/>
+    <Database color="#4A5565"  width={30} height={30}/>
+    <Server   color="#4A5565"  width={30} height={30}/>
   </div>
   
   <div 
-    className="py-5"
+    className="py-4"
     style={{ minHeight: '60vh' }}
   >
     <div className="shortintroaboutcontainer" style={{marginBottom: '150px'}}>
@@ -662,18 +620,18 @@ useEffect(() => {
 <section className="resumesection mt-4" id="resumepage">
   <div className="animationresumespecificsection" data-aos="fade-up">
 <div className="d-flex justify-content-center">
-  <div className="resumesectiondiv resumesectiondiv text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width: 'fit-content'}}>
-    <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px', color: '#ffffff99'}}>My Resume</h3>
+  <div className="resumesectiondiv resumesectiondiv align-item-center  text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width:'112.52', height: '42px'}}>
+    <h3 className="aboutmeheadingh3 text-center resumesectionh3 text-capitalize fw-medium" style={{fontSize: '14px', color: '#ffffff99', padding: '8px 16px', margin: '0px 0px 5px', marginTop: '4px'}}>My Resume</h3>
  
   </div>
 </div>
-<h1 className="text-white  resumesectionh1 text-center mt-3 fw-bold" style={{fontSize: '48px'}}>Professional Experience</h1>
-<p className="resumesectionp mt-3" style={{ fontSize: '18px', color: '#ffffff99'}}>A comprehensive overview of my skills, experience, and achievements</p>
+<h1 className="text-white  resumesectionh1 text-center mt-4 fw-bold" style={{fontSize: '48px'}}>Professional Experience</h1>
+<p className="resumesectionp mt-3 fw-lighter" style={{ fontSize: '18px', color: '#ffffff99'}}>A comprehensive overview of my skills, experience, and achievements</p>
 </div>
 <br />
-<div className="d-flex justify-content-center resumesectionresumediv mt-5 ">
+<div className="d-flex justify-content-center resumesectionresumediv mt-5">
   <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark" style={{ width: '1152px', height: '240vh', }}>
-    <div className="firstcolumn p-3 py-4 px-4" style={{ width: '30%', backgroundColor: '#191919'}} > 
+    <div className="firstcolumn p-3 py-4 px-4 shadow-lg" style={{ width: '35%', backgroundColor: '#191919'}} > 
       <div className="contactinfo mt-2" data-aos="fade-up"> 
         <div className="firstone fs-5 text-white fw-bold">
           <Mail className="me-2" style={{color:'#ffffff99'}} width={16} height={16} />
@@ -1058,10 +1016,10 @@ Time Management
   <span className="text-dark">Download Resume</span>
 </button>     </div>
     </div>
-    <div className="secondcolumn border-start border-dark  p-3 py-4 px-4 ps-4 pt-4" style={{ width: '70%', backgroundColor: '#0D0D0D', }} >
+    <div className="secondcolumn shadow-lg border-start border-dark  p-3 py-4 px-4 ps-4 pt-4" style={{ width: '65%', backgroundColor: '#0D0D0D', }} >
         <div  data-aos="fade-up" className="intro">
 <h1 className="introdivh1 fs-4 text-white fw-bold">Introduction</h1>
-<hr style={{color: '#ffffff99'}} />
+<hr className="mt-2" style={{color: '#ffffff99'}} />
 <h5 style={{color:'#ffffff99', width: '100%'}} className="introp pe-1 fs-6 text-left lh-base ms-0 me-0 w-100">I build production-grade, maintainable, and performant web UIs with
 reusable components, state management, routing, forms, and serverside rendering. I optimize frontend performance through lazy loading,
 code splitting, memoization, and caching, and implement secure
@@ -1072,7 +1030,7 @@ environments while monitoring frontend health with logs and metric.
 </h5>
   </div>
   <div className="experience101">
-<div className="experience mt-5 d-flex align-items-center">
+<div className="experience d-flex align-items-center" style={{marginTop: '35px'}}>
   <Calendar width={18} height={18} style={{color: '#ffffff99'}} />
   <span className="espan text-white fw-bold fs-4 p-2">Work Experience</span>
 </div>
@@ -1129,7 +1087,7 @@ Sep 2025
 </div>    
 <div  data-aos="fade-right"   data-aos-offset="100"
      data-aos-easing="ease-in-sine" className="flex justify-center items-center">
-  <div className="d-flex align-items-center mt-4">
+  <div className="d-flex align-items-center" style={{marginTop: '30px'}}>
 <Circle 
   width={12} 
   height={12} 
@@ -1268,12 +1226,16 @@ Matriculation in Computer Science
 <br />
 <div   data-aos="fade-up" className="resumesectionlastdiv">
 <p className="fs-6 resumesectionlastptag" style={{color:'#ffffff99'}}>Interested in working together?</p>
+  <a href="#contactpage">
 <div className="d-flex justify-content-center mt-4 fs-6 fw-light">
-<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light  p-3 fs-6">Let's Talk
+
+<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light  p-3 fs-6"> Let's Talk
 <span><MoveRight style={{width: '16px', height: '16px'}} width={16} height={16} className="fs-6 ms-2 fw-lighter"/></span>
 
 </button>
+
 </div>
+</a>
 </div>
 
 <br />
@@ -1331,15 +1293,17 @@ style={{
 </section>
 <section id="projectpage" className="mywork text-center mt-5 pt-1" style={{marginBottom: '150px'}}>
   <div data-aos="fade-up" className="myworkheadings">
-
-    <div  className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto" style={{background: '#0D0D0D', width: 'fit-content'}}>
-        <h3 className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0 fw-lighter" style={{fontSize: '14px',color: '#ffffff99'}}>My Work</h3>
-    </div>
+<div className="d-flex justify-content-center">
+  <div className="resumesectiondiv resumesectiondiv align-item-center  text-center rounded-pill d-flex justify-content-center border border-dark" style={{background: '#0D0D0D', width:'112.52', height: '42px'}}>
+    <h3 className="aboutmeheadingh3 text-center resumesectionh3 text-capitalize fw-medium" style={{fontSize: '14px', color: '#ffffff99', padding: '8px 16px', margin: '0px 0px 5px', marginTop: '4px'}}>My Work</h3>
+ 
+  </div>
+</div>
    <h1 className="text-white  resumesectionh1 text-center mt-3 fw-bolder" style={{fontSize: '60px'}}>Featured Projects
 </h1> 
 <p
-  className="resumesectionp mt-3 text-center"
-  style={{ fontSize: '18px', color: '#ffffff99'}}
+  className="resumesectionp mt-3 text-center "
+  style={{ fontSize: '18px', color: '#ffffff99' }}
 >
   Showcasing my best work across frontend, backend, and full-stack development
 </p>
@@ -2146,8 +2110,8 @@ Bootstrap
         }
 
     .card2 {
-    position: relative;
-    overflow: visible;
+    position: relative !important;
+    overflow: visible !important;
     }
   .card2:hover {
   transform: scale(1.02);

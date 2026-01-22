@@ -97,24 +97,19 @@ export default function ContactPage() {
 
       <div style={{ position: 'relative', zIndex: 10 }}>
     <div data-aos="fade-up">
-        <div
-          className="resumesectiondiv align-item-center rounded-pill border border-dark mx-auto"
-          style={{ background: 'rgb(15, 15, 15)', width: 'fit-content' }}
-        >
-          <h3
-            className="aboutmeheadingh3 resumesectionh3 text-capitalize py-2 px-3 m-0"
-            style={{ fontSize: '14px', color: '#ffffff99', fontWeight: '500' }}
-          >
-            Let's Connect
-          </h3>
-        </div>
+<div className="d-flex justify-content-center mt-5">
+  <div className="resumesectiondiv resumesectiondiv align-item-center  text-center rounded-pill d-flex justify-content-center border border-dark" style={{ background: 'linear-gradient(to left bottom, rgb(167 149 149 / 10%), rgb(40 36 36 / 80%))', width:'112.52', height: '42px'}}>
+    <h3 className="aboutmeheadingh3 text-center resumesectionh3 text-capitalize fw-medium" style={{fontSize: '14px', color: '#f1f1f1', padding: '8px 16px', margin: '0px 0px 5px', marginTop: '4px'}}>Let's Connect</h3>
+ 
+  </div>
+</div>
 
-        <h1 className="text-center mt-2 fw-bold w-100" style={{ fontSize: '72px' }}>
+        <h1 className="text-center mt-2 fw-bold w-100 mt-4" style={{ fontSize: '72px' }}>
           Get In Touch
         </h1>
 
         <p
-          className="text-center px-md-0 w-100 mt-1"
+          className="text-center px-md-0 w-100 mt-3"
           style={{ fontSize: '20px', color: '#ffffff99' }}
         >
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
@@ -123,9 +118,9 @@ export default function ContactPage() {
         <br />
 
         {/* CONTACT CARDS */}
-        <div data-aos="fade-up"  className="d-flex justify-content-center mt-5 flex-column flex-md-row px-3 px-md-0">
+        <div data-aos="fade-up"  className="d-flex justify-content-center mt-4 flex-column flex-md-row px-3 px-md-0">
           <a className="card1link" href="mailto:sadiqsiraj44@gmail.com" target="_blank" rel="noreferrer">
-            <div className="abcdef rounded-4 fs-5 py-2 px-2 mt-4 card-1 border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
+            <div className="abcdef rounded-4 shadow-lg fs-5 py-2 px-2 mt-4 card-1 border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
               <div className="d-flex justify-content-center align-items-center m-4 email-icon404" style={{ width: '64px', height: '64px', borderRadius: '14px', backgroundColor: '#1C1C1E' }}>
                 <MdOutlineEmail style={{ width: '28px', height: '28px', color: 'white' }} />
               </div>
@@ -141,8 +136,8 @@ export default function ContactPage() {
             </div>
           </a>
 
-          <div className="abcdef rounded-4 fs-5 py-2 px-2 mt-4 card-1 border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
-            <div className="d-flex justify-content-center align-items-center m-4 email-icon404" style={{ width: '64px', height: '64px', borderRadius: '14px', backgroundColor: '#1C1C1E' }}>
+          <div className="abcdef rounded-4 shadow-lg fs-5 py-2 px-2 mt-4 card-1 border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
+            <div className="d-flex justify-content-center  align-items-center m-4 email-icon404" style={{ width: '64px', height: '64px', borderRadius: '14px', backgroundColor: '#1C1C1E' }}>
               <LuPhone style={{ width: '28px', height: '28px', color: 'white' }} />
             </div>
             <div className="newone m-4">
@@ -156,7 +151,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="abcdef rounded-4 fs-5 py-2 px-2 mt-4 card-1 border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
+          <div className="abcdef rounded-4 shadow-lg fs-5 py-2 px-2 mt-4 card-1 border border-dark" style={{ maxWidth: '360px', height: '240px', borderRadius: '30px', width: '366px' }}>
             <div className="d-flex justify-content-center align-items-center m-4 email-icon404" style={{ width: '64px', height: '64px', borderRadius: '14px', backgroundColor: '#1C1C1E' }}>
               <FiMapPin style={{ width: '28px', height: '28px', color: 'white' }} />
             </div>
@@ -174,12 +169,12 @@ export default function ContactPage() {
 
         <br />
 
-        <h3 className="text-center text-white mt-3 fw-bold" style={{ fontSize: '30px' }}>
+        <h3 className="text-center text-white mt-4 mb-3 fw-bold" style={{ fontSize: '30px' }}>
           Connect on Social Media
         </h3>
 
         <div data-aos="zoom-out-up" className="d-flex justify-content-center flex-column flex-md-row px-3 px-md-0" style={{ gap: '1.5rem' }}>
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1_1 border border-dark" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
+          <div className="abcdef shadow-lg fs-5 py-2 px-3 mt-4 card-1_1 border border-dark" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
             <a href="https://github.com/privsaaaa44" target="_blank" rel="noreferrer">
               <div className="d-flex">
                 <div className="email-icon404" style={{ width: '56px', height: '56px', borderRadius: '12px', backgroundColor: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '19px' }}>
@@ -198,7 +193,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="abcdef fs-5 py-2 px-3 mt-4 card-1_1 border border-dark" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
+          <div className="abcdef shadow-lg fs-5 py-2 px-3 mt-4 card-1_1 border border-dark" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
             <a href="https://www.linkedin.com/in/muhammad-sadiq-1abbba36b" target="_blank" rel="noreferrer">
               <div className="d-flex align-items-center mt-3">
                 <div className="email-icon404" style={{ width: '56px', height: '56px', borderRadius: '12px', backgroundColor: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

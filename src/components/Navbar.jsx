@@ -5,6 +5,7 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import { PiSuitcaseSimpleBold } from "react-icons/pi";
 import { IoMailOutline } from "react-icons/io5";
 import {House, FileText, BriefcaseBusiness, Mail} from "lucide-react"
+import waicon from "../assets/waicon.png"
 const Navbar = () => {
   const sliderRef = useRef(null);
   const navGlassRef = useRef(null);
@@ -146,6 +147,10 @@ const Navbar = () => {
     setActiveSection(index);
   };
 
+  const openWhatsApp = () => {
+    window.open("https://wa.me/YOUR_PHONE_NUMBER", "_blank");
+  };
+
   return (
     <>
       <nav
@@ -203,6 +208,15 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* WhatsApp Button */}
+      <button
+        onClick={openWhatsApp}
+        className="whatsapp-floating-btn"
+        title="Chat with us on WhatsApp"
+      >
+       <img className="waicon" src={waicon} width={30} height={30} style={{objectFit: 'cover'}}  alt="" />
+      </button>
 
       <style>{`
         .custom-nav {
@@ -320,32 +334,6 @@ const Navbar = () => {
           animation: iconZoom 1.5s ease-in-out infinite !important;
         }
 
-        /* Top ambient light */
-        body::before {
-          content: "";
-          position: fixed;
-          top: -220px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 620px;
-          height: 520px;
-          background: radial-gradient(
-            ellipse at top,
-            rgba(255, 255, 255, 0.22),
-            rgba(255, 255, 255, 0.10),
-            rgba(255, 255, 255, 0.04),
-            transparent 65%
-          );
-          pointer-events: none;
-          z-index: 0;
-          filter: blur(8px);
-          transition: opacity 0.3s ease;
-        }
-
-        body.nav-scrolled::before {
-          opacity: 0;
-        }
-
         .slider {
           position: absolute; 
           height: 36px !important;
@@ -359,6 +347,61 @@ const Navbar = () => {
           z-index: 1;
           pointer-events: none;
           will-change: left, width;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-floating-btn {
+          position: fixed;
+          right: 20px;
+          bottom: 30px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+      background: linear-gradient(to right bottom, rgb(167 149 149 / 40%), rgb(40 36 36 / 90%));
+          border: 1px solid gray;
+          padding: 10px;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          transition: all 0.3s ease;
+          z-index: 998;
+        }
+
+        .whatsapp-floating-btn:hover {
+              background: linear-gradient(to right bottom, rgb(167 149 149 / 50%), rgb(40 36 36 / 100%));
+        transform: scale(1.1);
+          // box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+       
+
+          }
+          .whatsapp-floating-btn:hover .waicon {  animation: shake 0.5s;}
+@keyframes shake {
+    0% { transform: scale(1.1) translateX(0); }
+    20% { transform: scale(1.1) translateX(-5px); }
+    40% { transform: scale(1.1) translateX(5px); }
+    60% { transform: scale(1.1) translateX(-5px); }
+    80% { transform: scale(1.1) translateX(5px); }
+    100% { transform: scale(1.1) translateX(0); }
+}
+        .whatsapp-floating-btn:active {
+          transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+          .whatsapp-floating-btn {
+            right: 15px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+          }
+
+          .whatsapp-floating-btn svg {
+            width: 22px;
+            height: 22px;
+          }
         }
       `}</style>
     </>

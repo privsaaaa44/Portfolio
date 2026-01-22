@@ -10,6 +10,7 @@
 .t {
  filter: brightness(0) invert(1);
 }
+.card1 {    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px !important;}
 .card1:hover {
    transform: scale(1.02);
       background: linear-gradient(
@@ -190,8 +191,8 @@ font-family: 'Melodrama', serif;
  .container-fluid.justify-content-between.align-items-center {
     justify-content: center !important;
 }
-.d-flex.justify-content-center.mt-5.flex-column.flex-md-row.px-3.px-md-0 {
-    gap: 1.9rem;
+.d-flex.justify-content-center.mt-4.flex-column.flex-md-row.px-3.px-md-0 {
+    gap: 1.5rem;
 }
 .card-1_1:hover .email-icon404 {
 background-color: rgb(82, 82, 82) !important;

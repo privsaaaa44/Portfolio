@@ -6,7 +6,7 @@ const Footer = () => {
     <>
     <br />
     <br />
-    <div data-aos="fade-up" className='mt-5 pb-4'>
+    <div data-aos="fade-up" className='mt-4 pb-4'>
 <hr 
   style={{
     border: "none",
