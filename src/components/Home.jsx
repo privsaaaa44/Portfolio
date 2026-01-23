@@ -1227,10 +1227,10 @@ Matriculation in Computer Science
 <div   data-aos="fade-up" className="resumesectionlastdiv">
 <p className="fs-6 resumesectionlastptag" style={{color:'#ffffff99'}}>Interested in working together?</p>
   <a href="#contactpage">
-<div className="d-flex justify-content-center mt-4 fs-6 fw-light">
+<div className="d-flex justify-content-center mt-4">
 
-<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center border border-light  p-3 fs-6"> Let's Talk
-<span><MoveRight style={{width: '16px', height: '16px'}} width={16} height={16} className="fs-6 ms-2 fw-lighter"/></span>
+<button className="resumesectionlettalktobutton bg-white rounded-pill  text-center  p-3 fs-6"> Let's Talk
+<span><MoveRight style={{width: '16px', height: '16px'}} width={16} height={16} className="fs-6 fw-lighter"/></span>
 
 </button>
 

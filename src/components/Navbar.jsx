@@ -6,11 +6,14 @@ import { PiSuitcaseSimpleBold } from "react-icons/pi";
 import { IoMailOutline } from "react-icons/io5";
 import {House, FileText, BriefcaseBusiness, Mail} from "lucide-react"
 import waicon from "../assets/waicon.png"
+
 const Navbar = () => {
   const sliderRef = useRef(null);
   const navGlassRef = useRef(null);
+  const whatsappBtnRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState(0); // 0=home, 1=resume, 2=project, 3=contact
+  const [activeSection, setActiveSection] = useState(0);
+  const [isShaking, setIsShaking] = useState(false);
   const lastScrollY = useRef(0);
 
   // Scroll listener
@@ -22,7 +25,6 @@ const Navbar = () => {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
 
-          // Navbar compress/expand
           if (currentScrollY < 50) {
             setScrolled(false);
           } else if (currentScrollY > lastScrollY.current) {
@@ -33,7 +35,6 @@ const Navbar = () => {
 
           lastScrollY.current = currentScrollY;
 
-          // Section detection
           const homepage = document.getElementById("homepage");
           const resumepage = document.getElementById("resumepage");
           const projectpage = document.getElementById("projectpage");
@@ -147,8 +148,25 @@ const Navbar = () => {
     setActiveSection(index);
   };
 
+  const handleWhatsAppMouseEnter = () => {
+    setIsShaking(true);
+    const img = whatsappBtnRef.current?.querySelector('.waicon');
+    if (img) {
+      img.classList.remove('wa-shake');
+      void img.offsetWidth; // Trigger reflow
+      img.classList.add('wa-shake');
+    }
+  };
+
+  const handleAnimationEnd = () => {
+    setIsShaking(false);
+  };
+
   const openWhatsApp = () => {
-    window.open("https://wa.me/YOUR_PHONE_NUMBER", "_blank");
+    const message = "Hi! I'm interested in discussing a project.";
+    const phoneNumber = "923152453522";
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank");
   };
 
   return (
@@ -210,14 +228,26 @@ const Navbar = () => {
       </nav>
 
       {/* WhatsApp Button */}
+{/* <div className="whatsapp-container shadow-lg z-1"> */}
       <button
+        ref={whatsappBtnRef}
         onClick={openWhatsApp}
-        className="whatsapp-floating-btn"
-        title="Chat with us on WhatsApp"
+        onMouseEnter={handleWhatsAppMouseEnter}
+        className={`whatsapp-floating-btn ${isShaking ? 'wa-shake-btn' : ''}`}
       >
-       <img className="waicon" src={waicon} width={30} height={30} style={{objectFit: 'cover'}}  alt="" />
+        <div className="circel-ring border border-3 border-black bg-light" style={{top: '-5px', right: '-5px', width: '17.89px', height: '17.89px', position: 'absolute', borderRadius: '50%',}}>
+        </div>
+       <img 
+         className={`waicon ${isShaking ? 'wa-shake' : ''}`}
+         src={waicon} 
+         width=  {30} 
+         height= {30} 
+         style={{objectFit: 'cover',transform: 'rotate(-10deg) !important'}}  
+         alt="" 
+         onAnimationEnd={handleAnimationEnd}
+       />
       </button>
-
+    {/* </div> */}
       <style>{`
         .custom-nav {
           top: 4px;
@@ -350,44 +380,70 @@ const Navbar = () => {
         }
 
         /* WhatsApp Floating Button */
-        .whatsapp-floating-btn {
-          position: fixed;
-          right: 20px;
-          bottom: 30px;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-      background: linear-gradient(to right bottom, rgb(167 149 149 / 40%), rgb(40 36 36 / 90%));
-          border: 1px solid gray;
-          padding: 10px;
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-          transition: all 0.3s ease;
-          z-index: 998;
+        .whatsapp-container {
+        position: fixed !important;
+        z-index: 900 !important;
+        }
+     .whatsapp-floating-btn {
+  position: fixed !important;
+  right: 30px;
+  bottom: 35px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(to right bottom, rgb(167 149 149 / 40%), rgb(40 36 36 / 90%));
+  border: 1px solid gray;
+  padding: 0px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  z-index: 9999 !important;  /* بہت زیادہ بڑھائیں */
+  transition: all 0.3s ease !important;
+  isolation: isolate !important;  /* یہ لائن شامل کریں */
+}
+        .whatsapp-floating-btn:hover {
+          background: linear-gradient(to right bottom, rgb(167 149 149 / 60%), rgb(40 36 36 / 40%)) !important;
+
+            border: 1px solid;
+rgba(230, 227, 227, 0.15);
+          // transform: scale(1.03) !important;
         }
 
-        .whatsapp-floating-btn:hover {
-              background: linear-gradient(to right bottom, rgb(167 149 149 / 50%), rgb(40 36 36 / 100%));
-        transform: scale(1.1);
-          // box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-       
+        /* Button shake animation */
+        @keyframes wa-shake-btn {
+          0%, 100% { transform: scale(1) translateX(0); }
+          10% { transform: scale(1.05) translateX(-1px); }
+          20% { transform: scale(1.05) translateX(1px); }
+          30% { transform: scale1.05) translateX(-1px); }
+          40% { transform: scale(1.05) translateX(1px); }
+          50% { transform: scale(1.05) translateX(-1px); }
+          60% { transform: scale(1.05) translateX(1px); }
+          70% { transform: scale(1.05) translateX(-1px); }
+          80% { transform: scale(1.05) translateX(1px); }
+          90% { transform: scale(1.05) translateX(-1px); }
+        }
 
-          }
-          .whatsapp-floating-btn:hover .waicon {  animation: shake 0.5s;}
-@keyframes shake {
-    0% { transform: scale(1.1) translateX(0); }
-    20% { transform: scale(1.1) translateX(-5px); }
-    40% { transform: scale(1.1) translateX(5px); }
-    60% { transform: scale(1.1) translateX(-5px); }
-    80% { transform: scale(1.1) translateX(5px); }
-    100% { transform: scale(1.1) translateX(0); }
-}
-        .whatsapp-floating-btn:active {
-          transform: scale(0.95);
+        .whatsapp-floating-btn.wa-shake-btn {
+          animation: wa-shake-btn 0.8s ease-in-out;
+        }
+        @keyframes wa-shake {
+          0%, 100% { transform: scale(1.02) translateX(0); }
+          10% { transform: scale(1.05) translateX(-1x); }
+          20% { transform: scale(1.05) translateX(1px); }
+          30% { transform: scale(1.05) translateX(-1px); }
+          40% { transform: scale(1.05) translateX(1px); }
+          50% { transform: scale(1.05) translateX(-1px); }
+          60% { transform: scale(1.05) translateX(1px); }
+          70% { transform: scale(1.05) translateX(-1px); }
+          80% { transform: scale(1.05) translateX(1px); }
+          90% { transform: scale(1.05) translateX(-1px); }
+        }
+
+        .waicon.wa-shake {
+          animation: wa-shake 0.8s ease-in-out;
         }
 
         @media (max-width: 768px) {
@@ -403,6 +459,7 @@ const Navbar = () => {
             height: 22px;
           }
         }
+
       `}</style>
     </>
   );
