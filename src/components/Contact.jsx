@@ -66,7 +66,7 @@ function StarfieldBackground() {
   }, []);
 
   return (
-    <div
+    <div 
       style={{
         position: 'absolute',
         inset: 0,
@@ -86,18 +86,19 @@ function StarfieldBackground() {
 
 export default function ContactPage() {
   return (
-    <div
+    <div className=''
       style={{
         position: 'relative',
         overflow: 'hidden',
-        background: 'black'
+        background: 'black',
+       
       }}
     >
       <StarfieldBackground />
 
       <div style={{ position: 'relative', zIndex: 10 }}>
     <div data-aos="fade-up">
-<div className="d-flex justify-content-center mt-5">
+<div className="d-flex justify-content-center ">
   <div className="resumesectiondiv resumesectiondiv align-item-center  text-center rounded-pill d-flex justify-content-center border border-dark" style={{ background: 'linear-gradient(to left bottom, rgb(167 149 149 / 10%), rgb(40 36 36 / 80%))', width:'112.52', height: '42px'}}>
     <h3 className="aboutmeheadingh3 text-center resumesectionh3 text-capitalize fw-medium" style={{fontSize: '14px', color: '#f1f1f1', padding: '8px 16px', margin: '0px 0px 5px', marginTop: '4px'}}>Let's Connect</h3>
  

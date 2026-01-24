@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HiOutlineHome } from "react-icons/hi2";
-import { HiOutlineDocumentText } from "react-icons/hi";
-import { PiSuitcaseSimpleBold } from "react-icons/pi";
-import { IoMailOutline } from "react-icons/io5";
-import {House, FileText, BriefcaseBusiness, Mail} from "lucide-react"
-import waicon from "../assets/waicon.png"
+import { Home, FileText, Briefcase, Mail } from "lucide-react"
 
 const Navbar = () => {
   const sliderRef = useRef(null);
@@ -150,10 +145,10 @@ const Navbar = () => {
 
   const handleWhatsAppMouseEnter = () => {
     setIsShaking(true);
-    const img = whatsappBtnRef.current?.querySelector('.waicon');
+    const img = whatsappBtnRef.current?.querySelector('svg');
     if (img) {
       img.classList.remove('wa-shake');
-      void img.offsetWidth; // Trigger reflow
+      void img.offsetWidth;
       img.classList.add('wa-shake');
     }
   };
@@ -172,13 +167,13 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`navbar naya navbar-dark bg-transparent custom-nav position-fixed ${
+        className={`navbar naya navbar-dark mt-2 bg-transparent custom-nav position-fixed ${
           scrolled ? "navbar-scrolled" : ""
         }`}
       >
-        <div className="align-items-center">
+        <div className="d-flex justify-content-center w-100">
           <div
-            className="nav-glass px-3 py-1 d-flex  position-relative"
+            className="nav-glass px-3 py-1 d-flex position-relative"
             ref={navGlassRef}
           >
             <button
@@ -188,8 +183,8 @@ const Navbar = () => {
                 activeSection === 0 ? "active" : ""
               } homenav-link`}
             >
-              <House className={`homeicon ${activeSection === 0 ? "icon-zoom" : ""}`} />
-              <span className="navbarlink text-white" style={{marginLeft: '6px'}} >Home</span>
+              <Home className={`homeicon ${activeSection === 0 ? "icon-zoom" : ""}`} size={18} />
+              <span className="navbarlink text-white">Home</span>
             </button>
 
             <button
@@ -198,8 +193,8 @@ const Navbar = () => {
                 activeSection === 1 ? "active" : ""
               } aboutnav-link`}
             >
-              <FileText width={18} height={18} className={`${activeSection === 1 ? "icon-zoom" : ""}`} />
-              <span className="navbarlink" style={{marginLeft: '6px'}} >Resume</span>
+              <FileText size={18} className={`${activeSection === 1 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink">Resume</span>
             </button>
 
             <button
@@ -208,8 +203,8 @@ const Navbar = () => {
                 activeSection === 2 ? "active" : ""
               } fs-6 projectnav-link`}
             >
-              <BriefcaseBusiness width={18} height={18} className={`${activeSection === 2 ? "icon-zoom" : ""}`} />
-              <span className="navbarlink" style={{marginLeft: '6px'}} >Project</span>
+              <Briefcase size={18} className={`${activeSection === 2 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink">Project</span>
             </button>
 
             <button
@@ -218,8 +213,8 @@ const Navbar = () => {
                 activeSection === 3 ? "active" : ""
               } fs-6 contactnav-link`}
             >
-              <Mail width={18} height={18} className={`${activeSection === 3 ? "icon-zoom" : ""}`} />
-              <span className="navbarlink ms-1">Contact</span>
+              <Mail size={18} className={`${activeSection === 3 ? "icon-zoom" : ""}`} />
+              <span className="navbarlink">Contact</span>
             </button>
 
             <div className="slider" ref={sliderRef}></div>
@@ -227,8 +222,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* WhatsApp Button */}
-{/* <div className="whatsapp-container shadow-lg z-1"> */}
       <button
         ref={whatsappBtnRef}
         onClick={openWhatsApp}
@@ -237,17 +230,9 @@ const Navbar = () => {
       >
         <div className="circel-ring border border-3 border-black bg-light" style={{top: '-5px', right: '-5px', width: '17.89px', height: '17.89px', position: 'absolute', borderRadius: '50%',}}>
         </div>
-       <img 
-         className={`waicon ${isShaking ? 'wa-shake' : ''}`}
-         src={waicon} 
-         width=  {30} 
-         height= {30} 
-         style={{objectFit: 'cover',transform: 'rotate(-10deg) !important'}}  
-         alt="" 
-         onAnimationEnd={handleAnimationEnd}
-       />
+        <Mail size={30} onAnimationEnd={handleAnimationEnd} className="wa-icon" />
       </button>
-    {/* </div> */}
+
       <style>{`
         .custom-nav {
           top: 4px;
@@ -256,42 +241,54 @@ const Navbar = () => {
           transition: all 0.3s ease;
           display: flex;
           justify-content: center;
+          padding: 0 10px;
         }
 
         .nav-glass {
           border: 1px solid #191919;
           background: #00000066 !important;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px !important;
-          padding: 8px !important;
-          gap: 0px;
+          padding: 8px 12px !important;
+          gap: 8px;
           border-radius: 3.40282e38px !important;
           display: flex;
           align-items: center;
           transition: all 0.3s ease;
           position: relative;
           overflow: visible;
+          flex-wrap: nowrap;
+          justify-content: center;
+          max-width: 100%;
         }
 
         .custom-nav.navbar-scrolled .nav-glass {
           padding: 7px 7px !important;
           border: 2px solid #191919 !important;
-          background : #000000b3 !important;
-              box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 32px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;
-      backdrop-filter: blur(12px) !important;
-              }
+          background: #000000b3 !important;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 32px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;
+          backdrop-filter: blur(12px) !important;
+          gap: 4px;
+        }
 
         .navbarlink {
           font-size: 14px;
           white-space: nowrap;
           display: inline-block;
-          transition: opacity 0.3s ease, max-width 0.3s ease;
+          transition: opacity 0.3s ease, max-width 0.3s ease, margin 0.3s ease;
           max-width: 200px;
+          margin-left: 6px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        .nav-link.active .navbarlink {
+          color: white;
         }
 
         .custom-nav.navbar-scrolled .navbarlink {
           opacity: 0;
           max-width: 0;
           overflow: hidden;
+          margin-left: 0;
         }
 
         .nav-link {
@@ -316,7 +313,6 @@ const Navbar = () => {
 
         .custom-nav.navbar-scrolled .nav-link {
           padding: 6px 10px !important;
-
         }
 
         .custom-nav.navbar-scrolled .nav-link svg {
@@ -324,14 +320,15 @@ const Navbar = () => {
         }
 
         .custom-nav.navbar-scrolled .slider {
-        width: 38px !important;
-        height: 34px !important;
+          width: 38px !important;
+          height: 34px !important;
           border-radius: 70px !important;
         }
 
         .homeicon {
-          width:  18px !important;
+          width: 18px !important;
           height: 18px !important;
+          flex-shrink: 0;
         }
 
         .aboutnav-link,
@@ -340,7 +337,7 @@ const Navbar = () => {
         .contactnav-link {
           transition: all 0.3s ease;
         }
-  
+
         .aboutnav-link:hover,
         .homenav-link:hover,
         .projectnav-link:hover,
@@ -350,7 +347,6 @@ const Navbar = () => {
           transform: scale(1.06);
         }
 
-        /* Icon zoom animation */
         @keyframes iconZoom {
           0%, 100% {
             transform: scale(1);
@@ -379,45 +375,38 @@ const Navbar = () => {
           will-change: left, width;
         }
 
-        /* WhatsApp Floating Button */
-        .whatsapp-container {
-        position: fixed !important;
-        z-index: 900 !important;
+        .whatsapp-floating-btn {
+          position: fixed !important;
+          right: 30px;
+          bottom: 35px;
+          width: 50px;
+          height: 50px;
+          backdrop-filter: blur(38px);
+          border-radius: 50%;
+          background: linear-gradient(to right bottom, rgb(167 149 149 / 40%), rgb(40 36 36 / 90%));
+          border: 1px solid gray;
+          padding: 0px;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer !important;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+          z-index: 10000 !important;
+          transition: all 0.3s ease !important;
+          isolation: isolate !important;
         }
-     .whatsapp-floating-btn {
-  position: fixed !important;
-  right: 30px;
-  bottom: 35px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(to right bottom, rgb(167 149 149 / 40%), rgb(40 36 36 / 90%));
-  border: 1px solid gray;
-  padding: 0px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  z-index: 9999 !important;  /* بہت زیادہ بڑھائیں */
-  transition: all 0.3s ease !important;
-  isolation: isolate !important;  /* یہ لائن شامل کریں */
-}
+
         .whatsapp-floating-btn:hover {
           background: linear-gradient(to right bottom, rgb(167 149 149 / 60%), rgb(40 36 36 / 40%)) !important;
-
-            border: 1px solid;
-rgba(230, 227, 227, 0.15);
-          // transform: scale(1.03) !important;
+          border: 1px solid rgba(230, 227, 227, 0.15);
         }
 
-        /* Button shake animation */
         @keyframes wa-shake-btn {
           0%, 100% { transform: scale(1) translateX(0); }
           10% { transform: scale(1.05) translateX(-1px); }
           20% { transform: scale(1.05) translateX(1px); }
-          30% { transform: scale1.05) translateX(-1px); }
+          30% { transform: scale(1.05) translateX(-1px); }
           40% { transform: scale(1.05) translateX(1px); }
           50% { transform: scale(1.05) translateX(-1px); }
           60% { transform: scale(1.05) translateX(1px); }
@@ -429,9 +418,10 @@ rgba(230, 227, 227, 0.15);
         .whatsapp-floating-btn.wa-shake-btn {
           animation: wa-shake-btn 0.8s ease-in-out;
         }
+
         @keyframes wa-shake {
           0%, 100% { transform: scale(1.02) translateX(0); }
-          10% { transform: scale(1.05) translateX(-1x); }
+          10% { transform: scale(1.05) translateX(-1px); }
           20% { transform: scale(1.05) translateX(1px); }
           30% { transform: scale(1.05) translateX(-1px); }
           40% { transform: scale(1.05) translateX(1px); }
@@ -442,11 +432,78 @@ rgba(230, 227, 227, 0.15);
           90% { transform: scale(1.05) translateX(-1px); }
         }
 
-        .waicon.wa-shake {
+        .wa-icon.wa-shake {
           animation: wa-shake 0.8s ease-in-out;
         }
 
+        /* Tablet Responsiveness */
+        @media (max-width: 1024px) {
+          .nav-glass {
+            gap: 6px;
+            padding: 8px 10px !important;
+          }
+
+          .nav-link {
+            padding: 7px 10px !important;
+          }
+
+          .navbarlink {
+            font-size: 13px;
+            // margin-left: 5px;
+          }
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
+          .custom-nav {
+            padding: 0 20px;
+          }
+
+         .nav-glass {
+        gap: 6px !important;
+        padding: 8px 7px !important;
+        border-radius: 25px !important;
+    }
+
+          .nav-link {
+            padding: 7px 10px !important;
+            font-size: 11px;
+          }
+
+          .navbarlink {
+            font-size: 11px;
+            // margin-left: 6px;
+            max-width: none;
+            opacity: 1;
+            display: inline;
+          }
+
+          .homeicon,
+          .nav-link svg {
+            width: 16px !important;
+            height: 16px !important;
+          }
+    .custom-nav.navbar-scrolled .nav-glass {
+        gap: 9px !important;
+        padding: 8px 18px !important;
+    }
+
+          .custom-nav.navbar-scrolled .nav-link {
+            padding: 6px 8px !important;
+          }
+
+          .custom-nav.navbar-scrolled .navbarlink {
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            margin-left: 0;
+          }
+
+          .custom-nav.navbar-scrolled .slider {
+            height: 32px !important;
+            border-radius: 20px !important;
+          }
+
           .whatsapp-floating-btn {
             right: 15px;
             bottom: 20px;
@@ -460,6 +517,73 @@ rgba(230, 227, 227, 0.15);
           }
         }
 
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .custom-nav {
+            padding: 0 12px;
+            top: 5px !important;
+          }
+.slider {
+height: 30px !important;
+}
+          .nav-glass {
+            gap: 6px;
+            padding: 7px 8px !important;
+            border-radius: 25px !important;
+          }
+
+          .nav-link {
+            padding: 6px 8px !important;
+            font-size: 12px;
+          }
+
+          .navbarlink {
+            font-size: 11px;
+            // margin-left: 4px;
+            max-width: none;
+            opacity: 1;
+            display: inline;
+          }
+
+          .homeicon,
+          .nav-link svg {
+            width: 15px !important;
+            height: 15px !important;
+          }
+
+           .custom-nav.navbar-scrolled .nav-glass {
+        gap: 9px !important;
+        padding: 10px 20px !important;
+    }
+          .custom-nav.navbar-scrolled .nav-link {
+            padding: 5px 6px !important;
+          }
+
+          .custom-nav.navbar-scrolled .navbarlink {
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            margin-left: 0;
+          }
+
+          .custom-nav.navbar-scrolled .slider {
+          // width: 20px;  
+          height: 28px !important;
+            border-radius: 10px !important;
+          }
+
+          .whatsapp-floating-btn {
+            right: 12px;
+            bottom: 18px;
+            width: 42px;
+            height: 42px;
+          }
+
+          .whatsapp-floating-btn svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
       `}</style>
     </>
   );
