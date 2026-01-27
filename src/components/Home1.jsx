@@ -172,6 +172,194 @@ const Home1 = () => {
 
   return (
     <section className="firstsection mt-0" id="homepage">
+      <style>{`
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+          .col3 {
+            gap: 100px !important;
+          }
+          .cards-container {
+            gap: 20px !important;
+          }
+          .card1, .card2 {
+            width: 380px !important;
+            height: 340px !important;
+          }
+          .shortintroaboutcontainer div {
+            font-size: 50px !important;
+            word-spacing: 0.15em !important;
+            line-height: 1.6 !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            text-align: left !important;
+          }
+        }
+
+        @media (max-width: 992px) {
+          .col3 {
+            gap: 60px !important;
+          }
+          .cards-container {
+            gap: 15px !important;
+            flex-wrap: wrap;
+            margin: 0 !important;
+            padding: 0 19px !important;
+          }
+          .card1, .card2 {
+            width: 100% !important;
+            max-width: none !important;
+            height: auto !important;
+            min-height: 340px !important;
+            margin: 0 !important;
+          }
+          .shortintroaboutcontainer div {
+            font-size: 40px !important;
+            word-spacing: 0.1em !important;
+            line-height: 1.55 !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            text-align: left !important;
+            hyphens: auto !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .col3 {
+            gap: 40px !important;
+            flex-wrap: wrap !important;
+          }
+          .col1, .col2, .col3 {
+            flex: 1 1 calc(33.333% - 20px) !important;
+            min-width: 120px !important;
+          }
+          .cards-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            margin-top: 40px !important;
+            margin: 40px 19px 0 19px !important;
+            padding: 0 !important;
+          }
+          .card1, .card2 {
+            width: 100% !important;
+            max-width: none !important;
+            height: auto !important;
+            min-height: 300px !important;
+            padding: 1.5rem !important;
+            margin: 0 !important;
+          }
+          .shortintroaboutcontainer div {
+            font-size: 28px !important;
+            line-height: 1.5 !important;
+            word-spacing: 0.08em !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto !important;
+            text-align: left !important;
+          }
+          .icons {
+            gap: 15px !important;
+          }
+          .icons svg {
+            width: 24px !important;
+            height: 24px !important;
+          }
+        }
+
+        @media (max-width: 576px) {
+          h1.h1class {
+            font-size: 48px !important;
+          }
+          h1.h2Lclass {
+            font-size: 48px !important;
+          }
+          h1.h3class {
+            font-size: 22px !important;
+            margin-top: 20px !important;
+          }
+          .col3one {
+            margin: 0 15px !important;
+          }
+          .col3 {
+            gap: 25px !important;
+          }
+          .col1, .col2, .col3 {
+            flex: 1 1 calc(50% - 12px) !important;
+          }
+          .col1 h1, .col2 h1, .col3 h1 {
+            font-size: 28px !important;
+          }
+          .col1 h1:last-child, .col2 h1:last-child, .col3 h1:last-child {
+            font-size: 11px !important;
+          }
+          .cards-container {
+            margin-top: 30px !important;
+            margin: 30px 19px 0 19px !important;
+            padding: 0 !important;
+          }
+          .card1, .card2 {
+            width: 100% !important;
+            max-width: none !important;
+            padding: 1.2rem !important;
+            min-height: 280px !important;
+            height: auto !important;
+            margin: 0 !important;
+          }
+          .card1 p, .card2 p {
+            font-size: 16px !important;
+          }
+          .shortintroaboutcontainer div {
+            font-size: 20px !important;
+            padding: 0 15px !important;
+            line-height: 1.5 !important;
+            word-spacing: 0.06em !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto !important;
+            text-align: left !important;
+          }
+          .py-4 {
+            min-height: 50vh !important;
+          }
+          .skill.section {
+            padding: 0 15px !important;
+          }
+        }
+
+        @media (max-width: 420px) {
+          h1.h1class {
+            font-size: 40px !important;
+          }
+          h1.h2Lclass {
+            font-size: 40px !important;
+          }
+          .col3 {
+            gap: 20px !important;
+          }
+          .col1, .col2, .col3 {
+            flex: 1 1 100% !important;
+          }
+          .cards-container {
+            margin: 30px 19px 0 19px !important;
+            padding: 0 !important;
+          }
+          .card1, .card2 {
+            width: 100% !important;
+            max-width: none !important;
+            height: auto !important;
+            margin: 0 !important;
+          }
+          .shortintroaboutcontainer div {
+            font-size: 18px !important;
+            line-height: 1.5 !important;
+            word-spacing: 0.05em !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto !important;
+            text-align: left !important;
+          }
+        }
+      `}</style>
+
       <div className="firstdiv mt-0 p-0">
         <h1 className="text-center h1class mt-0 fw-bold" style={{ fontSize: '72px', color: '#CFD0D0' }}>
           Hi, I'm
@@ -189,6 +377,7 @@ const Home1 = () => {
               border: "none",
               height: "3px",
               width: '40%',
+              minWidth: '200px',
               background: "linear-gradient(to right, transparent, #ffffff99, transparent)",
             }}
           />
@@ -223,7 +412,7 @@ const Home1 = () => {
           </div>
         </div>
 
-        <div className="d-flex justify-content-center" style={{ marginTop: '60px', gap: '30px' }}>
+        <div className="d-flex justify-content-center cards-container" style={{ marginTop: '60px', gap: '30px' }}>
           {/* Quote Card */}
           <div className="p-4 shadow-lg border border-dark card1" style={{ width: '400px', backgroundColor: '#0E1011', height: '350px', borderRadius: '15px' }}>
             <div className="mb-4">
@@ -460,7 +649,15 @@ const Home1 = () => {
 
         <div className="py-4" style={{ minHeight: '60vh' }}>
           <div className="shortintroaboutcontainer" style={{ marginBottom: '150px' }}>
-            <div className="text-justify lh-1 fw-light mx-4" style={{ fontSize: '60px', color: '#fff', margin: '0px', padding: '0px' }}>
+            <div className="fw-light mx-4" style={{ 
+              fontSize: '60px', 
+              color: '#fff', 
+              margin: '0px', 
+              padding: '0px',
+              textAlign: 'left',
+              lineHeight: 1.6,
+              wordSpacing: '0.15em'
+            }}>
               {scrollWords.map((word, index) => (
                 <React.Fragment key={index}>
                   {word.trim() ? (

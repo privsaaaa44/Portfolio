@@ -320,9 +320,9 @@ const Navbar = () => {
         }
 
         .custom-nav.navbar-scrolled .slider {
-          width: 38px !important;
-          height: 34px !important;
-          border-radius: 70px !important;
+          width: 36px !important;
+          height: 32px !important;
+          border-radius: 20px !important;
         }
 
         .homeicon {
@@ -436,7 +436,7 @@ const Navbar = () => {
           animation: wa-shake 0.8s ease-in-out;
         }
 
-        /* Tablet Responsiveness */
+        /* Tablet Responsiveness - 1024px and below */
         @media (max-width: 1024px) {
           .nav-glass {
             gap: 6px;
@@ -449,33 +449,29 @@ const Navbar = () => {
 
           .navbarlink {
             font-size: 13px;
-            // margin-left: 5px;
           }
         }
 
-        /* Mobile Responsiveness */
+        /* Tablet Responsiveness - 768px and below */
         @media (max-width: 768px) {
           .custom-nav {
-            padding: 0 20px;
+            padding: 0 15px;
+            top: 3px;
           }
 
-         .nav-glass {
-        gap: 6px !important;
-        padding: 8px 7px !important;
-        border-radius: 25px !important;
-    }
+          .nav-glass {
+            gap: 4px !important;
+            padding: 7px 10px !important;
+            border-radius: 25px !important;
+          }
 
           .nav-link {
-            padding: 7px 10px !important;
-            font-size: 11px;
+            padding: 6px 9px !important;
           }
 
           .navbarlink {
-            font-size: 11px;
-            // margin-left: 6px;
-            max-width: none;
-            opacity: 1;
-            display: inline;
+            font-size: 12px;
+            margin-left: 4px;
           }
 
           .homeicon,
@@ -483,25 +479,79 @@ const Navbar = () => {
             width: 16px !important;
             height: 16px !important;
           }
-    .custom-nav.navbar-scrolled .nav-glass {
-        gap: 9px !important;
-        padding: 8px 18px !important;
-    }
+
+          .custom-nav.navbar-scrolled .nav-glass {
+            gap: 2px !important;
+            padding: 7px 10px !important;
+          }
 
           .custom-nav.navbar-scrolled .nav-link {
             padding: 6px 8px !important;
           }
 
-          .custom-nav.navbar-scrolled .navbarlink {
-            opacity: 0;
-            max-width: 0;
-            overflow: hidden;
-            margin-left: 0;
-          }
-
           .custom-nav.navbar-scrolled .slider {
             height: 32px !important;
             border-radius: 20px !important;
+          }
+
+          .whatsapp-floating-btn {
+            right: 18px;
+            bottom: 25px;
+            width: 48px;
+            height: 48px;
+          }
+
+          .whatsapp-floating-btn svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        /* Mobile Responsiveness - 576px and below */
+        @media (max-width: 576px) {
+          .custom-nav {
+            padding: 0 12px;
+            top: 2px;
+          }
+
+          .nav-glass {
+            gap: 2px !important;
+            padding: 6px 8px !important;
+            border-radius: 25px !important;
+          }
+
+          .nav-link {
+            padding: 5px 7px !important;
+          }
+
+          .navbarlink {
+            font-size: 11px;
+            margin-left: 3px;
+          }
+
+          .homeicon,
+          .nav-link svg {
+            width: 15px !important;
+            height: 15px !important;
+          }
+
+          .slider {
+            height: 28px !important;
+          }
+
+          .custom-nav.navbar-scrolled .nav-glass {
+            gap: 2px !important;
+            padding: 6px 10px !important;
+          }
+
+          .custom-nav.navbar-scrolled .nav-link {
+            padding: 5px 7px !important;
+          }
+
+          .custom-nav.navbar-scrolled .slider {
+            width: 24px !important;
+            height: 28px !important;
+            border-radius: 18px !important;
           }
 
           .whatsapp-floating-btn {
@@ -512,64 +562,55 @@ const Navbar = () => {
           }
 
           .whatsapp-floating-btn svg {
-            width: 22px;
-            height: 22px;
+            width: 21px;
+            height: 21px;
           }
         }
 
-        /* Small Mobile */
-        @media (max-width: 480px) {
+        /* Small Mobile - 360px and below */
+        @media (max-width: 360px) {
           .custom-nav {
-            padding: 0 12px;
-            top: 5px !important;
+            padding: 0 8px;
+            top: 2px;
           }
-.slider {
-height: 30px !important;
-}
+
           .nav-glass {
-            gap: 6px;
-            padding: 7px 8px !important;
-            border-radius: 25px !important;
+            gap: 1px !important;
+            padding: 5px 6px !important;
           }
 
           .nav-link {
-            padding: 6px 8px !important;
-            font-size: 12px;
+            padding: 4px 6px !important;
           }
 
           .navbarlink {
-            font-size: 11px;
-            // margin-left: 4px;
-            max-width: none;
-            opacity: 1;
-            display: inline;
+            font-size: 10px;
+            margin-left: 2px;
           }
 
           .homeicon,
           .nav-link svg {
-            width: 15px !important;
-            height: 15px !important;
+            width: 14px !important;
+            height: 14px !important;
           }
 
-           .custom-nav.navbar-scrolled .nav-glass {
-        gap: 9px !important;
-        padding: 10px 20px !important;
-    }
+          .slider {
+            height: 26px !important;
+          }
+
+          .custom-nav.navbar-scrolled .nav-glass {
+            gap: 1px !important;
+            padding: 5px 8px !important;
+          }
+
           .custom-nav.navbar-scrolled .nav-link {
-            padding: 5px 6px !important;
-          }
-
-          .custom-nav.navbar-scrolled .navbarlink {
-            opacity: 0;
-            max-width: 0;
-            overflow: hidden;
-            margin-left: 0;
+            padding: 4px 6px !important;
           }
 
           .custom-nav.navbar-scrolled .slider {
-          // width: 20px;  
-          height: 28px !important;
-            border-radius: 10px !important;
+            width: 22px !important;
+            height: 26px !important;
+            border-radius: 16px !important;
           }
 
           .whatsapp-floating-btn {
@@ -580,8 +621,8 @@ height: 30px !important;
           }
 
           .whatsapp-floating-btn svg {
-            width: 20px;
-            height: 20px;
+            width: 19px;
+            height: 19px;
           }
         }
       `}</style>
