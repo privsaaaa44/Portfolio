@@ -26,8 +26,10 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
       <div
         className="projectcard rounded-4 shadow-lg border border-dark"
         style={{
-          width: '35rem',
-          height: '117vh',
+          width: '100%',
+          maxWidth: '35rem',
+          height: 'auto',
+          minHeight: '117vh',
           backgroundColor: '#0E1011',
           borderWidth: '1px',
           overflow: 'hidden'
@@ -42,7 +44,7 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
         <div
           className="mt-1 border-2 border-top border-dark border-left imagebgproject"
           style={{
-            height: '45vh',
+            height: 'clamp(250px, 45vh, 45vh)',
             backgroundImage: `url(${image})`,
             backgroundSize: '100% auto',
             backgroundPosition: 'top center',
@@ -50,24 +52,32 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            marginBottom: '0px'
           }}
         ></div>
 
-        <div className="card-content align-items-left ms-4 mt-4" style={{ textAlign: 'left' }}>
-          <h1 className="fs-4 text-white fw-bold">{title}</h1>
+        <div className="card-content align-items-left ms-3 ms-md-4 me-3" style={{ textAlign: 'left', paddingTop: '8px', marginTop: '0px' }}>
+          <h1 className="fs-4 text-white fw-bold m-0 p-0" style={{ fontSize: 'clamp(18px, 5vw, 24px)', lineHeight: '1.2' }}>{title}</h1>
 
-          <div className="mt-2 rounded-end" style={{ width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0' }}></div>
-          <h3 className="card-h3 fs-6 w-100 lh-base" style={{ color: '#d1d5dc' }}>
+          <div className="mt-1 rounded-end" style={{ width: '8%', height: '5px', backgroundColor: '#adb5bd', borderRadius: '0 10px 10px 0', minWidth: '30px', marginTop: '6px !important', marginBottom: '6px !important' }}></div>
+          <h3 className="card-h3 fs-6 w-100 lh-base m-0 p-0" style={{ color: '#d1d5dc', fontSize: 'clamp(13px, 3vw, 16px)', marginBottom: '8px !important' }}>
             {description}
           </h3>
 
-          <div className="d-flex gap-3 mt-4">
+          <div className="d-flex flex-wrap gap-2" style={{ gap: '8px', marginTop: '8px' }}>
             {technologies.map((tech, idx) => (
               <div
                 key={idx}
                 className="d-flex flex-column align-items-center justify-content-center rounded-3"
-                style={{ height: '70px', backgroundColor: '#1a1a1a', minWidth: '115px', padding: '24px 20px', border: '1px solid #2a2a2a' }}
+                style={{ 
+                  minHeight: '70px', 
+                  backgroundColor: '#1a1a1a', 
+                  minWidth: '115px', 
+                  padding: '24px 20px', 
+                  border: '1px solid #2a2a2a',
+                  flex: '0 1 auto'
+                }}
               >
                 <img
                   src={tech.icon}
@@ -84,7 +94,7 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
             ))}
           </div>
 
-          <div className="simplecardtext mt-3 d-flex align-items-center">
+          <div className="simplecardtext mt-2 d-flex align-items-center flex-wrap" style={{ marginTop: '6px !important' }}>
             <span style={{ fontSize: '12px', color: '#ffffff99' }}>+{technologies.length > 4 ? 4 : 1} more</span>
             {[s1, s13, s2, s16].slice(0, Math.min(4, technologies.length)).map((icon, idx) => (
               <span
@@ -100,7 +110,8 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
                   justifyContent: 'center',
                   marginLeft: idx === 0 ? '8px' : '-5px',
                   position: 'relative',
-                  zIndex: idx + 1
+                  zIndex: idx + 1,
+                  flexShrink: 0
                 }}
               >
                 <img
@@ -114,39 +125,45 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
             ))}
           </div>
 
-          <div className="projectlivenowbutt mt-3 d-flex justify-content-between align-items-center">
-            <a href={link} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-              <button
-                className="btn btn-light d-inline-flex align-items-center gap-2 fw-medium"
-                style={{ fontSize: "12px", borderRadius: '9px', padding: '6px 12px', height: '26px' }}
-              >
-                <ExternalLink width={12} />
-                View Live
-              </button>
-            </a>
-            <a href="https://github.com/privsaaaa44" target="_blank" rel="noopener noreferrer" className="githubinprojectlink">
-              <div
-                className="githubinproject border border-dark"
-                style={{
-                  backgroundColor: '#1a1a1a',
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginRight: '22px'
-                }}
-              >
-                <img
-                  width={14}
-                  height={14}
-                  src={s13}
-                  alt=""
-                  style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
-                />
-              </div>
-            </a>
+          <div className="projectlivenowbutt mt-2 d-flex align-items-center justify-content-between" style={{ gap: '8px' }}>
+            <button
+              className="btn btn-light d-flex align-items-center justify-content-center fw-medium"
+              style={{ 
+                fontSize: "11px", 
+                borderRadius: '6px', 
+                padding: '5px 12px', 
+                height: '30px',
+                width: 'auto',
+                flexGrow: 1
+              }}
+              onClick={() => window.open(link, '_blank')}
+            >
+              <ExternalLink width={11} style={{ flexShrink: 0, marginRight: '4px' }} />
+              View Live
+            </button>
+            <div
+              className="githubinproject border border-dark"
+              style={{
+                backgroundColor: '#1a1a1a',
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                cursor: 'pointer'
+              }}
+              onClick={() => window.open('https://github.com/privsaaaa44', '_blank')}
+            >
+              <img
+                width={13}
+                height={13}
+                src={s13}
+                alt="github"
+                style={{ filter: 'invert(1) brightness(1.5) contrast(0.8)' }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -211,71 +228,120 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
   ];
 
   return (
-    <section id="projectpage" className="mywork text-center mt-5 pt-1" style={{ marginBottom: '150px' }}>
+    <section id="projectpage" className="mywork text-center mt-5 pt-1" style={{ marginBottom: 'clamp(50px, 20vw, 150px)' }}>
       <div data-aos="fade-up" className="myworkheadings">
-        <div className="d-flex justify-content-center">
-          <div className="resumesectiondiv resumesectiondiv align-item-center text-center rounded-pill d-flex justify-content-center border border-dark" style={{ background: '#0D0D0D', width: '112.52', height: '42px' }}>
-            <h3 className="aboutmeheadingh3 text-center resumesectionh3 text-capitalize fw-medium" style={{ fontSize: '14px', color: '#ffffff99', padding: '8px 16px', margin: '0px 0px 5px', marginTop: '4px' }}>
+        <div className="d-flex justify-content-center px-3">
+          <div className="resumesectiondiv resumesectiondiv align-item-center text-center rounded-pill d-flex justify-content-center border border-dark" style={{ background: '#0D0D0D', width: 'fit-content', height: '42px', padding: '0 16px' }}>
+            <h3 className="aboutmeheadingh3 text-center resumesectionh3 text-capitalize fw-medium" style={{ fontSize: '14px', color: '#ffffff99', padding: '8px 0px', margin: '0px', marginTop: '4px' }}>
               My Work
             </h3>
           </div>
         </div>
-        <h1 className="text-white resumesectionh1 text-center mt-3 fw-bolder" style={{ fontSize: '60px' }}>
+        <h1 className="text-white resumesectionh1 text-center mt-3 fw-bolder px-3" style={{ fontSize: 'clamp(32px, 8vw, 60px)', lineHeight: '1.2' }}>
           Featured Projects
         </h1>
-        <p className="resumesectionp mt-3 text-center" style={{ fontSize: '18px', color: '#ffffff99' }}>
+        <p className="resumesectionp mt-3 text-center px-3" style={{ fontSize: 'clamp(14px, 4vw, 18px)', color: '#ffffff99' }}>
           Showcasing my best work across frontend, backend, and full-stack development
         </p>
       </div>
 
-      <div data-aos="fade-up" className="d-flex mt-3 justify-content-center gap-4 p-5">
+      {/* Desktop Layout - 2 Projects in Row */}
+      <div data-aos="fade-up" className="d-none d-lg-flex mt-3 justify-content-center gap-4 p-5">
         {projects.slice(0, 2).map((project, idx) => (
           <ProjectCard key={idx} {...project} isDragging={isDragging} />
         ))}
       </div>
 
-      <div data-aos="fade-up" className="d-flex justify-content-center gap-4 mt-0">
+      <div data-aos="fade-up" className="d-none d-lg-flex justify-content-center gap-4 mt-0 p-5 pt-0">
         {projects.slice(2).map((project, idx) => (
           <ProjectCard key={idx + 2} {...project} isDragging={isDragging} />
         ))}
       </div>
 
-      <div data-aos="fade-up" className="myworklastheading">
-        <h6 className="fs-6 mt-5 p-4" style={{ color: '#ffffff99' }}>
+      {/* Tablet Layout - 1 Project in Row */}
+      <div data-aos="fade-up" className="d-none d-md-flex d-lg-none flex-column justify-content-center gap-4 p-4">
+        {projects.map((project, idx) => (
+          <div key={idx} className="d-flex justify-content-center">
+            <ProjectCard {...project} isDragging={isDragging} />
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile Layout - Full Width Single Column */}
+      <div data-aos="fade-up" className="d-flex d-md-none flex-column justify-content-center gap-4 p-3">
+        {projects.map((project, idx) => (
+          <div key={idx} className="d-flex justify-content-center">
+            <ProjectCard {...project} isDragging={isDragging} />
+          </div>
+        ))}
+      </div>
+
+      <div data-aos="fade-up" className="myworklastheading px-3">
+        <h6 className="fs-6 mt-5 p-4" style={{ color: '#ffffff99', fontSize: 'clamp(14px, 3vw, 16px)' }}>
           Want to see more of my work?
         </h6>
         <a className="fs-6" target="_blank" href="https://github.com/privsaaaa44" rel="noopener noreferrer">
-          <button className="btn border border-secondary border-1 fs-6 rounded-pill p-3 githubworkbutton" style={{ width: '19%' }}>
-            <Github className="text-white me-1" width={16} height={16} />
+          <button 
+            className="btn border border-secondary border-1 fs-6 rounded-pill p-3 githubworkbutton d-inline-flex align-items-center gap-2" 
+            style={{ width: 'clamp(236px, 90%, 19%)' }}
+          >
+            <Github className="text-white" width={16} height={16} style={{ flexShrink: 0 }} />
             <span className="fs-6 text-white fw-medium">View All on GitHub</span>
             <span>
-              <MoveRight width={16} height={16} className="ms-2 text-white fw-lighter" />
+              <MoveRight width={16} height={16} className="text-white fw-lighter" style={{ flexShrink: 0 }} />
             </span>
           </button>
         </a>
       </div>
 
       {/* Draggable Text Section */}
-      <div className="myworklastonebikul" style={{ marginTop: '130px' }}>
-        <div className="d-flex gap-0 align-items-center" style={{ userSelect: 'none', cursor: isDragging ? 'grabbing' : 'grab' }}>
+      <div className="myworklastonebikul" style={{ marginTop: 'clamp(50px, 15vw, 130px)' }}>
+        <style>{`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .carousel-track {
+            animation: scroll 20s linear infinite;
+            will-change: transform;
+          }
+          
+          .carousel-track.dragging {
+            animation: none !important;
+          }
+          
+          .carousel-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+        <div className="d-flex gap-0 align-items-center" style={{ userSelect: 'none', cursor: isDragging ? 'grabbing' : 'grab', overflowX: 'hidden' }}>
           <div className="w-100 position-relative" style={{ overflow: 'hidden' }}>
-            <div ref={trackRef} className="d-flex align-items-center" style={{ whiteSpace: 'nowrap', willChange: 'transform' }}>
+            <div 
+              ref={trackRef} 
+              className={`carousel-track d-flex align-items-center ${isDragging ? 'dragging' : ''}`}
+              style={{ whiteSpace: 'nowrap', willChange: 'transform' }}
+            >
               {/* Set 1 */}
-              <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{ fontSize: '64px', flexShrink: '0' }}>
-                LET'S <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                CREATE <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                AND <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                DEVELOP <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                SOFTWARE <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
+              <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{ fontSize: 'clamp(32px, 10vw, 64px)', flexShrink: '0', lineHeight: '1.2' }}>
+                LET'S <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                CREATE <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                AND <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                DEVELOP <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                SOFTWARE <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
               </div>
 
               {/* Set 2 */}
-              <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{ fontSize: '64px', flexShrink: '0', lineHeight: '1' }}>
-                LET'S <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                CREATE <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                AND <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                DEVELOP <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
-                SOFTWARE <span className="mx-3" style={{ fontSize: "64px" }}>✦</span>
+              <div className="fw-bold text-white text-uppercase d-flex align-items-center" style={{ fontSize: 'clamp(32px, 10vw, 64px)', flexShrink: '0', lineHeight: '1.2' }}>
+                LET'S <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                CREATE <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                AND <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                DEVELOP <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
+                SOFTWARE <span className="mx-3" style={{ fontSize: "inherit" }}>✦</span>
               </div>
             </div>
           </div>

@@ -367,8 +367,8 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
           <div
             className="position-relative"
             style={{ 
-              width: isMobile ? '160px' : '250px', 
-              height: isMobile ? '160px' : '250px', 
+              width:  '250px', 
+              height: '250px', 
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -397,16 +397,16 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                 cy={150}
                 r={95}
                 fill="none"
-                strokeWidth={isMobile ? 1.8 : 2.5}
+                strokeWidth={2.5}
                 stroke="#ffffff99"
               />
 
               <text
                 fill="white"
-                fontSize={isMobile ? "16" : "28"}
+                fontSize={"28"}
                 fontStyle="italic"
                 className="textone"
-                letterSpacing={isMobile ? "1" : "-3"}
+                letterSpacing={"-3"}
                 fontWeight="500"
               >
                 <textPath href="#circlePath" startOffset="0%">
