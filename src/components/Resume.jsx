@@ -5,6 +5,8 @@ import MuhammadSadiqResume from "../assets/MuhammadSadiqResume.pdf";
 
 const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const skillsSectionRef = React.useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -12,6 +14,29 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSkillsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (skillsSectionRef.current) {
+      observer.observe(skillsSectionRef.current);
+    }
+
+    return () => {
+      if (skillsSectionRef.current) {
+        observer.unobserve(skillsSectionRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -24,7 +49,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
             </h3>
           </div>
         </div>
-        <h1 className="text-white resumesectionh1 text-center mt-4 fw-bold" style={{ fontSize: isMobile ? '28px' : '48px' }}>
+        <h1 className="text-white resumesectionh1 text-center mt-4 fw-bold" style={{ fontSize: isMobile ? '24px' : '48px' }}>
           Professional Experience
         </h1>
         <p className="resumesectionp mt-3 fw-lighter" style={{ fontSize: isMobile ? '14px' : '18px', color: '#ffffff99' }}>
@@ -41,7 +66,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
           backgroundColor: '#0D0D0D'
         }}>
           {/* LEFT COLUMN */}
-          <div className="firstcolumn p-3 py-4 px-4 shadow-lg border-bottom border-lg-0 border-bottom-dark" style={{ 
+          <div className="firstcolumn p-3 py-4 px-4 shadow-lg border-dark border-lg-0 border-bottom-dark" style={{ 
             width: isMobile ? '100%' : '35%', 
             backgroundColor: '#191919',
             borderRight: isMobile ? 'none' : '1px solid #333'
@@ -93,7 +118,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
             </div>
 
             {/* Technical Skills */}
-            <div className="technicalinfo mt-4" ref={sectionRef}>
+            <div className="technicalinfo mt-4" ref={skillsSectionRef}>
               <div className="firstone fs-5 text-white fw-bold">
                 <Code className="me-2" style={{ color: '#ffffff99' }} width={16} height={16} />
                 Technical Skills
@@ -119,16 +144,31 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                         {skill.percent}%
                       </span>
                     </div>
-                    <div className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden border border-secondary" style={{ height: '8px' }}>
+                    <div className="skillprogressbar mt-2 w-100 bg-dark rounded-2 overflow-hidden" style={{ height: '8px', position: 'relative' }}>
                       <div
                         className="progressfill h-100 rounded-2"
                         style={{
-                          backgroundColor: '#B7B7B7',
-                          width: isVisible ? `${skill.percent}%` : '0%',
+                          background: 'linear-gradient(90deg, #ffffff 0%, #B7B7B7 50%, #808080 100%)',
+                          width: skillsVisible ? `${skill.percent}%` : '0%',
                           height: '100%',
-                          transition: `width 1s ease-out ${skill.delay}`
+                          transition: `width 1s ease-out ${skill.delay}`,
+                          position: 'relative',
+                          overflow: 'hidden'
                         }}
-                      ></div>
+                      >
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '-100%',
+                            width: '100%',
+                            height: '100%',
+                            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
+                            animation: skillsVisible ? 'shimmer 2s infinite' : 'none',
+                            animationDelay: skill.delay
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -417,6 +457,18 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
           </div>
         </section>
       </div>
+
+      {/* Add keyframe animation for shimmer effect */}
+      <style jsx>{`
+        @keyframes shimmer {
+          0% {
+            left: -100%;
+          }
+          100% {
+            left: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 };

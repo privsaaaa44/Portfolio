@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Home, FileText, Briefcase, Mail } from "lucide-react"
+import waicon from "../assets/waicon.png"
 
 const Navbar = () => {
   const sliderRef = useRef(null);
@@ -145,7 +146,7 @@ const Navbar = () => {
 
   const handleWhatsAppMouseEnter = () => {
     setIsShaking(true);
-    const img = whatsappBtnRef.current?.querySelector('svg');
+    const img = whatsappBtnRef.current?.querySelector('img');
     if (img) {
       img.classList.remove('wa-shake');
       void img.offsetWidth;
@@ -228,9 +229,13 @@ const Navbar = () => {
         onMouseEnter={handleWhatsAppMouseEnter}
         className={`whatsapp-floating-btn ${isShaking ? 'wa-shake-btn' : ''}`}
       >
-        <div className="circel-ring border border-3 border-black bg-light" style={{top: '-5px', right: '-5px', width: '17.89px', height: '17.89px', position: 'absolute', borderRadius: '50%',}}>
-        </div>
-        <Mail size={30} onAnimationEnd={handleAnimationEnd} className="wa-icon" />
+        <div className="circel-ring border border-3 border-black bg-light"></div>
+        <img 
+          src={waicon} 
+          alt="" 
+          onAnimationEnd={handleAnimationEnd} 
+          className={`wa-icon ${isShaking ? 'wa-shake' : ''}`}
+        />
       </button>
 
       <style>{`
@@ -402,6 +407,22 @@ const Navbar = () => {
           border: 1px solid rgba(230, 227, 227, 0.15);
         }
 
+        /* Circle ring default styling */
+        .circel-ring {
+          top: -5px;
+          right: -5px;
+          width: 17.89px;
+          height: 17.89px;
+          position: absolute;
+          border-radius: 50%;
+        }
+
+        /* WhatsApp icon default styling */
+        .wa-icon {
+          width: 30px;
+          height: 30px;
+        }
+
         @keyframes wa-shake-btn {
           0%, 100% { transform: scale(1) translateX(0); }
           10% { transform: scale(1.05) translateX(-1px); }
@@ -501,9 +522,16 @@ const Navbar = () => {
             height: 48px;
           }
 
-          .whatsapp-floating-btn svg {
-            width: 24px;
-            height: 24px;
+          .wa-icon {
+            width: 26px;
+            height: 26px;
+          }
+
+          .circel-ring {
+            width: 15px;
+            height: 15px;
+            top: -4px;
+            right: -4px;
           }
         }
 
@@ -549,21 +577,28 @@ const Navbar = () => {
           }
 
           .custom-nav.navbar-scrolled .slider {
-            width: 24px !important;
+            width: 26px !important;
             height: 28px !important;
             border-radius: 18px !important;
           }
 
           .whatsapp-floating-btn {
             right: 15px;
-            bottom: 20px;
-            width: 45px;
-            height: 45px;
+            bottom: 45px;
+            width:  40px;
+            height: 40px;
           }
 
-          .whatsapp-floating-btn svg {
-            width: 21px;
-            height: 21px;
+          .wa-icon {
+            width: 24px;
+            height: 24px;
+          }
+
+          .circel-ring {
+            width: 14px;
+            height: 14px;
+            top: -3px;
+            right: -3px;
           }
         }
 
@@ -608,21 +643,28 @@ const Navbar = () => {
           }
 
           .custom-nav.navbar-scrolled .slider {
-            width: 22px !important;
+            width:  24px !important;
             height: 26px !important;
             border-radius: 16px !important;
           }
 
           .whatsapp-floating-btn {
-            right: 12px;
-            bottom: 18px;
-            width: 42px;
-            height: 42px;
+            right: 18px;
+            bottom: 50px;
+            width:  40px;
+            height: 40px;
           }
 
-          .whatsapp-floating-btn svg {
-            width: 19px;
-            height: 19px;
+          .wa-icon {
+            width: 22px;
+            height: 22px;
+          }
+
+          .circel-ring {
+            width: 12px;
+            height: 12px;
+            top: -3px;
+            right: -3px;
           }
         }
       `}</style>

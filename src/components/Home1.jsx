@@ -38,6 +38,7 @@ const Home1 = () => {
   // State for quotes carousel
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
 
   // State for typing effect
   const [visibleWords, setVisibleWords] = useState(new Set());
@@ -224,7 +225,8 @@ const Home1 = () => {
         }
 
         @media (max-width: 768px) {
-          .col3 {
+         
+        .col3 {
             gap: 40px !important;
             flex-wrap: wrap !important;
           }
@@ -267,13 +269,13 @@ const Home1 = () => {
 
         @media (max-width: 576px) {
           h1.h1class {
-            font-size: 48px !important;
+            font-size: 36px !important;
           }
           h1.h2Lclass {
-            font-size: 48px !important;
+            font-size: 36px !important;
           }
           h1.h3class {
-            font-size: 22px !important;
+            font-size: 20px !important;
             margin-top: 20px !important;
           }
           .col3one {
@@ -309,9 +311,9 @@ const Home1 = () => {
           }
           .shortintroaboutcontainer div {
             font-size: 20px !important;
-            padding: 0 15px !important;
-            line-height: 1.5 !important;
-            word-spacing: 0.06em !important;
+            // padding: 0 15px !important;
+            line-height: 1 !important;
+            word-spacing: 0.1em !important;
             overflow-wrap: break-word !important;
             word-break: break-word !important;
             hyphens: auto !important;
@@ -327,10 +329,10 @@ const Home1 = () => {
 
         @media (max-width: 420px) {
           h1.h1class {
-            font-size: 40px !important;
+            font-size: 36px !important;
           }
           h1.h2Lclass {
-            font-size: 40px !important;
+            font-size: 36px !important;
           }
           .col3 {
             gap: 20px !important;
@@ -350,8 +352,8 @@ const Home1 = () => {
           }
           .shortintroaboutcontainer div {
             font-size: 18px !important;
-            line-height: 1.5 !important;
-            word-spacing: 0.05em !important;
+            line-height: 1 !important;
+            word-spacing: 0.1em !important;
             overflow-wrap: break-word !important;
             word-break: break-word !important;
             hyphens: auto !important;
@@ -586,7 +588,7 @@ const Home1 = () => {
           <div style={{
             display: 'flex',
             gap: '19px',
-            animation: 'scroll 20s linear infinite',
+            animation: 'scroll 42s linear infinite',
             width: 'fit-content'
           }}>
             {[...skills, ...skills, ...skills, ...skills].map((skill, idx) => (
@@ -648,15 +650,15 @@ const Home1 = () => {
         </div>
 
         <div className="py-4" style={{ minHeight: '60vh' }}>
-          <div className="shortintroaboutcontainer" style={{ marginBottom: '150px' }}>
+          <div style={{ marginBottom: isMobile ? '50px' : '150px' }}  className="shortintroaboutcontainer" >
             <div className="fw-light mx-4" style={{ 
               fontSize: '60px', 
               color: '#fff', 
               margin: '0px', 
               padding: '0px',
               textAlign: 'left',
-              lineHeight: 1.6,
-              wordSpacing: '0.15em'
+              lineHeight: 1,
+              wordSpacing: '0.1em'
             }}>
               {scrollWords.map((word, index) => (
                 <React.Fragment key={index}>
@@ -673,7 +675,7 @@ const Home1 = () => {
                       </span>
                       {index < scrollWords.length - 1 && ' '}
                       {isTyping && index === visibleWords.size - 1 && (
-                        <span className="typing-cursor" />
+                        <span className="typing-cursor w-25 h-25"  />
                       )}
                     </>
                   ) : null}
