@@ -367,7 +367,7 @@ const Home1 = () => {
           Hi, I'm
         </h1>
         <h1 className="text-center h2Lclass fw-bold mt-2" style={{ fontSize: '72px', color: '#767777' }}>
-          Muhammad Sadiq
+          Muhammad Oadiq
         </h1>
         <h1 className="text-center h3class text-white fw-lighter" style={{ fontSize: '30px', marginTop: '32px' }}>
           Frontend Developer
