@@ -213,7 +213,7 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       ]
     },
     {
-      link: "https://flavoura-best-resturant-in-pak.vercel.app",
+      link: "https://muhammadsadiq.vercel.app/",
       badge: "Frontend Website",
       image: p4,
       title: "Personal Portfolio",
