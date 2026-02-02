@@ -169,7 +169,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <h1 className="text-center mt-2 fw-bold w-100 mt-4 responsive-title" style={{ fontSize: '72px' }}>
+            <h1 className="text-center text-white mt-2 fw-bold w-100 mt-4 responsive-title" style={{ fontSize: '72px' }}>
               Get In Touch
             </h1>
 
