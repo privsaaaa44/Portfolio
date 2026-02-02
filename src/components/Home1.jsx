@@ -540,7 +540,7 @@ const Home1 = () => {
 
             <div className="mt-4" style={{ position: 'relative', zIndex: 2 }}>
               <div className="carddiv3">
-                <h1 className="cardheading3 text-center" style={{ fontSize: '96px' }}>
+                <h1 className="cardheading3 text-center text-white" style={{ fontSize: '96px' }}>
                   1+
                 </h1>
               </div>
