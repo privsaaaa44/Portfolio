@@ -234,9 +234,9 @@ export default function ContactPage() {
 
           <br />
 
-          <h3 className="text-center text-white mt-4 mb-3 fw-bold social-section-title" style={{ fontSize: '30px' }}>
+          <h4 className="text-center text-white mt-4 mb-3 fw-bold social-section-title" style={{ fontSize: '30px' }}>
             Connect on Social Media
-          </h3>
+          </h4>
 
           <div data-aos="zoom-out-up" className="d-flex justify-content-center flex-column flex-md-row px-3 px-md-0 social-cards-container" style={{ gap: '1.5rem' }}>
             <div className="abcdef shadow-lg fs-5 py-2 px-3 mt-4 card-1_1 border border-dark social-card" style={{ height: '104px', background: '#0f0f0f', width: '434px', borderRadius: '14px' }}>
