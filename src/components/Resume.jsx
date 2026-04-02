@@ -1,6 +1,6 @@
 // sections/ResumePageSection.jsx
 import React, { useState, useEffect } from "react";
-import { Mail, Phone, MapPin, Globe, Github, Linkedin, Code, Download, Calendar, Circle, Award, MoveRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Github, Linkedin, Code, Download, Calendar, Circle, Award, MoveRight, Trophy } from 'lucide-react';
 import MuhammadSadiqResume from "../assets/MuhammadSadiqResume.pdf";
 
 const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) => {
@@ -125,17 +125,19 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
               </div>
               <div className="skillssection">
                 {[
-                  { name: 'JavaScript/Jquery', percent: 65, delay: '0s' },
-                  { name: 'React', percent: 75, delay: '0.1s' },
-                  { name: 'Wordpress', percent: 50, delay: '0.2s' },
-                  { name: 'SEO', percent: 80, delay: '0.3s' },
-                  { name: 'Figma/Canva', percent: 90, delay: '0.4s' },
-                  { name: 'My SQL', percent: 85, delay: '0.5s' },
-                  { name: 'Shopify', percent: 65, delay: '0.6s' },
-                  { name: 'Bootstrap/Tailwind CSS', percent: 95, delay: '0.7s' },
-                  { name: 'XML/JSON', percent: 99, delay: '0.8s' },
-                  { name: 'MS office', percent: 95, delay: '0.9s' },
-                  { name: 'Git/GitHub', percent: 90, delay: '1s' },
+                  { name: 'Laravel', percent: 85, delay: '0s' },
+                  { name: 'PHP', percent: 90, delay: '0.1s' },
+                  { name: 'JavaScript/Jquery', percent: 65, delay: '0.2s' },
+                  { name: 'React', percent: 75, delay: '0.3s' },
+                  { name: 'Wordpress', percent: 50, delay: '0.4s' },
+                  { name: 'SEO', percent: 80, delay: '0.5s' },
+                  { name: 'Figma/Canva', percent: 90, delay: '0.6s' },
+                  { name: 'My SQL', percent: 85, delay: '0.7s' },
+                  { name: 'Shopify', percent: 65, delay: '0.8s' },
+                  { name: 'Bootstrap/Tailwind CSS', percent: 95, delay: '0.9s' },
+                  { name: 'XML/JSON', percent: 99, delay: '1s' },
+                  { name: 'MS office', percent: 95, delay: '1.1s' },
+                  { name: 'Git/GitHub', percent: 90, delay: '1.2s' },
                 ].map((skill, idx) => (
                   <div className="skill-container" key={idx}>
                     <div className="skillheader mt-2" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99' }}>
@@ -370,12 +372,60 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
             </div>
 
             {/* Certifications */}
-            <div className="cerifications">
+            <div className="cerifications mt-4">
               <div className="experience mt-5 d-flex align-items-center">
                 <Award width={18} height={18} style={{ color: '#ffffff99' }} />
                 <span className="espan text-white fw-bold fs-4 p-2" style={{ fontSize: isMobile ? '16px' : '20px' }}>Certifications</span>
               </div>
               <hr className="mt-0" style={{ color: '#ffffff99' }} />
+              <div className={`d-flex ${isMobile ? 'flex-column' : 'flex-row'} gap-3 w-100`}>
+                <div className="certification-item flex-fill">
+                  <a href="src/assets/Aptech_1_semester_certifications.pdf" target="_blank" className="text-decoration-none">
+                    <div className="alert shadow-lg border border-dark mb-0 d-flex align-items-center gap-3 h-100" style={{ backgroundColor: '#191919', color: '#ffffff99', transition: 'all 0.3s ease' }} role="alert">
+                      <Award width={18} height={18} style={{ color: '#ffffff99' }} />
+                      <span className="fw-medium" style={{ fontSize: isMobile ? '13px' : '15px' }}>ACCP IN AI-TERM 1</span>
+                    </div>
+                  </a>
+                </div>
+                <div className="certification-item flex-fill">
+                  <a href="src/assets/Aptech_1_semester_certifications.pdf" target="_blank" className="text-decoration-none">
+                    <div className="alert shadow-lg border border-dark mb-0 d-flex align-items-center gap-3 h-100" style={{ backgroundColor: '#191919', color: '#ffffff99', transition: 'all 0.3s ease' }} role="alert">
+                      <Award width={18} height={18} style={{ color: '#ffffff99' }} />
+                      <span className="fw-medium" style={{ fontSize: isMobile ? '13px' : '15px' }}>ACCP IN AI-TERM 2</span>
+                    </div>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+           
+
+            {/* Achievements */}
+             <div className="cerifications mt-2">
+              <div className="experience mt-4 d-flex align-items-center">
+                <Trophy width={18} height={18} style={{ color: '#ffffff99' }} />
+                <span className="espan text-white fw-bold fs-4 p-2" style={{ fontSize: isMobile ? '16px' : '20px' }}>Achievements</span>
+              </div>
+              <hr className="mt-0" style={{ color: '#ffffff99' }} />
+              <div className={`d-flex ${isMobile ? 'flex-column' : 'flex-row'} gap-3 w-100`}>
+                <div className="certification-item flex-fill">
+                  <a href="src/assets/Aptech_1_semester_certifications.pdf" target="_blank" className="text-decoration-none">
+                    <div className="alert shadow-lg border border-dark mb-0 d-flex align-items-center gap-3 h-100" style={{ backgroundColor: '#191919', color: '#ffffff99', transition: 'all 0.3s ease' }} role="alert">
+                      <Trophy width={18} height={18} style={{ color: '#ffffff99' }} />
+                      <span className="fw-medium" style={{ fontSize: isMobile ? '13px' : '15px' }}>AI Champ First Runner Up</span>
+                    </div>
+                  </a>
+                </div>
+                <div className="certification-item flex-fill">
+                  <a href="src/assets/Aptech_1_semester_certifications.pdf" target="_blank" className="text-decoration-none">
+                    <div className="alert shadow-lg border border-dark mb-0 d-flex align-items-center gap-3 h-100" style={{ backgroundColor: '#191919', color: '#ffffff99', transition: 'all 0.3s ease' }} role="alert">
+                      <Trophy width={18} height={18} style={{ color: '#ffffff99' }} />
+                      <span className="fw-medium" style={{ fontSize: isMobile ? '13px' : '15px' }}>AIDC First Position</span>
+                    </div>
+                  </a>
+                </div>
+                
+              </div>
             </div>
           </div>
         </div>

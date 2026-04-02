@@ -171,9 +171,86 @@ const Home1 = () => {
     };
   }, [quotes.length]);
 
+  // State for cycling titles with typing effect
+  const titles = [
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "PHP & Laravel Expert",
+    "React JSX Developer",
+    "Wordpress Developer",
+    "SEO Executive"
+  ];
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(50);
+
+  useEffect(() => {
+    let timer;
+    const currentTitle = titles[titleIndex];
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing
+        setDisplayText(currentTitle.substring(0, displayText.length + 1));
+        setTypingSpeed(50);
+
+        if (displayText === currentTitle) {
+          // Pause at the end
+          timer = setTimeout(() => setIsDeleting(true), 1000);
+          return;
+        }
+      } else {
+        // Deleting
+        setDisplayText(currentTitle.substring(0, displayText.length - 1));
+        setTypingSpeed(30);
+
+        if (displayText === "") {
+          setIsDeleting(false);
+          setTitleIndex((prev) => (prev + 1) % titles.length);
+        }
+      }
+
+      timer = setTimeout(handleTyping, typingSpeed);
+    };
+
+    timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, titleIndex, titles, typingSpeed]);
+
   return (
     <section className="firstsection mt-0" id="homepage">
       <style>{`
+        .title-fade {
+          display: inline-block;
+          animation: emerge 0.4s ease-out forwards;
+        }
+
+        @keyframes emerge {
+          0% {
+            opacity: 0;
+            transform: scale(0.95) translateY(5px);
+            filter: blur(3px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0);
+          }
+        }
+
+        .typing-cursor-title {
+          border-right: 2px solid #fff;
+          margin-left: 2px;
+          animation: blink-cursor 0.7s infinite;
+        }
+
+        @keyframes blink-cursor {
+          from, to { border-color: transparent }
+          50% { border-color: white }
+        }
+
         /* Responsive Styles */
         @media (max-width: 1200px) {
           .col3 {
@@ -333,6 +410,7 @@ const Home1 = () => {
           }
           h1.h2Lclass {
             font-size: 36px !important;
+            word-break: break-all;
           }
           .col3 {
             gap: 20px !important;
@@ -361,7 +439,6 @@ const Home1 = () => {
           }
         }
       `}</style>
-
       <div className="firstdiv mt-0 p-0">
         <h1 className="text-center h1class mt-0 fw-bold" style={{ fontSize: '72px', color: '#CFD0D0' }}>
           Hi, I'm
@@ -369,8 +446,11 @@ const Home1 = () => {
         <h1 className="text-center h2Lclass fw-bold mt-2" style={{ fontSize: '72px', color: '#767777' }}>
           Muhammad Sadiq
         </h1>
-        <h1 className="text-center h3class text-white fw-lighter" style={{ fontSize: '30px', marginTop: '32px' }}>
-          Frontend Developer
+        <h1 className="text-center h3class text-white fw-lighter" style={{ fontSize: '30px', marginTop: '32px', minHeight: '45px' }}>
+          <span key={titleIndex} className="title-fade">
+            {displayText}
+          </span>
+          <span className="typing-cursor-title"></span>
         </h1>
         <center>
           <hr
@@ -389,7 +469,7 @@ const Home1 = () => {
           <div className="col3 d-flex justify-content-center align-items-center" style={{ gap: '170px' }}>
             <div className="col1 text-center">
               <h1 className="text-white fw-bold" style={{ fontSize: '36px' }}>
-                20+
+               5+
               </h1>
               <h1 className="text-uppercase fw-medium mt-2" style={{ fontSize: '14px', color: '#87909A' }}>
                 projects completed
@@ -541,12 +621,12 @@ const Home1 = () => {
             <div className="mt-4" style={{ position: 'relative', zIndex: 2 }}>
               <div className="carddiv3">
                 <h1 className="cardheading3 text-center text-white" style={{ fontSize: '96px' }}>
-                  1+
+                  3+
                 </h1>
               </div>
               <div className="mt-4 text-center">
                 <h2 className="text-white mb-3" style={{ fontSize: '24px', fontWeight: '600' }}>
-                  Years of Experience
+                  Monthsf of Experience
                 </h2>
                 <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#ffffff99' }}>
                   Building scalable applications and crafting exceptional user experiences
