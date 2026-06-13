@@ -1,7 +1,7 @@
 // sections/ResumePageSection.jsx
 import React, { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Globe, Github, Linkedin, Code, Download, Calendar, Circle, Award, MoveRight, Trophy } from 'lucide-react';
-import MuhammadSadiqResume from "../assets/MuhammadSadiqResume.pdf";
+import MuhammadSadiqResume from "../assets/Muhammad Sadiq - Resumee.pdf";
 
 const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -129,11 +129,11 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                   { name: 'PHP', percent: 90, delay: '0.1s' },
                   { name: 'JavaScript/Jquery', percent: 65, delay: '0.2s' },
                   { name: 'React', percent: 75, delay: '0.3s' },
-                  { name: 'Wordpress', percent: 50, delay: '0.4s' },
+                  { name: 'Wordpress', percent: 80, delay: '0.4s' },
                   { name: 'SEO', percent: 80, delay: '0.5s' },
                   { name: 'Figma/Canva', percent: 90, delay: '0.6s' },
-                  { name: 'My SQL', percent: 85, delay: '0.7s' },
-                  { name: 'Shopify', percent: 65, delay: '0.8s' },
+                  { name: 'MySQL / SQL', percent: 85, delay: '0.7s' },
+                  { name: 'Shopify', percent: 60, delay: '0.8s' },
                   { name: 'Bootstrap/Tailwind CSS', percent: 95, delay: '0.9s' },
                   { name: 'XML/JSON', percent: 99, delay: '1s' },
                   { name: 'MS office', percent: 95, delay: '1.1s' },
@@ -335,22 +335,14 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
 
               <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
                 <div className="d-flex align-items-center mt-4">
-                  <Circle width={20} height={20} stroke="gray" fill="#3D3D3D" strokeWidth={2} />
+                <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
                   <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '13px' : '15px' }}>
-                    Diploma Degree Aptech, 3-year Web Development Course (1 year Completed) | 2025 – Present
+                    Aptech Learning Shahr-e-Faisal Karachi
                   </span>
-                </div>
-              </div>
-
-              <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
-                <div className="d-flex align-items-center mt-4">
-                  <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
-                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '13px' : '15px' }}>Govt Degree Boys College Johar Karachi, ICS | 2025 – Present</span>
-                </div>
-                <div className="company mt-1">
+                </div> <div className="company mt-1">
                   <div className="d-flex align-items-center" style={{ paddingLeft: isMobile ? '24px' : '36px' }}>
                     <h4 className="fw-bolder mb-0" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99' }}>
-                      Intermediate in Computer Science
+                1-Year Full Stack Developer Diploma
                     </h4>
                   </div>
                 </div>
@@ -359,12 +351,30 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
               <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
                 <div className="d-flex align-items-center mt-4">
                   <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
-                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '13px' : '15px' }}>HPGS School Karachi, Computer Science | 2025</span>
+                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '13px' : '15px' }}>Govt. Degree Boys College Johar
+</span>
                 </div>
                 <div className="company mt-1">
                   <div className="d-flex align-items-center" style={{ paddingLeft: isMobile ? '24px' : '36px' }}>
                     <h4 className="fw-bolder mb-0" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99' }}>
-                      Matriculation in Computer Science
+                     Intermediate in Computer Science (Studies in H.S.C part 2) 
+
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
+                <div className="d-flex align-items-center mt-4">
+                  <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
+                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '13px' : '15px' }}>Happy Palace Grammer School
+</span>
+                </div>
+                <div className="company mt-1">
+                  <div className="d-flex align-items-center" style={{ paddingLeft: isMobile ? '24px' : '36px' }}>
+                    <h4 className="fw-bolder mb-0" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99' }}>
+                     Matriculation in Computer Science in 2025
+
                     </h4>
                   </div>
                 </div>

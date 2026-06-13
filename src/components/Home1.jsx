@@ -469,7 +469,7 @@ const Home1 = () => {
           <div className="col3 d-flex justify-content-center align-items-center" style={{ gap: '170px' }}>
             <div className="col1 text-center">
               <h1 className="text-white fw-bold" style={{ fontSize: '36px' }}>
-               5+
+               9+
               </h1>
               <h1 className="text-uppercase fw-medium mt-2" style={{ fontSize: '14px', color: '#87909A' }}>
                 projects completed
@@ -485,7 +485,7 @@ const Home1 = () => {
             </div>
             <div className="col3 text-center">
               <h1 className="text-white fw-bold" style={{ fontSize: '36px' }}>
-                100+
+                100%
               </h1>
               <h1 className="text-uppercase fw-medium mt-2" style={{ fontSize: '14px', color: '#87909A' }}>
                 client satisfaction
@@ -626,7 +626,7 @@ const Home1 = () => {
               </div>
               <div className="mt-4 text-center">
                 <h2 className="text-white mb-3" style={{ fontSize: '24px', fontWeight: '600' }}>
-                  Monthsf of Experience
+                  Months of Experience
                 </h2>
                 <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#ffffff99' }}>
                   Building scalable applications and crafting exceptional user experiences

@@ -6,6 +6,8 @@ import p1 from "../assets/p1.png";
 import p2 from "../assets/p2.png";
 import p3 from "../assets/p3.png";
 import p4 from "../assets/p4.png";
+import chatbot from "../assets/personalchatbot.png";
+import nodejs from "../assets/nodejs.png";
 // Import skill icons
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
@@ -70,11 +72,11 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
               <div
                 key={idx}
                 className="d-flex flex-column align-items-center justify-content-center rounded-3"
-                style={{ 
-                  minHeight: '70px', 
-                  backgroundColor: '#1a1a1a', 
-                  minWidth: '115px', 
-                  padding: '24px 20px', 
+                style={{
+                  minHeight: '70px',
+                  backgroundColor: '#1a1a1a',
+                  minWidth: '115px',
+                  padding: '24px 20px',
                   border: '1px solid #2a2a2a',
                   flex: '0 1 auto'
                 }}
@@ -128,10 +130,10 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
           <div className="projectlivenowbutt mt-2 d-flex align-items-center justify-content-between" style={{ gap: '8px' }}>
             <button
               className="btn btn-light d-flex align-items-center justify-content-center fw-medium"
-              style={{ 
-                fontSize: "11px", 
-                borderRadius: '6px', 
-                padding: '5px 12px', 
+              style={{
+                fontSize: "11px",
+                borderRadius: '6px',
+                padding: '5px 12px',
                 height: '30px',
                 width: 'auto',
                 flexGrow: 1
@@ -224,6 +226,58 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
         { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
         { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
       ]
+    },
+    {
+      link: "https://personalchatbot-five.vercel.app/",
+      badge: "Full Stack Site",
+      image: chatbot,
+      title: "Aptech Chatbot",
+      description: "During this personal project, I created the Aptech Chatbot during the AI Champ Competition, where I emerged as the winner. The chatbot was designed to answer user queries and function as a career counselor, helping students explore courses, receive guidance, and make informed decisions through an intuitive conversational interface.", 
+      technologies: [
+        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
+        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
+        { icon: nodejs, name: "Nodejs", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
+        { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
+      ]
+    },
+    {
+      link: "https://muhammadsadiq.vercel.app/",
+      badge: "Frontend Website",
+      image: p4,
+      title: "Personal Portfolio",
+      description: "During this personal project, I created a responsive portfolio website showcasing my projects, skills, and experience, featuring smooth navigation, interactive elements, and modern design principles throughout.",
+      technologies: [
+        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
+        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
+        { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
+        { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
+      ]
+    },
+    {
+      link: "https://flavoura-best-resturant-in-pak.vercel.app",
+      badge: "Frontend Website",
+      image: p3,
+      title: "Flavora Restaurant Website",
+      description: "During this personal project, I created a restaurant website with online table reservation functionality, allowing customers to browse menus, view available time slots, and book tables through an intuitive interface.",
+      technologies: [
+        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
+        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
+        { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
+        { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
+      ]
+    },
+    {
+      link: "https://muhammadsadiq.vercel.app/",
+      badge: "Frontend Website",
+      image: p4,
+      title: "Personal Portfolio",
+      description: "During this personal project, I created a responsive portfolio website showcasing my projects, skills, and experience, featuring smooth navigation, interactive elements, and modern design principles throughout.",
+      technologies: [
+        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
+        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
+        { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
+        { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
+      ]
     }
   ];
 
@@ -253,10 +307,26 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       </div>
 
       <div data-aos="fade-up" className="d-none d-lg-flex justify-content-center gap-4 mt-0 p-5 pt-0">
-        {projects.slice(2).map((project, idx) => (
+        {projects.slice(2, 4).map((project, idx) => (
           <ProjectCard key={idx + 2} {...project} isDragging={isDragging} />
         ))}
       </div>
+
+      {projects.length > 4 && (
+        <div data-aos="fade-up" className="d-none d-lg-flex justify-content-center gap-4 mt-0 p-5 pt-0">
+          {projects.slice(4, 6).map((project, idx) => (
+            <ProjectCard key={idx + 4} {...project} isDragging={isDragging} />
+          ))}
+        </div>
+      )}
+
+      {projects.length > 6 && (
+        <div data-aos="fade-up" className="d-none d-lg-flex justify-content-center gap-4 mt-0 p-5 pt-0">
+          {projects.slice(6, 8).map((project, idx) => (
+            <ProjectCard key={idx + 6} {...project} isDragging={isDragging} />
+          ))}
+        </div>
+      )}
 
       {/* Tablet Layout - 1 Project in Row */}
       <div data-aos="fade-up" className="d-none d-md-flex d-lg-none flex-column justify-content-center gap-4 p-4">
@@ -281,8 +351,8 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
           Want to see more of my work?
         </h6>
         <a className="fs-6" target="_blank" href="https://github.com/privsaaaa44" rel="noopener noreferrer">
-          <button 
-            className="btn border border-secondary border-1 fs-6 rounded-pill p-3 githubworkbutton d-inline-flex align-items-center gap-2" 
+          <button
+            className="btn border border-secondary border-1 fs-6 rounded-pill p-3 githubworkbutton d-inline-flex align-items-center gap-2"
             style={{ width: 'clamp(236px, 90%, 19%)' }}
           >
             <Github className="text-white" width={16} height={16} style={{ flexShrink: 0 }} />
@@ -321,8 +391,8 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
         `}</style>
         <div className="d-flex gap-0 align-items-center" style={{ userSelect: 'none', cursor: isDragging ? 'grabbing' : 'grab', overflowX: 'hidden' }}>
           <div className="w-100 position-relative" style={{ overflow: 'hidden' }}>
-            <div 
-              ref={trackRef} 
+            <div
+              ref={trackRef}
               className={`carousel-track d-flex align-items-center ${isDragging ? 'dragging' : ''}`}
               style={{ whiteSpace: 'nowrap', willChange: 'transform' }}
             >
