@@ -8,6 +8,9 @@ import p3 from "../assets/p3.png";
 import p4 from "../assets/p4.png";
 import chatbot from "../assets/personalchatbot.png";
 import nodejs from "../assets/nodejs.png";
+import php from "../assets/php.png";
+import mysql from "../assets/mysql.png";
+import pos from "../assets/pos.png";
 // Import skill icons
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
@@ -241,14 +244,14 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       ]
     },
     {
-      link: "https://muhammadsadiq.vercel.app/",
-      badge: "Frontend Website",
-      image: p4,
-      title: "Personal Portfolio",
-      description: "During this personal project, I created a responsive portfolio website showcasing my projects, skills, and experience, featuring smooth navigation, interactive elements, and modern design principles throughout.",
+      link: "https://posmanagementsystem.liveblog365.com/",
+      badge: "Full Stack Site",
+      image: pos,
+      title: "POS Management System",
+      description: "During this personal project, I built an ERP and POS system using Core PHP, MySQL, and Bootstrap to manage inventory, sales, customers, and transactions. The system included features like invoicing, sales reporting, and role-based access control, with Core PHP handling backend logic and Bootstrap providing a responsive user interface.",
       technologies: [
-        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
-        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
+        { icon: php, name: "Core PHP", filter: 'brightness(0) invert(1)' },
+        { icon: mysql, name: "MYSQL", filter: 'brightness(0) invert(1)' },
         { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
         { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
       ]
