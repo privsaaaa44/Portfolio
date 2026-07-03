@@ -11,6 +11,7 @@ import nodejs from "../assets/nodejs.png";
 import php from "../assets/php.png";
 import mysql from "../assets/mysql.png";
 import pos from "../assets/pos.png";
+import m from "../assets/m.png";
 // Import skill icons
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
@@ -257,14 +258,14 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       ]
     },
     {
-      link: "https://flavoura-best-resturant-in-pak.vercel.app",
-      badge: "Frontend Website",
-      image: p3,
-      title: "Flavora Restaurant Website",
-      description: "During this personal project, I created a restaurant website with online table reservation functionality, allowing customers to browse menus, view available time slots, and book tables through an intuitive interface.",
+      link: "https://moviebookingsystem.liveblog365.com/index.php",
+      badge: "Full Stack Site",
+      image: m,
+      title: "Movie Booking System",
+      description: "During my second-semester project at Aptech, I developed a Movie Booking System using Core PHP. The system allowed users to browse available movies, view show timings, select seats, and book tickets through a user-friendly interface. It also included an admin panel for managing movies, schedules, and bookings, providing a complete end-to-end movie ticket reservation solution.",
       technologies: [
-        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
-        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
+        { icon: php, name: "Core PHP", filter: 'brightness(0) invert(1)' },
+        { icon: mysql, name: "MYSQL", filter: 'brightness(0) invert(1)' },
         { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
         { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
       ]
