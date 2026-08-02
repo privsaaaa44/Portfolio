@@ -62,7 +62,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
         <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark flex-column flex-lg-row" style={{ 
           width: isMobile ? '95vw' : window.innerWidth < 1200 ? '90vw' : '1152px', 
           maxWidth: '1152px',
-          height: isMobile ? 'auto' : '240vh',
+          height: isMobile ? 'auto' : '245vh',
           backgroundColor: '#0D0D0D'
         }}>
           {/* LEFT COLUMN */}
@@ -252,78 +252,48 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                 <span className="espan text-white fw-bold fs-4 p-2" style={{ fontSize: isMobile ? '16px' : '20px' }}>Work Experience</span>
               </div>
               <hr className="mt-0" style={{ color: '#ffffff99' }} />
-
-              {/* Job 1 */}
-              <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
-                <div className="d-flex align-items-center mt-4">
-                  <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
-                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '15px' : '18px' }}>Data Entry Operator Intern</span>
-                </div>
-                <div className="company mt-1">
-                  <div className="d-flex align-items-center flex-wrap" style={{ paddingLeft: isMobile ? '24px' : '36px' }}>
-                    <h4 className="fw-bolder mb-0" style={{ fontSize: isMobile ? '13px' : '14px', color: '#ffffff99' }}>
-                      Digitalaz Solution
-                    </h4>
-                    <ul className="mb-0 d-flex align-items-center gap-4 flex-wrap" style={{ listStyleType: 'square', paddingLeft: '8px', margin: 0, marginLeft: isMobile ? '2px' : '4px' }}>
-                      <li className="ms-3" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
-                        On-site
-                      </li>
-                      <li style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
-                        Aug 2025 – Sep 2025
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="companypara mt-2" style={{ marginLeft: isMobile ? '8px' : '13px' }}>
-                    <ul className="companyul ps-0">
-                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
-                        <span className="ms-2">Performed product listings and updates on the company's ecommerce platform.</span>
-                      </li>
-                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
-                        <span className="ms-2">Ensured product details, prices, and descriptions were accurate and up to date.</span>
-                      </li>
-                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
-                        <span className="ms-2">Assisted in organizing digital inventory and maintaining data consistency.</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Job 2 */}
+                  {/* Job 3 */}
               <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
                 <div className="d-flex align-items-center" style={{ marginTop: '30px' }}>
                   <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
-                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '15px' : '18px' }}>Web Developer Intern</span>
+                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '15px' : '18px' }}>Junior SEO Executive</span>
                 </div>
                 <div className="company mt-1">
                   <div className="d-flex align-items-center flex-wrap" style={{ paddingLeft: isMobile ? '24px' : '36px' }}>
                     <h4 className="fw-bolder mb-0" style={{ fontSize: isMobile ? '13px' : '14px', color: '#ffffff99' }}>
-                      IJK Media
+                    Gettz Pro
                     </h4>
                     <ul className="mb-0 d-flex align-items-center gap-4 flex-wrap" style={{ listStyleType: 'square', paddingLeft: '8px', margin: 0, marginLeft: isMobile ? '2px' : '4px' }}>
                       <li className="ms-3" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
                         On-site
                       </li>
                       <li style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
-                        Oct 2025 – Dec 2025
+                        July 2026 – Present
                       </li>
                     </ul>
                   </div>
                   <div className="companypara mt-2" style={{ marginLeft: isMobile ? '8px' : '13px' }}>
                     <ul className="companyul ps-0">
                       <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
-                        <span className="ms-2">Developed front-end features using HTML, CSS, JavaScript, Bootstrap, React, WordPress.</span>
+                        <span className="ms-2">Conduct keyword research and competitor analysis to identify ranking opportunities; execute On-Page, Off-Page, and basic Technical SEO.</span>
                       </li>
                       <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
-                        <span className="ms-2">Focused on creating responsive layouts and improving user interface experience.</span>
+                        <span className="ms-2">Optimize website content, meta titles/descriptions, headings, and internal linking to improve search visibility.</span>
                       </li>
                       <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
-                        <span className="ms-2">Collaborated with the team to deliver visually appealing and functional web pages.</span>
+                        <span className="ms-2">Build and manage high-quality backlinks through white-hat link-building strategies.</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
+    {/* Job 2 */}
+       
+
+              {/* Job 1 */}
+          
+
+          
             </div>
 
             {/* Education */}

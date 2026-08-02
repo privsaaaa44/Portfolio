@@ -6,12 +6,15 @@ import p1 from "../assets/p1.png";
 import p2 from "../assets/p2.png";
 import p3 from "../assets/p3.png";
 import p4 from "../assets/p4.png";
+import boxingsite from "../assets/boxingsite.png";
 import chatbot from "../assets/personalchatbot.png";
 import nodejs from "../assets/nodejs.png";
 import php from "../assets/php.png";
 import mysql from "../assets/mysql.png";
 import pos from "../assets/pos.png";
 import m from "../assets/m.png";
+import woo from "../assets/woo.png";
+import h from "../assets/h.png";
 // Import skill icons
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
@@ -25,7 +28,7 @@ import s11 from "../assets/s11.svg";
 import s13 from "../assets/s13.png";
 import s16 from "../assets/s16.png";
 import s18 from "../assets/s18.svg";
-
+const image = "/boxingsitescreenshot.png";
 const ProjectCard = ({ link, badge, image, title, description, technologies, isDragging }) => {
   return (
     <a href={link} className="projectcardlink" target="_blank" rel="noopener noreferrer">
@@ -35,7 +38,7 @@ const ProjectCard = ({ link, badge, image, title, description, technologies, isD
           width: '100%',
           maxWidth: '35rem',
           height: 'auto',
-          minHeight: '117vh',
+          minHeight: '125vh',
           backgroundColor: '#0E1011',
           borderWidth: '1px',
           overflow: 'hidden'
@@ -201,7 +204,7 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       technologies: [
         { icon: s9, name: "Wordpress", filter: 'brightness(0) invert(1)' },
         { icon: s10, name: "Elementor Pro", filter: 'brightness(0) invert(1)' },
-        { icon: s4, name: "JavaScript", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
+        { icon: h, name: "Hostinger", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
         { icon: s11, name: "Jquery", filter: 'brightness(0) invert(1)' }
       ]
     },
@@ -262,7 +265,7 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       badge: "Full Stack Site",
       image: m,
       title: "Movie Booking System",
-      description: "During my second-semester project at Aptech, I developed a Movie Booking System using Core PHP. The system allowed users to browse available movies, view show timings, select seats, and book tickets through a user-friendly interface. It also included an admin panel for managing movies, schedules, and bookings, providing a complete end-to-end movie ticket reservation solution.",
+      description: "During my personal WordPress project, I developed a responsive boxing website using WordPress, Elementor Pro, and WooCommerce. The website featured custom pages, WooCommerce functionality, and responsive layouts. I also fixed cache conflicts, plugin compatibility, publish button issues, and optimized website performance, delivering a complete WordPress eCommerce solution.",
       technologies: [
         { icon: php, name: "Core PHP", filter: 'brightness(0) invert(1)' },
         { icon: mysql, name: "MYSQL", filter: 'brightness(0) invert(1)' },
@@ -271,16 +274,16 @@ const ProjectPageSection = ({ trackRef, isDragging }) => {
       ]
     },
     {
-      link: "https://muhammadsadiq.vercel.app/",
-      badge: "Frontend Website",
-      image: p4,
-      title: "Personal Portfolio",
-      description: "During this personal project, I created a responsive portfolio website showcasing my projects, skills, and experience, featuring smooth navigation, interactive elements, and modern design principles throughout.",
+      link: "/boxingsitescreenshot.png",
+      badge: "Full Stack Site",
+      image: boxingsite,
+      title: "LiftLab Boxing Site",
+      description: "During my personal WordPress project, I developed a responsive boxing website using WordPress, Elementor Pro, and WooCommerce. The project included building custom pages, WooCommerce features, and responsive layouts. I also solved cache conflicts, publish button issues, slow website performance, and plugin compatibility while gaining hands-on experience in WordPress development.",
       technologies: [
-        { icon: s6, name: "React.JSX", filter: 'brightness(0) invert(1)' },
-        { icon: s3, name: "Bootstrap", filter: 'brightness(0) invert(1)' },
-        { icon: s16, name: "Figma", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
-        { icon: s18, name: "Vercel", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
+        { icon: s9, name: "Wordpress", filter: 'brightness(0) invert(1)' },
+        { icon: s10, name: "Elementor Pro", filter: 'brightness(0) invert(1)' },
+        { icon: mysql, name: "MYSQL", filter: 'invert(1) brightness(1.5) contrast(0.8)' },
+        { icon: woo, name: "Woocommerce", filter: 'invert(1) brightness(1.5) contrast(0.8)' }
       ]
     }
   ];
