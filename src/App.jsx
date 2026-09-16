@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import './App.css';
 import Footer from './components/Footer';
-
+import VideoIntro from './components/VideoIntro';
 
 function App() {
   return (
     <>
-      {/* Snowfall setup for the whole page */}
- 
+      <VideoIntro />
 
       <div className="App">
         <Navbar />

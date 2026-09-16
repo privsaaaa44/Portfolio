@@ -268,7 +268,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                         On-site
                       </li>
                       <li style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
-                        July 2026 – Present
+                        May 2026 – Present
                       </li>
                     </ul>
                   </div>
