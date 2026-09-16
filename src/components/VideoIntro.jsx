@@ -13,6 +13,8 @@ const styles = `
   z-index: 99999;
   overflow: hidden;
   background: #000000;
+  display: grid;
+  place-items: center;
   transform: translateY(0);
   transition: transform ${INTRO_TRANSITION_MS}ms cubic-bezier(0.83, 0, 0.17, 1);
   will-change: transform;
@@ -24,12 +26,14 @@ const styles = `
 }
 
 .video-intro__video {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
-  transform: translate3d(0, clamp(180px, 34vh, 330px), 0);
+  transform: translateY(4vh) scale(1.14);
   backface-visibility: hidden;
   filter: brightness(1.22) contrast(1.12) saturate(1.08);
 }
@@ -68,8 +72,10 @@ const styles = `
 
 @media (max-width: 768px) {
   .video-intro__video {
+    width: auto;
+    max-width: 100vw;
     height: 100dvh;
-    transform: translate3d(0, clamp(72px, 15vh, 150px), 0);
+    transform: none;
   }
 }
 
