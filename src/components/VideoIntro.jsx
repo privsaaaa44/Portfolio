@@ -34,6 +34,8 @@ const styles = `
   aspect-ratio: 320 / 568;
   transform: translateY(4vh) scale(1.14);
   transform-origin: center center;
+  pointer-events: none;
+  user-select: none;
 }
 
 .video-intro__video {
@@ -44,6 +46,8 @@ const styles = `
   object-position: center center;
   backface-visibility: hidden;
   filter: brightness(1.22) contrast(1.12) saturate(1.08);
+  pointer-events: none;
+  user-select: none;
 }
 
 .video-intro__shade {
@@ -61,40 +65,19 @@ const styles = `
   pointer-events: none;
 }
 
-.video-intro__play {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 74px;
-  height: 74px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.42);
-  color: #ffffff;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(8px);
-}
-
-.video-intro__play::before {
-  content: "";
-  width: 0;
-  height: 0;
-  margin-left: 5px;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-left: 22px solid currentColor;
-}
-
 @media (max-width: 768px) {
   .video-intro__frame {
     width: auto;
     max-width: 100vw;
     height: 100dvh;
     transform: none;
+  }
+
+  .video-intro__watermark-cover {
+    right: 0;
+    bottom: 0;
+    width: 48%;
+    height: 24%;
   }
 }
 
@@ -108,16 +91,14 @@ const styles = `
 export default function VideoIntro() {
   const videoRef = useRef(null);
   const startedRef = useRef(false);
-  const needsTapRef = useRef(false);
   const [opening, setOpening] = useState(false);
   const [gone, setGone] = useState(false);
-  const [needsTap, setNeedsTap] = useState(false);
 
   const openCurtain = () => {
     setOpening(true);
   };
 
-  const startVideo = (fromUserTap = false) => {
+  const startVideo = () => {
     const video = videoRef.current;
     if (!video) return;
 
@@ -130,17 +111,8 @@ export default function VideoIntro() {
       playPromise
         .then(() => {
           startedRef.current = true;
-          needsTapRef.current = false;
-          setNeedsTap(false);
         })
-        .catch(() => {
-          if (fromUserTap) {
-            openCurtain();
-            return;
-          }
-          needsTapRef.current = true;
-          setNeedsTap(true);
-        });
+        .catch(() => {});
     }
   };
 
@@ -149,7 +121,7 @@ export default function VideoIntro() {
     document.body.style.overflow = "hidden";
 
     const fallback = window.setTimeout(() => {
-      if (!startedRef.current && !needsTapRef.current) openCurtain();
+      if (!startedRef.current) openCurtain();
     }, VIDEO_FALLBACK_MS);
 
     return () => {
@@ -195,23 +167,16 @@ export default function VideoIntro() {
             onCanPlay={() => startVideo()}
             onPlaying={() => {
               startedRef.current = true;
-              needsTapRef.current = false;
-              setNeedsTap(false);
             }}
             onEnded={openCurtain}
             onError={openCurtain}
+            disablePictureInPicture
+            controlsList="nodownload noplaybackrate noremoteplayback"
+            tabIndex={-1}
           />
           <div className="video-intro__watermark-cover" />
         </div>
         <div className="video-intro__shade" />
-        {needsTap && (
-          <button
-            className="video-intro__play"
-            type="button"
-            aria-label="Play intro video"
-            onClick={() => startVideo(true)}
-          />
-        )}
       </div>
     </>
   );
