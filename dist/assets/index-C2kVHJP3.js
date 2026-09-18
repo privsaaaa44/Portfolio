@@ -661,7 +661,7 @@ Error generating stack: `+a.message+`
                     0%, 80%, 100% { opacity: 0.3; }
                     40% { opacity: 1; }
                   }
-                `})]})]})}),c.jsxs("div",{className:"p-4 shadow-lg border border-dark card2",style:{width:"400px",backgroundColor:"#0E1011",height:"350px",position:"relative",overflow:"visible",borderRadius:"15px"},children:[c.jsx("div",{style:{position:"absolute",top:"80px",left:"50%",transform:"translateX(-50%)",width:"180px",height:"180px",background:"radial-gradient(circle, rgba(100, 100, 100, 0.4) 0%, rgba(80, 80, 80, 0.2) 30%, transparent 60%)",filter:"blur(50px)",borderRadius:"50%",zIndex:0}}),c.jsx("div",{className:"position-absolute",style:{top:"50px",right:"50px",width:"80px",height:"80px",border:"2px solid rgba(255, 255, 255, 0.1)",borderLeft:"none",borderBottom:"none",borderTopRightRadius:"25px"}}),c.jsx("div",{className:"position-absolute",style:{bottom:"40px",left:"40px",width:"80px",height:"80px",border:"2px solid rgba(255, 255, 255, 0.1)",borderRight:"none",borderTop:"none",borderBottomLeftRadius:"25px"}}),c.jsxs("div",{className:"mt-4",style:{position:"relative",zIndex:2},children:[c.jsx("div",{className:"carddiv3",children:c.jsx("h1",{className:"cardheading3 text-center text-white",style:{fontSize:"96px"},children:"3+"})}),c.jsxs("div",{className:"mt-4 text-center",children:[c.jsx("h2",{className:"text-white mb-3",style:{fontSize:"24px",fontWeight:"600"},children:"Months of Experience"}),c.jsx("p",{style:{fontSize:"14px",lineHeight:"1.6",color:"#ffffff99"},children:"Building scalable applications and crafting exceptional user experiences"})]})]})]})]})]}),c.jsxs("div",{className:"skill section",children:[c.jsx("br",{}),c.jsx("hr",{className:"bg-dark mt-2",style:{opacity:"0.4"}}),c.jsx("br",{}),c.jsx("style",{children:`
+                `})]})]})}),c.jsxs("div",{className:"p-4 shadow-lg border border-dark card2",style:{width:"400px",backgroundColor:"#0E1011",height:"350px",position:"relative",overflow:"visible",borderRadius:"15px"},children:[c.jsx("div",{style:{position:"absolute",top:"80px",left:"50%",transform:"translateX(-50%)",width:"180px",height:"180px",background:"radial-gradient(circle, rgba(100, 100, 100, 0.4) 0%, rgba(80, 80, 80, 0.2) 30%, transparent 60%)",filter:"blur(50px)",borderRadius:"50%",zIndex:0}}),c.jsx("div",{className:"position-absolute",style:{top:"50px",right:"50px",width:"80px",height:"80px",border:"2px solid rgba(255, 255, 255, 0.1)",borderLeft:"none",borderBottom:"none",borderTopRightRadius:"25px"}}),c.jsx("div",{className:"position-absolute",style:{bottom:"40px",left:"40px",width:"80px",height:"80px",border:"2px solid rgba(255, 255, 255, 0.1)",borderRight:"none",borderTop:"none",borderBottomLeftRadius:"25px"}}),c.jsxs("div",{className:"mt-4",style:{position:"relative",zIndex:2},children:[c.jsx("div",{className:"carddiv3",children:c.jsx("h1",{className:"cardheading3 text-center text-white",style:{fontSize:"96px"},children:"1+"})}),c.jsxs("div",{className:"mt-4 text-center",children:[c.jsx("h2",{className:"text-white mb-3",style:{fontSize:"24px",fontWeight:"600"},children:"Years of Experience"}),c.jsx("p",{style:{fontSize:"14px",lineHeight:"1.6",color:"#ffffff99"},children:"Building scalable applications and crafting exceptional user experiences"})]})]})]})]})]}),c.jsxs("div",{className:"skill section",children:[c.jsx("br",{}),c.jsx("hr",{className:"bg-dark mt-2",style:{opacity:"0.4"}}),c.jsx("br",{}),c.jsx("style",{children:`
             @keyframes scroll {
               0% {
                 transform: translateX(0);
@@ -871,21 +871,40 @@ Error generating stack: `+a.message+`
   pointer-events: none;
 }
 
-.video-intro__video {
+.video-intro__frame {
+  position: relative;
   width: auto;
   max-width: 100vw;
   height: 100dvh;
   max-height: 100dvh;
+  aspect-ratio: 320 / 568;
+  transform: translateY(4vh) scale(1.14);
+  transform-origin: center center;
+}
+
+.video-intro__video {
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: contain;
   object-position: center center;
-  transform: translateY(4vh) scale(1.14);
   backface-visibility: hidden;
   filter: brightness(1.22) contrast(1.12) saturate(1.08);
 }
 
 .video-intro__shade {
   display: none;
+}
+
+.video-intro__watermark-cover {
+  position: absolute;
+  right: 0;
+  bottom: 4.5%;
+  z-index: 1;
+  width: 36%;
+  height: 14%;
+  background: #000000;
+  pointer-events: none;
 }
 
 .video-intro__play {
@@ -917,7 +936,7 @@ Error generating stack: `+a.message+`
 }
 
 @media (max-width: 768px) {
-  .video-intro__video {
+  .video-intro__frame {
     width: auto;
     max-width: 100vw;
     height: 100dvh;
@@ -930,4 +949,4 @@ Error generating stack: `+a.message+`
     transition-duration: 250ms;
   }
 }
-`;function Sp(){const v=G.useRef(null),T=G.useRef(!1),j=G.useRef(!1),[f,h]=G.useState(!1),[z,B]=G.useState(!1),[q,w]=G.useState(!1),p=()=>{h(!0)},U=(D=!1)=>{const O=v.current;if(!O)return;O.muted=!0,O.defaultMuted=!0,O.playsInline=!0;const Q=O.play();Q&&Q.then(()=>{T.current=!0,j.current=!1,w(!1)}).catch(()=>{if(D){p();return}j.current=!0,w(!0)})};return G.useEffect(()=>{const D=document.body.style.overflow;document.body.style.overflow="hidden";const O=window.setTimeout(()=>{!T.current&&!j.current&&p()},xp);return()=>{window.clearTimeout(O),document.body.style.overflow=D}},[]),G.useEffect(()=>{U()},[]),G.useEffect(()=>{if(!f)return;const D=window.setTimeout(()=>{B(!0),document.body.style.overflow=""},f0);return()=>window.clearTimeout(D)},[f]),z?null:c.jsxs(c.Fragment,{children:[c.jsx("style",{children:bp}),c.jsxs("div",{className:`video-intro ${f?"video-intro--open":""}`,"aria-hidden":"true",children:[c.jsx("video",{ref:v,className:"video-intro__video",src:yp,autoPlay:!0,muted:!0,defaultMuted:!0,playsInline:!0,preload:"auto",onCanPlay:()=>U(),onPlaying:()=>{T.current=!0,j.current=!1,w(!1)},onEnded:p,onError:p}),c.jsx("div",{className:"video-intro__shade"}),q&&c.jsx("button",{className:"video-intro__play",type:"button","aria-label":"Play intro video",onClick:()=>U(!0)})]})]})}function Ap(){return c.jsxs(c.Fragment,{children:[c.jsx(Sp,{}),c.jsxs("div",{className:"App",children:[c.jsx(E1,{}),c.jsx("br",{}),c.jsx("br",{}),c.jsx("br",{}),c.jsx("br",{}),c.jsxs("div",{className:"content-wrapper",children:[c.jsx(vp,{}),c.jsx(gp,{})]})]})]})}Xh.createRoot(document.getElementById("root")).render(c.jsx(G.StrictMode,{children:c.jsx(Ap,{})}));
+`;function Sp(){const v=G.useRef(null),T=G.useRef(!1),j=G.useRef(!1),[f,h]=G.useState(!1),[z,B]=G.useState(!1),[q,w]=G.useState(!1),p=()=>{h(!0)},U=(D=!1)=>{const O=v.current;if(!O)return;O.muted=!0,O.defaultMuted=!0,O.playsInline=!0;const Q=O.play();Q&&Q.then(()=>{T.current=!0,j.current=!1,w(!1)}).catch(()=>{if(D){p();return}j.current=!0,w(!0)})};return G.useEffect(()=>{const D=document.body.style.overflow;document.body.style.overflow="hidden";const O=window.setTimeout(()=>{!T.current&&!j.current&&p()},xp);return()=>{window.clearTimeout(O),document.body.style.overflow=D}},[]),G.useEffect(()=>{U()},[]),G.useEffect(()=>{if(!f)return;const D=window.setTimeout(()=>{B(!0),document.body.style.overflow=""},f0);return()=>window.clearTimeout(D)},[f]),z?null:c.jsxs(c.Fragment,{children:[c.jsx("style",{children:bp}),c.jsxs("div",{className:`video-intro ${f?"video-intro--open":""}`,"aria-hidden":"true",children:[c.jsxs("div",{className:"video-intro__frame",children:[c.jsx("video",{ref:v,className:"video-intro__video",src:yp,autoPlay:!0,muted:!0,defaultMuted:!0,playsInline:!0,preload:"auto",onCanPlay:()=>U(),onPlaying:()=>{T.current=!0,j.current=!1,w(!1)},onEnded:p,onError:p}),c.jsx("div",{className:"video-intro__watermark-cover"})]}),c.jsx("div",{className:"video-intro__shade"}),q&&c.jsx("button",{className:"video-intro__play",type:"button","aria-label":"Play intro video",onClick:()=>U(!0)})]})]})}function Ap(){return c.jsxs(c.Fragment,{children:[c.jsx(Sp,{}),c.jsxs("div",{className:"App",children:[c.jsx(E1,{}),c.jsx("br",{}),c.jsx("br",{}),c.jsx("br",{}),c.jsx("br",{}),c.jsxs("div",{className:"content-wrapper",children:[c.jsx(vp,{}),c.jsx(gp,{})]})]})]})}Xh.createRoot(document.getElementById("root")).render(c.jsx(G.StrictMode,{children:c.jsx(Ap,{})}));

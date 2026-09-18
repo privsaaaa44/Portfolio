@@ -621,12 +621,12 @@ const Home1 = () => {
             <div className="mt-4" style={{ position: 'relative', zIndex: 2 }}>
               <div className="carddiv3">
                 <h1 className="cardheading3 text-center text-white" style={{ fontSize: '96px' }}>
-                  3+
+                  1+
                 </h1>
               </div>
               <div className="mt-4 text-center">
                 <h2 className="text-white mb-3" style={{ fontSize: '24px', fontWeight: '600' }}>
-                  Months of Experience
+                  Years of Experience
                 </h2>
                 <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#ffffff99' }}>
                   Building scalable applications and crafting exceptional user experiences

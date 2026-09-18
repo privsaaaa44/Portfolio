@@ -25,21 +25,40 @@ const styles = `
   pointer-events: none;
 }
 
-.video-intro__video {
+.video-intro__frame {
+  position: relative;
   width: auto;
   max-width: 100vw;
   height: 100dvh;
   max-height: 100dvh;
+  aspect-ratio: 320 / 568;
+  transform: translateY(4vh) scale(1.14);
+  transform-origin: center center;
+}
+
+.video-intro__video {
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: contain;
   object-position: center center;
-  transform: translateY(4vh) scale(1.14);
   backface-visibility: hidden;
   filter: brightness(1.22) contrast(1.12) saturate(1.08);
 }
 
 .video-intro__shade {
   display: none;
+}
+
+.video-intro__watermark-cover {
+  position: absolute;
+  right: 0;
+  bottom: 4.5%;
+  z-index: 1;
+  width: 36%;
+  height: 14%;
+  background: #000000;
+  pointer-events: none;
 }
 
 .video-intro__play {
@@ -71,7 +90,7 @@ const styles = `
 }
 
 @media (max-width: 768px) {
-  .video-intro__video {
+  .video-intro__frame {
     width: auto;
     max-width: 100vw;
     height: 100dvh;
@@ -163,24 +182,27 @@ export default function VideoIntro() {
         className={`video-intro ${opening ? "video-intro--open" : ""}`}
         aria-hidden="true"
       >
-        <video
-          ref={videoRef}
-          className="video-intro__video"
-          src={backgroundVideo}
-          autoPlay
-          muted
-          defaultMuted
-          playsInline
-          preload="auto"
-          onCanPlay={() => startVideo()}
-          onPlaying={() => {
-            startedRef.current = true;
-            needsTapRef.current = false;
-            setNeedsTap(false);
-          }}
-          onEnded={openCurtain}
-          onError={openCurtain}
-        />
+        <div className="video-intro__frame">
+          <video
+            ref={videoRef}
+            className="video-intro__video"
+            src={backgroundVideo}
+            autoPlay
+            muted
+            defaultMuted
+            playsInline
+            preload="auto"
+            onCanPlay={() => startVideo()}
+            onPlaying={() => {
+              startedRef.current = true;
+              needsTapRef.current = false;
+              setNeedsTap(false);
+            }}
+            onEnded={openCurtain}
+            onError={openCurtain}
+          />
+          <div className="video-intro__watermark-cover" />
+        </div>
         <div className="video-intro__shade" />
         {needsTap && (
           <button
