@@ -110,9 +110,9 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                 </a>
               </div>
               <div className="thirdone mt-2 secondoneallofit">
-                <a className="text-secondary" href="https://www.linkedin.com/in/muhammad-sadiq-1abbba36b" target="_blank" rel="noopener noreferrer">
+                <a className="text-secondary" href="https://www.linkedin.com/in/muhammad-sadiq123" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="me-2" width={14} height={14} />
-                  <span className="contactinfospan fs-6 fw-light" style={{ color: '#ffffff99', fontSize: isMobile ? '12px' : '14px' }}>linkedin.com/in/muhammad-sadiq</span>
+                  <span className="contactinfospan fs-6 fw-light" style={{ color: '#ffffff99', fontSize: isMobile ? '12px' : '14px' }}>linkedin.com/in/muhammad-sadiq123  </span>
                 </a>
               </div>
             </div>
@@ -252,7 +252,49 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                 <span className="espan text-white fw-bold fs-4 p-2" style={{ fontSize: isMobile ? '16px' : '20px' }}>Work Experience</span>
               </div>
               <hr className="mt-0" style={{ color: '#ffffff99' }} />
-                  {/* Job 3 */}
+                  {/* Job 3 */}  <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
+                <div className="d-flex align-items-center" style={{ marginTop: '30px' }}>
+                  <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
+                  <span className="text-white fs-5 fw-bold ms-4" style={{ fontSize: isMobile ? '15px' : '18px' }}>Junior Web Developer</span>
+                </div>
+                <div className="company mt-1">
+                  <div className="d-flex align-items-center flex-wrap" style={{ paddingLeft: isMobile ? '24px' : '36px' }}>
+                    <h4 className="fw-bolder mb-0" style={{ fontSize: isMobile ? '13px' : '14px', color: '#ffffff99' }}>
+                   Genify Technologies 
+                    </h4>
+                    <ul className="mb-0 d-flex align-items-center gap-4 flex-wrap" style={{ listStyleType: 'square', paddingLeft: '8px', margin: 0, marginLeft: isMobile ? '2px' : '4px' }}>
+                      <li className="ms-3" style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
+                        On-site
+                      </li>
+                      <li style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
+                     Sep 2026 – Present
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="companypara mt-2" style={{ marginLeft: isMobile ? '8px' : '13px' }}>
+                    <ul className="companyul ps-0">
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Develop and maintain responsive, user-friendly websites using HTML, CSS, JavaScript, PHP, WordPress, and Laravel</span>
+                      </li>
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Build and customize WordPress websites, themes, plugins, and pages according to project requirements.</span>
+                      </li>
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Develop and maintain Laravel-based web applications, implementing backend functionality, database integration, APIs, and dynamic
+features.</span>
+                      </li>
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Troubleshoot, debug, and optimize websites to improve performance, responsiveness, functionality, and cross-browser compatibility.</span>
+                      </li>
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Collaborate with the team to understand project requirements, implement new features, maintain existing websites, and deliver clean,
+scalable, and user-focused web solutions.
+</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" className="flex justify-center items-center">
                 <div className="d-flex align-items-center" style={{ marginTop: '30px' }}>
                   <Circle width={12} height={12} stroke="gray" fill="#3D3D3D" strokeWidth={3} />
@@ -268,7 +310,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                         On-site
                       </li>
                       <li style={{ fontSize: isMobile ? '12px' : '14px', color: '#ffffff99', paddingLeft: '2px' }}>
-                        May 2026 – Present
+                        Mar 2026 – Aug 2026
                       </li>
                     </ul>
                   </div>
@@ -283,10 +325,17 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
                       <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
                         <span className="ms-2">Build and manage high-quality backlinks through white-hat link-building strategies.</span>
                       </li>
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Monitored traffic, rankings, and performance via Google Search Console, Analytics, Ahrefs, and SEMrush; prepared SEO reports.</span>
+                      </li>
+                      <li className="companyli fs-6 mb-2" style={{ color: '#ffffff99', fontSize: isMobile ? '13px' : '15px' }}>
+                        <span className="ms-2">Managed SEO tasks for WordPress websites, ensuring proper indexing and optimization.</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
+            
     {/* Job 2 */}
        
 
