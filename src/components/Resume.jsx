@@ -62,7 +62,7 @@ const ResumePageSection = ({ isVisible, sectionRef, isHovered, setIsHovered }) =
         <div className="resumesectionresume d-flex rounded-4 overflow-hidden border border-dark flex-column flex-lg-row" style={{ 
           width: isMobile ? '95vw' : window.innerWidth < 1200 ? '90vw' : '1152px', 
           maxWidth: '1152px',
-          height: isMobile ? 'auto' : '245vh',
+          height: isMobile ? 'auto' : '270vh',
           backgroundColor: '#0D0D0D'
         }}>
           {/* LEFT COLUMN */}
